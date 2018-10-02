@@ -1,0 +1,36 @@
+.home-center {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    text-align: Left;
+}
+.filler {
+    margin: 0;
+    height: 100%;
+    min-height: 100vh;
+}
+.bghome {
+
+    background-image: url("/svg/503.svg");
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+}
+@media screen and (max-width: 535px) {
+    .title {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        font-size: 15px;
+    }
+}
