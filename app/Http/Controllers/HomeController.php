@@ -49,7 +49,7 @@ class HomeController extends Controller
     {
 
         $projects = DB::table('projects')->where('id', '=', $id)->get();
-        return view('projects', [
+        return view('project', [
 
             'projects' => $projects,
 

@@ -31,11 +31,10 @@
             </div>
             <div class="col-md-9">
                 <h1>Tigo Middelkoop</h1>
-                <h5>This is my portfolio site! It is still in development</h5>
-                <h5>The sitetheme is definitely going to change soon</h5>d
-                <a style="font-size: 10px">It is not going to be using a template. I swear! Well to be fair it is going
-                    to
-                    be my template that is going to be here.</a>
+                <h5>And welcome to my portfolio</h5>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50%" aria-valuemin="0%" aria-valuemax="100%" style="width: 75%"></div>
             </div>
             {{--<h1>Hello {{ $name }} <-- This is to learn using laravel variables etc!</h1>--}}
         </div>

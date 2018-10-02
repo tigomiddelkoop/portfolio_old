@@ -4,22 +4,18 @@
 
 @section('content')
     <div class="container">
-        <h1>My projects</h1>
-        <h5>On this page are all the projects I have done</h5>
-        <h5>You can click on the button to go to the GitHub repository</h5>
-        <a style="font-size: 12px">There are two Git servers I use, GitHub and my own so there can be two links to the
-            corresponding repo's</a>
-        <br/>
-        <br/>
-        <br/>
-
-
         @foreach($projects as $project)
+        <h1>{{ $project->name }}</h1>
+        <h5>This project is written in: {{ $project->language }}</h5>
+        <br/>
+
+
+
             <div class="card">
                 <div class="card-body">
                     <h2 class="">{{ $project->name }}</h2>
                     <h5 class="">Written in: {{ $project->language }}</h5>
-                    <a class="">{{ $project->short_description }}</a>
+                    <a class="">{{ $project->long_description }}</a>
                     <br/>
                     <span class="pull-right stats-bars">
                     @if( !$project->github == "" )
