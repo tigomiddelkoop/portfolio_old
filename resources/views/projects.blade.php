@@ -17,10 +17,12 @@
         @foreach($projects as $project)
             <div class="card">
                 <div class="card-body">
+                    <div class-="card-text">
                     <h2 class="">{{ $project->name }}</h2>
                     <h5 class="">Written in: {{ $project->language }}</h5>
                     <a class="">{{ $project->short_description }}</a>
                     <br/>
+                    </div>
                     <span class="pull-right stats-bars">
                     @if( !$project->github == "" )
                         <a class="btn btn-primary" role="button" href="{{ $project->github }}">GitHub</a>
