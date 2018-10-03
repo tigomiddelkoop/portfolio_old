@@ -17,8 +17,6 @@
                 <div class="info-box-content">
                     <span class="info-box-text">Forum Topics</span>
                     <span class="info-box-number">0</span>
-                    <span class="info-box-text">Forum Messages</span>
-                    <span class="info-box-number">0</span>
                 </div>
             </div>
         </div>
