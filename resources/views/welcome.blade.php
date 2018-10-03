@@ -25,19 +25,51 @@
         <div class="row">
             <div class="col-md-3">
 
-                <img src="gif/profilepicture.gif"
-                     style="height: 100%; max-height:250px; width: 100%; max-width: 250px; border-radius: 100%; margin: auto; display: block;">
+                <img src="gif/profilepicture.gif" class="profilepicture">
 
             </div>
             <div class="col-md-9">
-                <h1>Tigo Middelkoop</h1>
+                <h1>Hello! I am Tigo Middelkoop</h1>
                 <h5>And welcome to my portfolio</h5>
             </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50%" aria-valuemin="0%" aria-valuemax="100%" style="width: 75%"></div>
-            </div>
-            {{--<h1>Hello {{ $name }} <-- This is to learn using laravel variables etc!</h1>--}}
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text--center">How I qualify myself in terms of code knowledge</h1>
+            </div>
+            <div class="col-md-3">
+                Java:
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                         aria-valuenow="50%" aria-valuemin="0%" aria-valuemax="100%" style="width: 10%"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                HTML/CSS/JavaScript:
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                         aria-valuenow="50%" aria-valuemin="0%" aria-valuemax="100%" style="width: 10%"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                PHP:
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                         aria-valuenow="50%" aria-valuemin="0%" aria-valuemax="100%" style="width: 50%">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                C++:
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar"
+                         aria-valuenow="100%" aria-valuemin="0%" aria-valuemax="100%" style="width: 100%">NOT YET STARTED ON</div>
+                </div>
+            </div>
+        </div>
+
+        {{--<h1>Hello {{ $name }} <-- This is to learn using laravel variables etc!</h1>--}}
+    </div>
     </div>
 @stop
 
