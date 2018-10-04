@@ -22,7 +22,7 @@ class CreateProjectsTable extends Migration
             $table->String('github');
             $table->String('genericgit');
             $table->integer('visits');
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 

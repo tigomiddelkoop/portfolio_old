@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\App;
+use App;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -34,9 +36,8 @@ class HomeController extends Controller
     public function projects()
     {
 
-        $projects = DB::table('projects')->get();
 
-//        $projects = Projects::All();
+        $projects = App\Projects::All();
 
         return view('projects', [
 
@@ -45,13 +46,13 @@ class HomeController extends Controller
         ]);
     }
 
-    public function specificproject($id)
+    public function viewProject($id)
     {
 
-        $projects = DB::table('projects')->where('id', '=', $id)->get();
+        $project = App\Projects::find($id);
         return view('project', [
 
-            'projects' => $projects,
+            'project' => $project,
 
         ]);
     }

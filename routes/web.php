@@ -15,8 +15,19 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/projects', 'HomeController@projects')->name('home');
-Route::get('/projects/{id}', 'HomeController@specificproject')->name('id');
+Route::get('/projects/{id}', 'HomeController@viewProject')->name('id');
 Route::get('/about', 'HomeController@about')->name('home');
+Route::get('/faq', 'HomeController@faq')->name('home');
+
+//Contact
+Route::get('/contact', 'ContactController@contact');
+Route::post('/contact', 'ContactController@sendForm');
+
+//Blog
+Route::get('/blog', 'BlogController@showLatestPosts');
+
+//Forum
+Route::get('/forum', 'ForumController@showCategories');
 
 
 

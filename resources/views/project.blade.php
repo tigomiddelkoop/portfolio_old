@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        @foreach($projects as $project)
+        {{--@foreach($projects as $project)--}}
         <h1>{{ $project->name }}</h1>
         <h5>This project is written in: {{ $project->language }}</h5>
         <br/>
@@ -40,6 +40,6 @@
             </div>
             <br/>
 
-        @endforeach
+        {{--@endforeach--}}
     </div>
 @stop
