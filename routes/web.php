@@ -11,7 +11,7 @@
 |
 */
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/projects', 'HomeController@projects')->name('home');
@@ -29,8 +29,6 @@ Route::get('/blog', 'BlogController@showLatestPosts');
 //Forum
 Route::get('/forum', 'ForumController@showCategories');
 
-
-
-
 Route::get('/admin/dashboard', 'AdminController@dashboard')->name('home');
+
 
