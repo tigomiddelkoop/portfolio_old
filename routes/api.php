@@ -17,6 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('foo', function () {
-    return 'Hello World';
-});
+Route::get('/projects/{projectid}', 'HomeController@viewProjectAPI');

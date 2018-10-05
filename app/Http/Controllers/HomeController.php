@@ -71,4 +71,11 @@ class HomeController extends Controller
     {
         return view('faq');
     }
+
+
+    //Route Model Binding
+    public function viewProjectAPI(Projects $projectid) {
+        return $projectid;
+    }
 }
+

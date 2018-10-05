@@ -21,11 +21,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect. -->
     <link rel="stylesheet" href="{{url('adminlte')}}/dist/css/skins/skin-blue.min.css">
-    {{--<link rel="stylesheet" href="{{url('adminlte')}}/dist/css/skins/skin-black.css">--}}
-    {{--<link rel="stylesheet" href="{{url('adminlte')}}/dist/css/skins/skin-yellow.css">--}}
-    {{--<link rel="stylesheet" href="{{url('adminlte')}}/dist/css/skins/skin-red.css">--}}
+{{--<link rel="stylesheet" href="{{url('adminlte')}}/dist/css/skins/skin-black.css">--}}
+{{--<link rel="stylesheet" href="{{url('adminlte')}}/dist/css/skins/skin-yellow.css">--}}
+{{--<link rel="stylesheet" href="{{url('adminlte')}}/dist/css/skins/skin-red.css">--}}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -85,17 +85,19 @@ desired effect
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="{{url('adminlte')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="{{url('adminlte')}}/dist/img/user2-160x160.jpg" class="user-image"
+                                 alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                            <span class="hidden-xs">{{--{{ Auth::user()->name }}--}}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="{{url('adminlte')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="{{url('adminlte')}}/dist/img/user2-160x160.jpg" class="img-circle"
+                                     alt="User Image">
 
                                 <p>
-                                    {{ Auth::user()->name }}
+                                    {{--{{ Auth::user()->name }}--}}
                                     <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
@@ -111,7 +113,8 @@ desired effect
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
