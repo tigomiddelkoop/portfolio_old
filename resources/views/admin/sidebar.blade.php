@@ -28,8 +28,10 @@
         <!-- /.search form -->
 
         <!-- Sidebar Menu -->
+        <
+        <!-- /.sidebar-menu -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">HEADER</li>
+            <li class="header">Generic</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
@@ -49,7 +51,48 @@
                 </ul>
             </li>
         </ul>
-        <!-- /.sidebar-menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">Forum</li>
+            <!-- Optionally, you can add icons to the links -->
+            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Skills</span></a></li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-link"></i> <span>Forum</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#">Link in level 2</a></li>
+                    <li><a href="#">Link in level 2</a></li>
+                </ul>
+            </li>
+        </ul>
+        ul class="sidebar-menu" data-widget="tree">
+        <li class="header">Blog</li>
+        <!-- Optionally, you can add icons to the links -->
+        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Skills</span></a></li>
+        <li class="treeview">
+            <a href="#"><i class="fa fa-link"></i> <span>Forum</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="#">Link in level 2</a></li>
+                <li><a href="#">Link in level 2</a></li>
+            </ul>
+        </li>
+        </ul>
     </section>
     <!-- /.sidebar -->
 </aside>
