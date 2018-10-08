@@ -6,12 +6,12 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{{ url('adminlte') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>Alexander Pierce</p>
                 <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <a href="#"><i class="fa fa-circle text-warning"></i> Idle</a>
             </div>
         </div>
 
@@ -33,65 +33,33 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Generic</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Skills</span></a></li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>Forum</span>
-                    <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
-                </ul>
-            </li>
+            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Skills</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Projects</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Contact info</span></a></li>
         </ul>
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Forum</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Skills</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Categories</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Topics</span></a></li>
+            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Users</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Reports</span></a></li>
             <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>Forum</span>
+                <a href="#"><i class="fa fa-link"></i> <span>Punishments</span>
                     <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
+                    <li><a href="#">Warnings</a></li>
+                    <li><a href="#">Bans</a></li>
                 </ul>
             </li>
         </ul>
-        ul class="sidebar-menu" data-widget="tree">
+        <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Blog</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Skills</span></a></li>
-        <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Forum</span>
-                <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="#">Link in level 2</a></li>
-                <li><a href="#">Link in level 2</a></li>
-            </ul>
-        </li>
+        <li class="active"><a href="{{ url('admin/blog') }}"><i class="fa fa-link"></i> <span>Posts</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->
