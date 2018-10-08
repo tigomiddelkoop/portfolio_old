@@ -36,6 +36,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text--center">How I qualify myself in terms of code knowledge</h1>
+                <h5 class="text--center">These bars will dissapear soon, there will be better representation of my skills</h5>
             </div>
             <div class="col-md-3">
                 Java:
