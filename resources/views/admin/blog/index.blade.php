@@ -36,9 +36,9 @@
                             <td>
 
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-xs">View</button>
-                                    <button type="button" class="btn btn-warning btn-xs">Edit</button>
-                                    <button type="button" class="btn btn-danger btn-xs">Delete</button>
+                                    <a type="button" href="#" class="btn btn-success btn-xs">View</a>
+                                    <a type="button" href="{{ url('/') }}/admin/blog/edit/{{ $post->id }}" class="btn btn-warning btn-xs">Edit</a>
+                                    <a type="button" href="" class="btn btn-danger btn-xs">Delete</a>
                                 </div>
 
 

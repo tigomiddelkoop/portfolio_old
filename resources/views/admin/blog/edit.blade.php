@@ -15,17 +15,17 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <form method="POST" action="/admin/blog/create">
+                    <form method="POST" action="/admin/blog/edit/{{ $post->id }}">
                         {{ csrf_field() }}
-                        <input type="hidden" name="author" value="__Tigo__">
+                        <input type="hidden" name="author" value="{{--{{ Auth::user()->name }}--}}">
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control" id="title" name="title">
+                            <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}">
                         </div>
 
                         <div class="form-group">
                             <label for="post">Post</label>
-                            <textarea name="post" id="post" class="form-control" rows="25"></textarea>
+                            <textarea name="post" id="post" class="form-control" rows="25">{{ $post->body }}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Publish</button>

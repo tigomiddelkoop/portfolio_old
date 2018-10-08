@@ -13,6 +13,6 @@ class BlogController extends Controller
     public function viewPost() {
 
 
-        return view('blog.create');
+//        return view('blog');
     }
 }

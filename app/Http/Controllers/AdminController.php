@@ -9,29 +9,48 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-     //   $this->middleware('auth');
+        //   $this->middleware('auth');
     }
 
-    public function dashboard() {
+    public function dashboard()
+    {
         return view('admin.dashboard');
     }
 
 
-
     //BLOG
-    public function listPublishedPosts() {
+    public function listPublishedPosts()
+    {
         $posts = Blogposts::all();
         return view('admin.blog.index', [
 
             'posts' => $posts,
 
-            ]);
+        ]);
     }
-    public function blogCreatePost() {
+
+    public function blogCreatePost()
+    {
         return view('admin.blog.create');
     }
 
-    public function blogPublishPost() {
+    public function blogPublishPost()
+    {
+        return (request()->all());
+    }
+
+    public function blogGetPost($id)
+    {
+        $post = Blogposts::find($id);
+        return view('admin.blog.edit',
+            [
+
+                'post' => $post,
+
+            ]);
+    }
+    public function blogSavePost()
+    {
         return (request()->all());
     }
 }

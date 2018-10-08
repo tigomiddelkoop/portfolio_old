@@ -42,4 +42,9 @@ Route::get('/admin/blog/', 'AdminController@listPublishedPosts');
 Route::get('/admin/blog/create', 'AdminController@blogCreatePost');
 Route::post('/admin/blog/create', 'AdminController@blogPublishPost');
 
+Route::get('/admin/blog/edit/{id}', 'AdminController@blogGetPost');
+Route::post('/admin/blog/edit/{id}', 'AdminController@blogSavePost');
+
+Route::get('/admin/blog/delete{id}');
+
 
