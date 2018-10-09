@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">New Blog Post</h3>
+                    <h3 class="box-title">Editting Blog Post: {{ $post->title }}</h3>
                     <div class="box-tools pull-right">
                         <!-- Buttons, labels, and many other things can be placed here! -->
                         <!-- Here is a label for example -->
@@ -36,4 +36,17 @@
         </div>
     </div>
     <!-- /.box -->
+@stop
+
+@section('requiredJS')
+    <!-- CK Editor -->
+    <script src="{{ url('adminlte') }}/bower_components/ckeditor/ckeditor.js"></script>
+
+    <script>
+        $(function () {
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace('post')
+        })
+    </script>
 @stop

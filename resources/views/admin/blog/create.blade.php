@@ -15,17 +15,26 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+
+                                {{ $error }}
+
+                            @endforeach
+                        </ul>
+                    </div>
                     <form method="POST" action="/admin/blog/create">
                         {{ csrf_field() }}
-                        <input type="hidden" name="author" value="{{--{{ Auth::user()->name }}--}}">
+                        <input type="hidden" name="author" value="Appelsap{{--{{ Auth::user()->name }}--}}">
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control" id="title" name="title">
+                            <input type="text" class="form-control" id="title" name="title" required>
                         </div>
 
                         <div class="form-group">
                             <label for="post">Post</label>
-                            <textarea name="post" id="post" class="form-control" rows="25"></textarea>
+                            <textarea name="body" id="body" class="form-control" rows="25" required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Publish</button>
@@ -36,4 +45,17 @@
         </div>
     </div>
     <!-- /.box -->
+@stop
+
+@section('requiredJS')
+    <!-- CK Editor -->
+    <script src="{{ url('adminlte') }}/bower_components/ckeditor/ckeditor.js"></script>
+
+    <script>
+        $(function () {
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace('body')
+        })
+    </script>
 @stop

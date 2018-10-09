@@ -32,16 +32,39 @@ class AdminController extends Controller
 
     public function blogPublishPost()
     {
-        return (request()->all());
+
+        $this->validate(request(), [
+
+            'title' => 'required',
+            'body' => 'required',
+            'author' => 'required'
+
+        ]);
+
+        Blogposts::create(request(['title', 'author', 'body']));
+
+        return redirect('admin/blog');
+
+
     }
 
     public function blogGetPost(Blogposts $post)
     {
         return view('admin.blog.edit', compact('post'));
     }
-    public function blogSavePost()
+    public function blogSavePost($post)
     {
-        return (request()->all());
+
+//        return $post;
+//
+//        $Blogpost->title = request('title');
+//        $Blogpost->author = request('author');
+//        $Blogpost->body = request('post');
+//
+//        $Blogpost->
+//
+//        return redirect('admin/blog');
+
     }
 }
 

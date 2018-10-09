@@ -254,6 +254,8 @@ desired effect
 <!-- AdminLTE App -->
 <script src="{{ url('adminlte') }}/dist/js/adminlte.min.js"></script>
 
+@yield('requiredJS')
+
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->

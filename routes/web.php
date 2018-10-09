@@ -11,7 +11,6 @@
 |
 */
 
-Auth::routes(['register'=>false]);
 
 Route::get('/', 'HomeController@index')->name('Home');
 Route::get('/projects', 'HomeController@projects')->name('projects');
