@@ -15,9 +15,18 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
+                    @foreach($errors->all() as $error)
+                        <div class="alert alert-danger">
+                            <ul>
+
+                                {{ $error }}
+
+                            </ul>
+                        </div>
+                    @endforeach
                     <form method="POST" action="/admin/blog/edit/{{ $post->id }}">
                         {{ csrf_field() }}
-                        <input type="hidden" name="author" value="{{--{{ Auth::user()->name }}--}}">
+                        <input type="hidden" name="author" value="Kerel{{--{{ Auth::user()->name }}--}}">
                         <div class="form-group">
                             <label for="title">Title</label>
                             <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}">

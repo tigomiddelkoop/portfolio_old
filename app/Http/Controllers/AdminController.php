@@ -54,6 +54,13 @@ class AdminController extends Controller
     }
     public function blogSavePost($post)
     {
+        $this->validate(request(), [
+
+            'title' => 'required',
+            'body' => 'required',
+            'author' => 'required'
+
+        ]);
 
 //        return $post;
 //
