@@ -27,16 +27,10 @@ Route::get('/blog', 'BlogController@showLatestPosts');
 Route::get('/blog/{id}', 'BlogController@viewPost');
 
 
-Route::get('/blog/create', 'BlogController@createPost');
-
-//Forum
-Route::get('/forum', 'ForumController@showCategories');
-
 //Admin
 Route::get('/admin/dashboard', 'AdminController@dashboard');
 
-
-
+    //Admin Blog
 Route::get('/admin/blog/', 'AdminController@listPublishedPosts');
 Route::get('/admin/blog/create', 'AdminController@blogCreatePost');
 Route::post('/admin/blog/create', 'AdminController@blogPublishPost');

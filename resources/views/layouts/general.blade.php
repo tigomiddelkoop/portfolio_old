@@ -18,7 +18,7 @@
 <body>
 @yield('pagetop')
 
-@include('general.navbar')
+@include('admin.general.navbar')
 
 <main class="py-4">
         @yield('content')

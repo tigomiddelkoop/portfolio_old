@@ -107,13 +107,13 @@ desired effect
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                                    <a class="btn btn-default btn-flat" href="{{--{{ route('logout') }} --}}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    <form id="logout-form" action="{{--{{ route('logout') }} --}}" method="POST"
                                           style="display: none;">
                                         @csrf
                                     </form>
@@ -232,7 +232,7 @@ desired effect
                             Some information about this general settings option
                         </p>
                     </div>
-                    <!-- /.form-group -->
+                    <!-- /.form-group -->.
                 </form>
             </div>
             <!-- /.tab-pane -->
