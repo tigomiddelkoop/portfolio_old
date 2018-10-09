@@ -22,11 +22,7 @@ class AdminController extends Controller
     public function listPublishedPosts()
     {
         $posts = Blogposts::all();
-        return view('admin.blog.index', [
-
-            'posts' => $posts,
-
-        ]);
+        return view('admin.blog.index', compact('posts'));
     }
 
     public function blogCreatePost()
@@ -39,15 +35,9 @@ class AdminController extends Controller
         return (request()->all());
     }
 
-    public function blogGetPost($id)
+    public function blogGetPost(Blogposts $post)
     {
-        $post = Blogposts::find($id);
-        return view('admin.blog.edit',
-            [
-
-                'post' => $post,
-
-            ]);
+        return view('admin.blog.edit', compact('post'));
     }
     public function blogSavePost()
     {

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\App;
 use App\Projects;
 use Illuminate\Support\Facades\DB;
+use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 class HomeController extends Controller
 {
@@ -39,22 +40,13 @@ class HomeController extends Controller
 
         $projects = Projects::All();
 
-        return view('projects', [
-
-            'projects' => $projects,
-
-        ]);
+        return view('projects', compact('projects'));
     }
 
-    public function viewProject($id)
+    public function viewProject(Projects $project)
     {
 
-        $project = Projects::find($id);
-        return view('project', [
-
-            'project' => $project,
-
-        ]);
+        return view('project', compact('project'));
     }
 
     public function about()
@@ -72,10 +64,5 @@ class HomeController extends Controller
         return view('faq');
     }
 
-
-    //Route Model Binding
-    public function viewProjectAPI(Projects $projectid) {
-        return $projectid;
-    }
 }
 

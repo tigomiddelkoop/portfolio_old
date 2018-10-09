@@ -13,14 +13,14 @@
 
 Auth::routes(['register'=>false]);
 
-Route::get('/', 'HomeController@index');
-Route::get('/projects', 'HomeController@projects');
+Route::get('/', 'HomeController@index')->name('Home');
+Route::get('/projects', 'HomeController@projects')->name('projects');
 Route::get('/projects/{id}', 'HomeController@viewProject');
-Route::get('/about', 'HomeController@about');
-Route::get('/faq', 'HomeController@faq');
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/faq', 'HomeController@faq')->name('faq');
 
 //Contact
-Route::get('/contact', 'ContactController@contact');
+Route::get('/contact', 'ContactController@contact')->name('contact');
 Route::post('/contact', 'ContactController@sendForm');
 
 //Blog
@@ -42,8 +42,8 @@ Route::get('/admin/blog/', 'AdminController@listPublishedPosts');
 Route::get('/admin/blog/create', 'AdminController@blogCreatePost');
 Route::post('/admin/blog/create', 'AdminController@blogPublishPost');
 
-Route::get('/admin/blog/edit/{id}', 'AdminController@blogGetPost');
-Route::post('/admin/blog/edit/{id}', 'AdminController@blogSavePost');
+Route::get('/admin/blog/edit/{post}', 'AdminController@blogGetPost');
+Route::post('/admin/blog/edit/{post}', 'AdminController@blogSavePost');
 
 Route::get('/admin/blog/delete{id}');
 
