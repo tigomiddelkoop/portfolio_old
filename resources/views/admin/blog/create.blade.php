@@ -15,15 +15,15 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->all() as $error)
+                    @foreach($errors->all() as $error)
+                        <div class="alert alert-danger">
+                            <ul>
 
                                 {{ $error }}
 
-                            @endforeach
-                        </ul>
-                    </div>
+                            </ul>
+                        </div>
+                    @endforeach
                     <form method="POST" action="/admin/blog/create">
                         {{ csrf_field() }}
                         <input type="hidden" name="author" value="Appelsap{{--{{ Auth::user()->name }}--}}">
