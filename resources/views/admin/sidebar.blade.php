@@ -33,9 +33,11 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Generic</li>
             <!-- Optionally, you can add icons to the links -->
+            <li class="active"><a href="{{ route('adminDashboard') }}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
             <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Skills</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Projects</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Contact info</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Frequently asked questions</span></a></li>
         </ul>
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Forum</li>

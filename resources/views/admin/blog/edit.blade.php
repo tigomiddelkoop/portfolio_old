@@ -34,7 +34,7 @@
 
                         <div class="form-group">
                             <label for="post">Post</label>
-                            <textarea name="post" id="post" class="form-control" rows="25">{{ $post->body }}</textarea>
+                            <textarea name="body" id="body" class="form-control" rows="25">{{ $post->body }}</textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Publish</button>
@@ -55,7 +55,7 @@
         $(function () {
             // Replace the <textarea id="editor1"> with a CKEditor
             // instance, using default configuration.
-            CKEDITOR.replace('post')
+            CKEDITOR.replace('body')
         })
     </script>
 @stop

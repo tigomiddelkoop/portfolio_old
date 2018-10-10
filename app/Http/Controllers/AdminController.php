@@ -43,7 +43,7 @@ class AdminController extends Controller
 
         Blogposts::create(request(['title', 'author', 'body']));
 
-        return redirect('admin/blog');
+        return redirect(route('adminListBlog'));
 
 
     }
@@ -52,7 +52,8 @@ class AdminController extends Controller
     {
         return view('admin.blog.edit', compact('post'));
     }
-    public function blogSavePost($post)
+
+    public function blogSavePost($postid)
     {
         $this->validate(request(), [
 
@@ -62,6 +63,13 @@ class AdminController extends Controller
 
         ]);
 
+        $post = Blogposts::find($postid);
+        $post->title = request()->title;
+        $post->body = request()->body;
+
+        $post->save();
+
+        return redirect(route('adminListBlog'));
 //        return $post;
 //
 //        $Blogpost->title = request('title');
@@ -71,6 +79,17 @@ class AdminController extends Controller
 //        $Blogpost->
 //
 //        return redirect('admin/blog');
+
+    }
+
+    public function blogDeletePost($postid)
+    {
+
+        $post = Blogposts::find($postid);
+
+        $post->delete();
+
+        return redirect(route('adminListBlog'));
 
     }
 }

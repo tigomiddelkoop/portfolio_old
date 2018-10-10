@@ -62,6 +62,11 @@ class HomeController extends Controller
     public function faq()
     {
         return view('faq');
+
+    }
+    public function forum()
+    {
+        return redirect('https://forum.genericdevelopment.nl');
     }
 
 }
