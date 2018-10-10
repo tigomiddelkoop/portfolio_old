@@ -5,7 +5,7 @@
         <h1>Blog Home</h1>
         <div class="row">
             @foreach($posts as $post)
-            @include('blog.post')
+            @include('blog.allarticles')
             @endforeach
                 <div class="col-md-3 pull-right">
                     <div class="card">

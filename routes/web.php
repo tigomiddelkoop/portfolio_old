@@ -50,3 +50,4 @@ Route::post('/admin/blog/edit/{post}', 'AdminController@blogSavePost');
 Route::get('/admin/blog/delete/{id}', 'AdminController@blogDeletePost')->name('adminDeletePost');
 
 
+

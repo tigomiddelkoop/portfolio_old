@@ -12,6 +12,7 @@ class BlogController extends Controller
 
         $posts = Blogposts::orderBy('id', 'desc')->take(5)->get();
 
+
 //        dd($posts);
 
         return view('blog.index', compact('posts'));
@@ -20,7 +21,6 @@ class BlogController extends Controller
 
     public function viewPost() {
 
-
-//        return view('blog');
+        return view('blog.post');
     }
 }
