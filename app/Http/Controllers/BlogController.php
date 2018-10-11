@@ -10,7 +10,7 @@ class BlogController extends Controller
     public function showLatestPosts() {
 
 
-        $posts = Blogposts::orderBy('id', 'desc')->take(5)->get();
+        $posts = Blogposts::latest()->get()->take(5);
 
 
 //        dd($posts);
@@ -19,8 +19,8 @@ class BlogController extends Controller
 
     }
 
-    public function viewPost() {
+    public function viewPost(Blogposts $post) {
 
-        return view('blog.post');
+        return view('blog.article', compact('post'));
     }
 }

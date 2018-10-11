@@ -33,7 +33,7 @@ Route::get('/forum', 'HomeController@forum');
 
 //Blog
 Route::get('/blog', 'BlogController@showLatestPosts')->name('blogPage');
-Route::get('/blog/{id}', 'BlogController@viewPost')->name('viewPost');
+Route::get('/blog/{post}', 'BlogController@viewPost')->name('viewPost');
 
 
 //Admin
