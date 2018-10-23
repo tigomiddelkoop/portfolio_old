@@ -12,7 +12,7 @@
                         {{--<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">--}}
 
                         {{--<div class="" style="width: 150px;">--}}
-                        <a type="button" href="{{ route('adminCreatePost') }}" class="btn btn-default">Edit</a>
+                        <a type="button" href="{{ route('adminCreatePost') }}" class="btn btn-default">Create</a>
                         {{--</div>--}}
                         {{--</div>--}}
                     </div>
