@@ -39,12 +39,13 @@
             <li><a href="#"><i class="fa fa-link"></i> <span>Contact info</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Frequently asked questions</span></a></li>
         </ul>
+        {{--
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Forum</li>
             <!-- Optionally, you can add icons to the links -->
             <li><a href="#"><i class="fa fa-link"></i> <span>Categories</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Topics</span></a></li>
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Users</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Users</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Reports</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-link"></i> <span>Punishments</span>
@@ -63,6 +64,7 @@
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="{{ url('admin/blog') }}"><i class="fa fa-link"></i> <span>Posts</span></a></li>
         </ul>
+        --}}
     </section>
     <!-- /.sidebar -->
 </aside>
