@@ -36,38 +36,71 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text--center">How I qualify myself in terms of code knowledge</h1>
-                <h5 class="text--center">These bars will dissapear soon, there will be better representation of my skills</h5>
+                <br/>
             </div>
             <div class="col-md-3">
-                Java:
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                         aria-valuenow="50%" aria-valuemin="0%" aria-valuemax="100%" style="width: 10%"></div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                HTML/CSS/JavaScript:
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                         aria-valuenow="50%" aria-valuemin="0%" aria-valuemax="100%" style="width: 10%"></div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                PHP:
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                         aria-valuenow="50%" aria-valuemin="0%" aria-valuemax="100%" style="width: 50%">
+                <div class="card">
+                    <div class="card">
+                        <div class="card-header">
+                            Java
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional
+                                content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
                 </div>
+                <br />
             </div>
             <div class="col-md-3">
-                C++:
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar"
-                         aria-valuenow="100%" aria-valuemin="0%" aria-valuemax="100%" style="width: 100%">NOT YET
-                        STARTED ON
+                <div class="card">
+                    <div class="card">
+                        <div class="card-header">
+                            HTML/CSS/JavaScript
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional
+                                content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
                 </div>
+                <br/>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card">
+                        <div class="card-header">
+                            PHP
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional
+                                content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card">
+                        <div class="card-header">
+                            C++
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional
+                                content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <br/>
             </div>
             {{--<h1>Hello {{ $name }} <-- This is to learn using laravel variables etc!</h1>--}}
         </div>
