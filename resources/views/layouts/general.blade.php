@@ -12,6 +12,7 @@
     <meta property="og:image" content="https://images.genericdevelopment.nl/logoGD.png">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/main-style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/fontawesome.css') }}" rel="stylesheet" type="text/css">
     @yield('css')
     <title>{{ config('app.name') }}</title>
 </head>

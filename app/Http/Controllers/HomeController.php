@@ -29,7 +29,7 @@ class HomeController extends Controller
     {
         return view('welcome', [
 
-            'name' => 'Tigo',
+            'language' => 'Tigo',
 
         ]);
     }

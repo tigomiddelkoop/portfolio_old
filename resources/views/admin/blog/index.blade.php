@@ -26,7 +26,7 @@
                             <th>Author</th>
                             <th style="max-width: 100px">Posted at</th>
                             <th>Updated at</th>
-                            <th style="min-width: 100px">View / Edit</th>
+                            <th style="min-width: 100px">Tools</th>
                         </tr>
                         @foreach($posts as $post)
                             <tr>
@@ -51,18 +51,9 @@
                                     {{--<a type="button" href="" class="btn btn-danger btn-xs">Delete</a>--}}
                                     {{--</div>--}}
                                     <div class="btn-group">
-                                        <a type="button" href="{{ route('adminEditPost', ['post'=>$post->id]) }}"
-                                           class="btn btn-default">Edit</a>
-                                        <button type="button" class="btn btn-default dropdown-toggle"
-                                                data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                            <span class="sr-only">Toggle Dropdown</span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="{{ route('viewPost', ['post'=>$post->id]) }}">View</a></li>
-                                            <li><a href="{{ route('adminDeletePost', ['post'=>$post->id]) }}">Delete</a>
-                                            </li>
-                                        </ul>
+                                        <a type="button" href="{{ route('adminEditPost', ['post'=>$post->id]) }}" class="btn btn-default">Edit</a>
+                                        <a type="button" href="{{ route('viewPost', ['post'=>$post->id]) }}" class="btn btn-default">View</a>
+                                        <a type="button" href="{{ route('adminDeletePost', ['post'=>$post->id]) }}" class="btn btn-danger">Delete</a>
                                     </div>
 
 

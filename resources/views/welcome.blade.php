@@ -40,15 +40,16 @@
             </div>
             <div class="col-md-3">
                 <div class="card">
-                    <div class="card">
+                    <div class="card ">
                         <div class="card-header">
                             Java
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a class="card-text">API<span class="fas fa-check"></span></a>
+                            <hr />
+                            <a class="card-text">API<span class="fas fa-check"></span></a>
+                            <hr />
+                            <a href="#" class="btn btn-primary btn-sm">Go the projects written in {{ $language }}</a>
                         </div>
                     </div>
                 </div>
@@ -61,9 +62,6 @@
                             HTML/CSS/JavaScript
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
