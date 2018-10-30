@@ -17,7 +17,7 @@ class CreateSkillsTable extends Migration
             $table->increments('id');
             $table->integer('codelanguages_id');
             $table->string('skill');
-            $table->integer('');
+            $table->integer('learned');
             $table->timestamps();
         });
     }
