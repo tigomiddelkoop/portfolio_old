@@ -10,6 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>AdminLTE 2 | Starter</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{{url('/')}}/css/custom.css">
     <link rel="stylesheet" href="{{url('adminlte')}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{url('adminlte')}}/bower_components/font-awesome/css/font-awesome.min.css">
@@ -88,7 +89,7 @@ desired effect
                             <img src="{{url('adminlte')}}/dist/img/user2-160x160.jpg" class="user-image"
                                  alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">{{--{{ Auth::user()->name }}--}}</span>
+                            <span class="hidden-xs">{{ Auth::user()->name }}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
@@ -97,7 +98,7 @@ desired effect
                                      alt="User Image">
 
                                 <p>
-                                    {{--{{ Auth::user()->name }}--}}
+                                    {{ Auth::user()->name }} - {{ Auth::user()->role }}
                                     <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
@@ -107,13 +108,13 @@ desired effect
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a class="btn btn-default btn-flat" href="{{--{{ route('logout') }} --}}"
+                                    <a class="btn btn-default btn-flat" href="{{ route('logout') }} "
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{--{{ route('logout') }} --}}" method="POST"
+                                    <form id="logout-form" action="{{ route('logout') }} " method="POST"
                                           style="display: none;">
                                         @csrf
                                     </form>

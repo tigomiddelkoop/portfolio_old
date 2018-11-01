@@ -5,14 +5,18 @@
         <h1>Blog Home</h1>
         <div class="row">
             @foreach($posts as $post)
-            @include('blog.allarticles')
+                @include('blog.allarticles')
             @endforeach
-                <div class="col-md-3 pull-right">
-                    <div class="card">
-                        <div class="card-header">Archive</div>
-                        <div class="card-body">Text<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />d</div>
+            <div class="col-md-3 pull-right">
+                <div class="card">
+                    <div class="card-header">Archive</div>
+                    <div class="card-body">
+                        This will be the archive panel!
+
+                        This website is still in development!
                     </div>
                 </div>
+            </div>
         </div>
 
         <br/><br/><br/>

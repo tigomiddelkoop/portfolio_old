@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Codelanguages;
 use Illuminate\Http\Request;
 use \App\Blogposts;
 
@@ -91,6 +92,13 @@ class AdminController extends Controller
 
         return redirect(route('adminListBlog'));
 
+    }
+
+    public function adminSkillsList() {
+
+       $codelanguages =  Codelanguages::all();
+
+       return view('admin.skills.index', compact('codelanguages'));
     }
 }
 

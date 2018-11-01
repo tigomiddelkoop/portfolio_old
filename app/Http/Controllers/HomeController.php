@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Codelanguages;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\App;
 use App\Projects;
@@ -27,11 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome', [
+        $skills = Codelanguages::All();
 
-            'language' => 'Tigo',
-
-        ]);
+        return view('welcome', compact('skills'));
     }
 
     public function projects()
@@ -70,4 +69,3 @@ class HomeController extends Controller
     }
 
 }
-

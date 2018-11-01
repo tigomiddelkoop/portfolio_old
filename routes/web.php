@@ -11,10 +11,7 @@
 |
 */
 
-//MOCK LOGIN
-Route::get('/fakelogin', function() {
-    return redirect('/');
-})->name('login');
+
 
 
 
@@ -36,6 +33,9 @@ Route::get('/blog', 'BlogController@showLatestPosts')->name('blogPage');
 Route::get('/blog/{post}', 'BlogController@viewPost')->name('viewPost');
 
 
+//User
+Route::get('/user/profile', 'UserController@profile')->name('userProfile');
+
 //Admin
 Route::get('/admin/dashboard', 'AdminController@dashboard')->name('adminDashboard');
 
@@ -49,5 +49,12 @@ Route::post('/admin/blog/edit/{post}', 'AdminController@blogSavePost');
 
 Route::get('/admin/blog/delete/{id}', 'AdminController@blogDeletePost')->name('adminDeletePost');
 
+    //Admin Skills
+Route::get('/admin/skills/', 'AdminController@adminSkillsList')->name('adminSkillsList');
 
 
+
+
+Auth::routes(['register' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -54,7 +54,12 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ url('/') }}/admin/dashboard">Dashboard</a>
+
+                            @hasrole('admin')
+                            <a class="dropdown-item" href="{{ route('adminDashboard') }}">Dashboard</a>
+                            @endhasrole
+                            <a class="dropdown-item" href="{{ route('userProfile') }}">Dashboard</a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

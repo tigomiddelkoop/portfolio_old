@@ -9,7 +9,7 @@
                 <img src="{{ url('adminlte') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>{{ Auth::user()->name }}</p>
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-warning"></i> Idle</a>
             </div>
@@ -34,7 +34,7 @@
             <li class="header">Generic</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ route('adminDashboard') }}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Skills</span></a></li>
+            <li class="active"><a href="{{ route('adminSkillsList') }}"><i class="fa fa-link"></i> <span>Skills</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Projects</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Contact info</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Frequently asked questions</span></a></li>

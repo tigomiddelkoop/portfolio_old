@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Codelanguages extends Model
 {
-    public function comments()
+    public function skills()
     {
 
         return $this->hasMany(Skills::class);

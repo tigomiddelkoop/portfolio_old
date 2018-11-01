@@ -38,68 +38,30 @@
                 <h1 class="text--center">How I qualify myself in terms of code knowledge</h1>
                 <br/>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card ">
-                        <div class="card-header">
-                            Java
-                        </div>
-                        <div class="card-body">
-                            <a class="card-text">API<span class="fas fa-check"></span></a>
-                            <hr />
-                            <a class="card-text">API<span class="fas fa-check"></span></a>
-                            <hr />
-                            <a href="#" class="btn btn-primary btn-sm">Go the projects written in {{ $language }}</a>
-                        </div>
-                    </div>
-                </div>
-                <br />
-            </div>
-            <div class="col-md-3">
-                <div class="card">
+            @foreach($skills as $skill)
+                <div class="col-md-3">
                     <div class="card">
                         <div class="card-header">
-                            HTML/CSS/JavaScript
+                            {{ $skill->language }}
                         </div>
                         <div class="card-body">
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            @foreach($skill->skills as $learning)
+                                <a class="card-text">{{$learning->skill}}
+                                    @if($learning->learned == 0)
+                                        <span class="fas fa-times"></span>
+                                    @elseif($learning->learned == 1)
+                                        <span class="fas fa-check"></span>
+                                    @endif
+                                </a>
+                                <hr/>
+                            @endforeach
+                            <a href="#" class="btn btn-primary btn-sm">Go the projects written
+                                in {{ $skill->language }}</a>
                         </div>
                     </div>
+                    <br/>
                 </div>
-                <br/>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card">
-                        <div class="card-header">
-                            PHP
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <br/>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card">
-                        <div class="card-header">
-                            C++
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <br/>
-            </div>
+            @endforeach
             {{--<h1>Hello {{ $name }} <-- This is to learn using laravel variables etc!</h1>--}}
         </div>
     </div>
