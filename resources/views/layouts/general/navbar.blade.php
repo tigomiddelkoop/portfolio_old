@@ -58,7 +58,7 @@
                             @hasrole('admin')
                             <a class="dropdown-item" href="{{ route('adminDashboard') }}">Dashboard</a>
                             @endhasrole
-                            <a class="dropdown-item" href="{{ route('userProfile') }}">Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('userProfile') }}">Profile</a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
