@@ -22,15 +22,15 @@ Route::get('/about', 'HomeController@about')->name('aboutPage');
 Route::get('/faq', 'HomeController@faq')->name('faqPage');
 
 //Contact
-Route::get('/contact', 'ContactController@contact')->name('contactPage');
-Route::post('/contact', 'ContactController@sendForm');
+Route::get('/contact', 'ContactController@index')->name('contactPage');
+Route::post('/contact', 'ContactController@store');
 
 //Forum
 Route::get('/forum', 'HomeController@forum');
 
 //Blog
-Route::get('/blog', 'BlogController@showLatestPosts')->name('blogPage');
-Route::get('/blog/{post}', 'BlogController@viewPost')->name('viewPost');
+Route::get('/blog', 'BlogController@index')->name('blogPage');
+Route::get('/blog/{post}', 'BlogController@view')->name('viewPost');
 
 
 //User
