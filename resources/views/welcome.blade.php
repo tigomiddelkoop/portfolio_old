@@ -31,11 +31,15 @@
             <div class="col-md-9">
                 <h1>Hello! I am Tigo Middelkoop</h1>
                 <h5>And welcome to my portfolio</h5>
+                <a class="btn btn-primary" href="{{ url('/TigoMiddelkoopCV.pdf') }}">Download my CV</a>
+                <br />
+                <a>Keep in mind that the language of the file is Dutch</a>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <h1 class="text--center">How I qualify myself in terms of code knowledge</h1>
+
                 <br/>
             </div>
             @foreach($skills as $skill)
