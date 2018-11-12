@@ -16,8 +16,8 @@
 
 
 Route::get('/', 'HomeController@index')->name('homePage');
-Route::get('/projects', 'HomeController@projects')->name('projectsPage');
-Route::get('/projects/{id}', 'HomeController@viewProject')->name('projectPage');
+Route::get('/projects', 'ProjectController@index')->name('projectsPage');
+Route::get('/projects/{project}', 'ProjectController@show')->name('projectPage');
 Route::get('/about', 'HomeController@about')->name('aboutPage');
 Route::get('/faq', 'HomeController@faq')->name('faqPage');
 
