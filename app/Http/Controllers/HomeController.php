@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Codelanguages;
+use App\Mail\Contact;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\App;
 use App\Projects;
@@ -31,21 +32,6 @@ class HomeController extends Controller
         $skills = Codelanguages::All();
 
         return view('welcome', compact('skills'));
-    }
-
-    public function projects()
-    {
-
-
-        $projects = Projects::All();
-
-        return view('projects', compact('projects'));
-    }
-
-    public function viewProject(Projects $project)
-    {
-
-        return view('project', compact('project'));
     }
 
     public function about()
