@@ -25,3 +25,6 @@
     margin: auto;
     display: block;
 }
+.card-columns {
+    column-count: 4;
+}
