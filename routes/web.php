@@ -36,21 +36,36 @@ Route::get('/blog/{post}', 'BlogController@view')->name('viewPost');
 //User
 Route::get('/user/profile', 'UserController@profile')->name('userProfile');
 
-//Admin
-Route::get('/admin/dashboard', 'AdminController@dashboard')->name('adminDashboard');
 
-    //Admin Blog
-Route::get('/admin/blog/', 'AdminController@listPublishedPosts')->name('adminListBlog');
-Route::get('/admin/blog/create', 'AdminController@blogCreatePost')->name('adminCreatePost');
-Route::post('/admin/blog/create', 'AdminController@blogPublishPost');
 
-Route::get('/admin/blog/edit/{post}', 'AdminController@blogGetPost')->name('adminEditPost');
-Route::post('/admin/blog/edit/{post}', 'AdminController@blogSavePost');
+Route::prefix('admin')->group( function () {
 
-Route::get('/admin/blog/delete/{id}', 'AdminController@blogDeletePost')->name('adminDeletePost');
+    Route::get('/', 'AdminController@dashboard')->name('adminDashboard');
+
+    Route::prefix('skills')->group( function () {
+
+        Route::get('/', 'AdminController@adminSkillsList')->name('adminSkillsList');
+
+    });
+
+    Route::prefix('blog')->group( function () {
+
+        Route::get('/', 'AdminController@listPublishedPosts')->name('adminListBlog');
+        Route::get('/create', 'AdminController@blogCreatePost')->name('adminCreatePost');
+        Route::post('/create', 'AdminController@blogPublishPost');
+
+        Route::get('/edit/{post}', 'AdminController@blogGetPost')->name('adminEditPost');
+        Route::post('/edit/{post}', 'AdminController@blogSavePost');
+
+        Route::get('/delete/{id}', 'AdminController@blogDeletePost')->name('adminDeletePost');
+
+    });
+
+});
+
 
     //Admin Skills
-Route::get('/admin/skills/', 'AdminController@adminSkillsList')->name('adminSkillsList');
+
 
 
 

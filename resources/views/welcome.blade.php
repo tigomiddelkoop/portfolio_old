@@ -42,9 +42,8 @@
 
                 <br/>
             </div>
-            <div class="card-columns">
-                @foreach($skills as $skill)
-                    {{--<div class="col-md-3">--}}
+            @foreach($skills as $skill)
+                <div class="col-md-3">
                     <div class="card">
                         <div class="card-header">
                             {{ $skill->language }}
@@ -65,9 +64,8 @@
                         </div>
                     </div>
                     <br/>
-
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
 @stop
