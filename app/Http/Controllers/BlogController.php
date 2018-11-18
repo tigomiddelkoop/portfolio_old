@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Blogposts;
+use App\Blogpost;
 
 class BlogController extends Controller
 {
@@ -15,7 +15,7 @@ class BlogController extends Controller
     public function index()
     {
 
-        $posts = Blogposts::latest()->get()->take(5);
+        $posts = Blogpost::latest()->get()->take(5);
 
         return view('blog.index', compact('posts'));
 
@@ -48,7 +48,7 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Blogposts $post)
+    public function show(Blogpost $post)
     {
 
         return view('blog.article', compact('post'));

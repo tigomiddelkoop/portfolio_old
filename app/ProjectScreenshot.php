@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class skills extends Model
+class ProjectScreenshot extends Model
 {
     //
 }

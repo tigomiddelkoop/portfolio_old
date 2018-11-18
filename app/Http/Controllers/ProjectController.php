@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Projects;
+use App\Project;
 
 class ProjectController extends Controller
 {
@@ -14,7 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Projects::All();
+        $projects = Project::All();
 
         return view('projects', compact('projects'));
     }
@@ -46,7 +46,7 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Projects $project)
+    public function show(Project $project)
     {
 
         return view('project', compact('project'));

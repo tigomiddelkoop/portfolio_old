@@ -9,7 +9,7 @@ class Comment extends Model
     public function Blogpost()
     {
 
-        return $this->belongsTo(Blogposts::class);
+        return $this->belongsTo(Blogpost::class);
 
     }
 }

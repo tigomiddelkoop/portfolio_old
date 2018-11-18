@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Codelanguages;
+use App\CodeLanguage;
 use App\Mail\Contact;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\App;
@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $skills = Codelanguages::All();
+        $skills = CodeLanguage::All();
 
         return view('welcome', compact('skills'));
     }

@@ -59,8 +59,8 @@
                                 </a>
                                 <hr/>
                             @endforeach
-                            <a href="#" class="btn btn-primary btn-sm">Go the projects written
-                                in {{ $skill->language }}</a>
+                            {{--<a href="#" class="btn btn-primary btn-sm">Go the projects written--}}
+                                {{--in {{ $skill->language }}</a>--}}
                         </div>
                     </div>
                     <br/>

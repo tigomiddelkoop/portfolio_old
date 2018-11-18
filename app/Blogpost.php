@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Blogposts extends Model
+class Blogpost extends Model
 {
     protected $fillable = ['title', 'author', 'body'];
 

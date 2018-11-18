@@ -4,12 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Codelanguages extends Model
+class CodeLanguage extends Model
 {
     public function skills()
     {
-
-        return $this->hasMany(Skills::class);
-
+        return $this->hasMany(Skill::class);
     }
 }

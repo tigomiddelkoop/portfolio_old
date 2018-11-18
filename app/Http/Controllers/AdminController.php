@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Codelanguages;
+use App\CodeLanguage;
 use Illuminate\Http\Request;
 use \App\Blogposts;
 
@@ -96,7 +96,7 @@ class AdminController extends Controller
 
     public function adminSkillsList() {
 
-       $codelanguages =  Codelanguages::all();
+       $codelanguages =  CodeLanguage::all();
 
        return view('admin.skills.index', compact('codelanguages'));
     }
