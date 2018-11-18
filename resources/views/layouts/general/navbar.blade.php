@@ -11,25 +11,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <a class="nav-link" href="{{ url('/') }}">Home</a>
-                <a class="nav-link" href="{{ url('projects') }}">Projects</a>
-                <a class="nav-link" href="{{ url('blog') }}">Blog</a>
-                <a class="nav-link" href="{{ url('forum') }}">Forum</a>
-                <a class="nav-link" href="{{ url('about') }}">About me</a>
-                <a class="nav-link" href="{{ url('contact') }}">Contact</a>
-                <a class="nav-link" href="{{ url('faq') }}">FAQ</a>
-<li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                           SourceCodes <span class="caret"></span>
-                        </a>
+                <a class="nav-link" href="{{ url('/') }}">{{ __('navbar.home') }}</a>
+                <a class="nav-link" href="{{ url('projects') }}">{{ __('navbar.projects') }}</a>
+                <a class="nav-link" href="{{ url('blog') }}">{{ __('navbar.blog') }}</a>
+                <a class="nav-link" href="{{ url('about') }}">{{ __('navbar.about_me') }}</a>
+                <a class="nav-link" href="{{ url('contact') }}">{{ __('navbar.contact') }}</a>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ __('navbar.source_code') }} <span class="caret"></span>
+                    </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="https://github.com/tigomiddelkoop">GitHub</a>
-                            <a class="dropdown-item" href="https://git.genericdevelopment.nl/explore">Generic Git</a>
-                        </div>
-                    </li>
-
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://github.com/tigomiddelkoop">GitHub</a>
+                        <a class="dropdown-item" href="https://git.genericdevelopment.nl/explore">Generic Git</a>
+                    </div>
+                </li>
 
 
             </ul>

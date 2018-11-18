@@ -17,7 +17,9 @@ class CreateProjectScreenshotsTable extends Migration
             $table->increments('id');
             $table->integer('project_id');
             $table->text('picture');
+            $table->string('title');
             $table->text('description');
+            $table->boolean('first_picture');
             $table->timestamps();
         });
     }

@@ -4,11 +4,9 @@
 
 @section('content')
     <div class="container">
-        <h1>My projects</h1>
-        <h5>On this page are all the projects I have done</h5>
-        <h5>You can click on the button to go to the GitHub repository</h5>
-        <a style="font-size: 12px">There are two Git servers I use, GitHub and my own so there can be two links to the
-            corresponding repo's</a>
+        <h1>{{  __('projects.my_projects') }}</h1>
+        <h5>{{ __('projects.projects_i_have_done') }}</h5>
+        <a style="font-size: 12px">{{ __('projects.git_explanation') }}</a>
         <br/>
         <br/>
         <br/>
@@ -19,28 +17,13 @@
                 <div class="card-body">
                     <div class-="card-text">
                     <h2 class="">{{ $project->name }}</h2>
-                    <h5 class="">Written in: {{ $project->language }}</h5>
+                    <h5 class="">{{ __('projects.written_in') }}: {{ $project->language }}</h5>
                     <a class="">{{ $project->short_description }}</a>
                     <br/>
                     </div>
                     <span class="pull-right stats-bars">
-                    @if( !$project->github == "" )
-                        <a class="btn btn-primary" role="button" href="{{ $project->github }}">GitHub</a>
-                    @else
-                        <a class="btn btn-primary disabled" role="button" href="{{ $project->github }}"
-                           disabled>GitHub</a>
-                    @endif
-
-                    @if( !$project->genericgit == "" )
-                        <a class="btn btn-primary" role="button" href="{{ $project->genericgit }}">GenericDevelopment
-                            Git</a>
-                    @else
-                        <a class="btn btn-primary disabled" role="button" href="{{ $project->genericgit }}" disabled>GenericDevelopment
-                            Git</a>
-                    @endif
-                    <a class="btn btn-primary" role="button" href="{{ url('projects') }}/{{ $project->id }}">Go
-                        to Project
-                        Page</a>
+                    @include('project.gitbuttons')
+                    <a class="btn btn-primary" role="button" href="{{ url('projects') }}/{{ $project->id }}">{{ __('projects.project_page') }}</a>
                     </span>
                 </div>
             </div>
