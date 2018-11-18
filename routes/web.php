@@ -30,7 +30,7 @@ Route::get('/forum', 'HomeController@forum');
 
 //Blog
 Route::get('/blog', 'BlogController@index')->name('blogPage');
-Route::get('/blog/{post}', 'BlogController@view')->name('viewPost');
+Route::get('/blog/{post}', 'BlogController@show')->name('viewPost');
 
 
 //User
@@ -40,11 +40,11 @@ Route::get('/user/profile', 'UserController@profile')->name('userProfile');
 
 Route::prefix('admin')->group( function () {
 
-    Route::get('/', 'AdminController@dashboard')->name('adminDashboard');
+    Route::get('/', 'Admin\DashboardController')->name('adminDashboard');
 
     Route::prefix('skills')->group( function () {
 
-        Route::get('/', 'SkillsController@index')->name('adminSkillsList');
+        Route::get('/', 'Admin\SkillsController@index')->name('adminSkillsList');
 
     });
 
