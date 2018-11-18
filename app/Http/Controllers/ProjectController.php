@@ -10,7 +10,7 @@ class ProjectController extends Controller
 {
     public function __construct()
     {
-        App::setLocale('nl');
+        App::setLocale('en');
     }
 
     /**

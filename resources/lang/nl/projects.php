@@ -10,5 +10,6 @@ return [
 
     'written_in' => 'Geschreven in',
 
-    'project_description' => 'Project Beschrijving'
+    'project_description' => 'Project Beschrijving',
+    'story_behind_project' => 'Verhaal achter het Project'
 ];

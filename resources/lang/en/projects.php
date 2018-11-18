@@ -9,5 +9,6 @@ return [
 
     'written_in' => 'Written in',
 
-    'project_description' => 'Project Description'
+    'project_description' => 'Project Description',
+    'story_behind_project' => 'Story behind the project'
 ];

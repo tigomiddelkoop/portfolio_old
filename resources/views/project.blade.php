@@ -59,6 +59,12 @@
                     <div class="card">
                         <div class="card-header">{{ __('projects.project_description') }}</div>
                     </div>
+                    <br />
+                </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">{{ __('projects.story_behind_project') }}</div>
+                    </div>
                 </div>
 
             </div>

@@ -42,8 +42,8 @@
 
                 <br/>
             </div>
-            @foreach($skills as $skill)
-                <div class="col-md-3">
+            <div class="card-columns">
+                @foreach($skills as $skill)
                     <div class="card">
                         <div class="card-header">
                             {{ $skill->language }}
@@ -60,12 +60,12 @@
                                 <hr/>
                             @endforeach
                             {{--<a href="#" class="btn btn-primary btn-sm">Go the projects written--}}
-                                {{--in {{ $skill->language }}</a>--}}
+                            {{--in {{ $skill->language }}</a>--}}
                         </div>
                     </div>
                     <br/>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 @stop
