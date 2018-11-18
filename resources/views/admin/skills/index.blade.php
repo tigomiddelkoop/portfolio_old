@@ -35,11 +35,13 @@
                                         </div>
                                     </th>
                                 </tr>
-                                <tr>
-                                    <th></th>
-                                    <th><button type="submit" class="btn btn-primary" style="width: 100%">Add</button></th>
-                                </tr>
                             @endforeach
+                            <tr>
+                                <th></th>
+                                <th>
+                                    <button type="submit" class="btn btn-primary" style="width: 100%">Add</button>
+                                </th>
+                            </tr>
                         </table>
                     </div>
                     <!-- /.box-body -->
