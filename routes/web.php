@@ -44,20 +44,20 @@ Route::prefix('admin')->group( function () {
 
     Route::prefix('skills')->group( function () {
 
-        Route::get('/', 'AdminController@adminSkillsList')->name('adminSkillsList');
+        Route::get('/', 'SkillsController@index')->name('adminSkillsList');
 
     });
 
     Route::prefix('blog')->group( function () {
 
-        Route::get('/', 'AdminController@listPublishedPosts')->name('adminListBlog');
-        Route::get('/create', 'AdminController@blogCreatePost')->name('adminCreatePost');
-        Route::post('/create', 'AdminController@blogPublishPost');
+        Route::get('/', 'Admin\BlogController@index')->name('adminListBlog');
+        Route::get('/create', 'Admin\BlogController@create')->name('adminCreatePost');
+        Route::post('/create', 'Admin\BlogController@store');
 
-        Route::get('/edit/{post}', 'AdminController@blogGetPost')->name('adminEditPost');
-        Route::post('/edit/{post}', 'AdminController@blogSavePost');
+        Route::get('/edit/{post}', 'Admin\BlogController@edit')->name('adminEditPost');
+        Route::post('/edit/{post}', 'Admin\BlogController@update');
 
-        Route::get('/delete/{id}', 'AdminController@blogDeletePost')->name('adminDeletePost');
+        Route::get('/delete/{id}', 'Admin\BlogController@destroy')->name('adminDeletePost');
 
     });
 
