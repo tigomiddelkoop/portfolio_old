@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->String('short_description');
             $table->text('description');
             $table->text('story_behind');
+            $table->String('demo_url');
             $table->String('language');
             $table->String('github');
             $table->String('genericgit');

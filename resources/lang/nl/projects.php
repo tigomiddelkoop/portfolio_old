@@ -9,6 +9,7 @@ return [
 
     'project_name' => "Project Naam",
     'written_in' => 'Geschreven in',
+    'demo' => 'Demo',
 
     'project_description' => 'Project Beschrijving',
     'story_behind_project' => 'Verhaal achter het Project'

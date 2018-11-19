@@ -11,8 +11,10 @@
                     <div class="card-body">
 
                         @lang('projects.project_name'): {{ $project->name }} <br />
-                        @lang('projects.written_in'): {{ $project->language }}
-{{--                        @lang('projects.current_stage'): {{ $project->stage }}--}}
+                        @lang('projects.written_in'): {{ $project->language }}<br />
+{{--                        @lang('projects.current_stage'): {{ $project->stage }}<br />--}}
+                        @lang('projects.demo'): {{ $project->demo_url }}
+
 
                     </div>
                     <div class="card-footer">

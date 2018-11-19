@@ -8,6 +8,7 @@ return [
     'project_page' => "Go to the Project page",
 
     'project_name' => "Project Name",
+    'demo' => 'Demo',
     'written_in' => 'Written in',
 
     'project_description' => 'Project Description',
