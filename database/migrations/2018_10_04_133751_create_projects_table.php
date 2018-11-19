@@ -24,6 +24,7 @@ class CreateProjectsTable extends Migration
             $table->String('github');
             $table->String('genericgit');
             $table->integer('visits');
+            $table->integer('development_stage');
 //            $table->timestamps();
         });
     }

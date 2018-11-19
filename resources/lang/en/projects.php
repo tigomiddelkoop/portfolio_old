@@ -10,6 +10,11 @@ return [
     'project_name' => "Project Name",
     'demo' => 'Demo',
     'written_in' => 'Written in',
+    'stage' => 'Development stage',
+
+    'development_started' => 'In Development',
+    'development_paused' => 'Development Paused',
+    'development_over' => 'Development Stopped',
 
     'project_description' => 'Project Description',
     'story_behind_project' => 'Story behind the project'

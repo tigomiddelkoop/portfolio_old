@@ -10,6 +10,11 @@ return [
     'project_name' => "Project Naam",
     'written_in' => 'Geschreven in',
     'demo' => 'Demo',
+    'stage' => 'Ontwikkel stage',
+
+    'development_started' => 'In ontwikkeling',
+    'development_paused' => 'Ontwikkeling gepauzeerd',
+    'development_over' => 'Ontwikkeling gestopt',
 
     'project_description' => 'Project Beschrijving',
     'story_behind_project' => 'Verhaal achter het Project'
