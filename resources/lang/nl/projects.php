@@ -7,7 +7,7 @@ return [
     'project_page' => "Ga naar de Project pagina",
 
 
-
+    'project_name' => "Project Naam",
     'written_in' => 'Geschreven in',
 
     'project_description' => 'Project Beschrijving',

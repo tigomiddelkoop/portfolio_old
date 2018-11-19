@@ -17,7 +17,8 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->String('name');
             $table->String('short_description');
-            $table->text('long_description');
+            $table->text('description');
+            $table->text('story_behind');
             $table->String('language');
             $table->String('github');
             $table->String('genericgit');

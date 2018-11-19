@@ -10,8 +10,9 @@
                     <div class="card-header">{{ $project->name }}</div>
                     <div class="card-body">
 
+                        @lang('projects.project_name'): {{ $project->name }} <br />
                         @lang('projects.written_in'): {{ $project->language }}
-
+{{--                        @lang('projects.current_stage'): {{ $project->stage }}--}}
 
                     </div>
                     <div class="card-footer">
@@ -58,12 +59,19 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">{{ __('projects.project_description') }}</div>
+                        <div class="card-body">
+                            {!! $project->long_description !!}
+                        </div>
                     </div>
+
                     <br />
                 </div>
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">{{ __('projects.story_behind_project') }}</div>
+                        <div class="card-body">
+                            {!! $project->story_behind !!}
+                        </div>
                     </div>
                 </div>
 

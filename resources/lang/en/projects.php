@@ -7,6 +7,7 @@ return [
             corresponding repo\'s',
     'project_page' => "Go to the Project page",
 
+    'project_name' => "Project Name",
     'written_in' => 'Written in',
 
     'project_description' => 'Project Description',
