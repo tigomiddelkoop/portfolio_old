@@ -25,6 +25,25 @@
     margin: auto;
     display: block;
 }
+
 .card-columns {
     column-count: 4;
+}
+
+@media screen and (max-width: 992px) {
+    .card-columns {
+        column-count: 3
+    }
+}
+
+@media screen and (max-width: 768px){
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card-columns {
+        column-count: 1;
+    }
 }

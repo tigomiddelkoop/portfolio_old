@@ -42,29 +42,31 @@
 
                 <br/>
             </div>
-            <div class="card-columns">
-                @foreach($skills as $skill)
-                    <div class="card">
-                        <div class="card-header">
-                            {{ $skill->language }}
+            <div class="col-md-12">
+                <div class="card-columns">
+                    @foreach($skills as $skill)
+                        <div class="card">
+                            <div class="card-header">
+                                {{ $skill->language }}
+                            </div>
+                            <div class="card-body">
+                                @foreach($skill->skills as $learning)
+                                    <a class="card-text">{{$learning->skill}}
+                                        @if($learning->learned == 0)
+                                            <span class="fas fa-times"></span>
+                                        @elseif($learning->learned == 1)
+                                            <span class="fas fa-check"></span>
+                                        @endif
+                                    </a>
+                                    <hr/>
+                                @endforeach
+                                {{--<a href="#" class="btn btn-primary btn-sm">Go the projects written--}}
+                                {{--in {{ $skill->language }}</a>--}}
+                            </div>
                         </div>
-                        <div class="card-body">
-                            @foreach($skill->skills as $learning)
-                                <a class="card-text">{{$learning->skill}}
-                                    @if($learning->learned == 0)
-                                        <span class="fas fa-times"></span>
-                                    @elseif($learning->learned == 1)
-                                        <span class="fas fa-check"></span>
-                                    @endif
-                                </a>
-                                <hr/>
-                            @endforeach
-                            {{--<a href="#" class="btn btn-primary btn-sm">Go the projects written--}}
-                            {{--in {{ $skill->language }}</a>--}}
-                        </div>
-                    </div>
-                    <br/>
-                @endforeach
+                        <br/>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
