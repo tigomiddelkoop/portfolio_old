@@ -5,5 +5,7 @@ return [
     'projects' => 'Projecten',
     'blog' => 'Blog',
     'about_me' => 'Over Mij',
-    'contact' => 'Contact'
+    'contact' => 'Contact',
+
+    'language_switch' => 'Switch to EN'
 ];

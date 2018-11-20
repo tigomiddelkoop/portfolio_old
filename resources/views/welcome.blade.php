@@ -29,16 +29,17 @@
 
             </div>
             <div class="col-md-9">
-                <h1>Hello! I am Tigo Middelkoop</h1>
-                <h5>And welcome to my portfolio</h5>
-                <a class="btn btn-primary" href="{{ url('/TigoMiddelkoopCV.pdf') }}">Download my CV</a>
+                <h1>{{ __('home.intro') }} Tigo Middelkoop</h1>
+                <h5>{{ __('home.welcome_to_portfolio') }}</h5>
+                <a class="btn btn-primary" href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('home.download_cv') }}</a>
                 <br/>
                 <a>Keep in mind that the language of the file is Dutch</a>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text--center">How I qualify myself in terms of code knowledge</h1>
+                <h1 class="text--center">{{ __('home.code_knowledge') }}</h1>
+                <h5 class="text--center">{{ __('home.legenda_skills') }}</h5>
 
                 <br/>
             </div>

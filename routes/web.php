@@ -48,6 +48,20 @@ Route::prefix('admin')->group( function () {
 
     });
 
+    Route::prefix('project')->group( function () {
+
+        Route::get('/', 'Admin\ProjectController@index')->name('adminListProject');
+
+        Route::get('/create', 'Admin\ProjectController@create')->name('adminCreateProject');
+        Route::post('/create', 'Admin\ProjectController@store')->name('adminSaveProject');
+
+        Route::get('/edit/{project}', 'Admin\ProjectController@edit')->name('adminEditProject');
+        Route::post('/edit/{project}', 'Admin\ProjectController@update')->name('adminUpdateProject');
+
+        Route::get('/delete/{id}', 'Admin\ProjectController@destroy')->name('adminDeleteProject');
+
+    });
+
     Route::prefix('blog')->group( function () {
 
         Route::get('/', 'Admin\BlogController@index')->name('adminListBlog');
