@@ -23,7 +23,7 @@ Route::get('/faq', 'HomeController@faq')->name('faqPage');
 
 //Contact
 Route::get('/contact', 'ContactController@index')->name('contactPage');
-Route::post('/contact', 'ContactController@store');
+Route::post('/contact', 'ContactController@store')->name('contactPageStore');
 
 //Forum
 Route::get('/forum', 'HomeController@forum');

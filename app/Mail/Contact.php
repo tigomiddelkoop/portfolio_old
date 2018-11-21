@@ -16,9 +16,9 @@ class Contact extends Mailable
      *
      * @return void
      */
-    public function __construct($contact)
+    public function __construct($contactdata)
     {
-        $this->contact = $contact;
+        $this->data = $contactdata;
     }
 
     /**
@@ -29,7 +29,6 @@ class Contact extends Mailable
     public function build()
     {
         return $this
-            ->from('no-reply@genericdevelopment.nl')
             ->view('mail.contact');
     }
 }
