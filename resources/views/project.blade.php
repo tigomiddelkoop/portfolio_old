@@ -54,8 +54,8 @@
                                             @endif
                                             <img class="d-block w-100" src="{{ $picture->picture }}" alt="First slide">
                                             <div class="carousel-caption d-none d-md-block">
-                                                <h5>{{ $picture->title }}</h5>
-                                                <p>{{ $picture->description }}</p>
+                                                <h5 style="background-color: black">{{ $picture->title }}</h5>
+                                                <p style="background-color: black">{{ $picture->description }}</p>
                                             </div>
                                         </div>
                                         @endforeach

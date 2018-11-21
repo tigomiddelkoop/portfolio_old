@@ -52,7 +52,7 @@
                                     {{--</div>--}}
                                     <div class="btn-group">
                                         <a type="button" href="{{ route('adminEditPost', ['post'=>$post->id]) }}" class="btn btn-default">Edit</a>
-                                        <a type="button" href="{{ route('viewPost', ['post'=>$post->id]) }}" class="btn btn-default">View</a>
+                                        <a type="button" href="{{ route('viewPost', ['post'=>$post->id]) }}" class="btn btn-default" target="_blank" rel="noopener noreferrer">View</a>
                                         <a type="button" href="{{ route('adminDeletePost', ['post'=>$post->id]) }}" class="btn btn-danger">Delete</a>
                                     </div>
 

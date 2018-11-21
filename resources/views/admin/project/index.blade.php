@@ -28,7 +28,7 @@
                                         <a type="button" href="{{ route('adminEditProject', ['project'=>$project->id]) }}"
                                            class="btn btn-default">Edit</a>
                                         <a type="button" href="{{ route('projectPage', ['project'=>$project->id]) }}"
-                                           class="btn btn-default">View</a>
+                                           class="btn btn-default" target="_blank" rel="noopener noreferrer">View</a>
                                         <a type="button" href="{{ route('adminDeleteProject', ['project'=>$project->id]) }}"
                                            class="btn btn-danger">Delete</a>
                                     </div>
