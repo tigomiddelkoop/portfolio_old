@@ -1,7 +1,7 @@
 @if( !$project->github == "" )
-    <a class="btn btn-primary" role="button" href="{{ $project->github }}">GitHub</a>
+    <a class="btn btn-primary" role="button" target="_blank" rel="noopener noreferrer" href="{{ $project->github }}">GitHub</a>
 @else
-    <a class="btn btn-primary disabled" role="button" href="{{ $project->github }}"
+    <a class="btn btn-primary disabled" role="button" target="_blank" rel="noopener noreferrer" href="{{ $project->github }}"
        disabled>GitHub</a>
 @endif
 
