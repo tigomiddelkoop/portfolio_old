@@ -9,4 +9,5 @@ return [
     'contact_form_email_address' => 'Email address',
     'contact_form_subject' => 'Subject',
     'contact_form_message' => 'Your message',
+    'contact_form_send' => 'Send',
 ];

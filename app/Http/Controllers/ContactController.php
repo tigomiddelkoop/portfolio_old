@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use App\Mail\Contact;
+
 
 class ContactController extends Controller
 {
@@ -35,7 +37,25 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $tigo = "tigo.middelkoop@gmail.com";
+
+        $this->validate(request(), [
+
+            'name' => 'required',
+            'emailaddress' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+
+//        return $request;
+
+        Mail::to($request->emailaddress)
+            ->bcc("tigo.middelkoop@gmail.com")
+            ->send(new Contact($request));
+
+
+
     }
 
     /**
