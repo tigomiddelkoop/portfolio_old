@@ -15,15 +15,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    @foreach($errors->all() as $error)
-                        <div class="alert alert-danger">
-                            <ul>
-
-                                {{ $error }}
-
-                            </ul>
-                        </div>
-                    @endforeach
+                    @include('admin.formerror')
                     <form method="POST" action="/admin/blog/edit/{{ $post->id }}">
                         {{ csrf_field() }}
                         <input type="hidden" name="author" value="Kerel{{--{{ Auth::user()->name }}--}}">

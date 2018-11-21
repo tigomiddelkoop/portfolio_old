@@ -1,15 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    @include('admin.formerror')
     <form action="{{ route('adminSaveProject') }}" method="POST">
         @csrf
         <div class="row">
@@ -27,16 +19,16 @@
                         <br/>
                         <label for="shortDescription">Short Description</label>
                         <input type="textarea" name="shortDescription" class="form-control">
-                        <br />
+                        <br/>
                         <label for="demoURL">Demo URL</label>
                         <input type="text" name="demoURL" class="form-control">
-                        <br />
+                        <br/>
                         <label for="githubURL">GitHub URL</label>
                         <textarea name="genericgitURL" class="form-control"></textarea>
-                        <br />
+                        <br/>
                         <label for="genericgitURL">GenericGit URL</label>
                         <input type="genericgitURL" name="genericgitURL" class="form-control">
-                        <br />
+                        <br/>
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="saveAsDraft"> Save as Draft

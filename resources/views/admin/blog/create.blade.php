@@ -15,26 +15,26 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-@include('admin.formerror')
-                <form method="POST" action="/admin/blog/create">
-                    {{ csrf_field() }}
-                    <input type="hidden" name="author" value="Appelsap{{--{{ Auth::user()->name }}--}}">
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" name="title" required>
-                    </div>
+                    @include('admin.formerror')
+                    <form method="POST" action="/admin/blog/create">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="author" value="Appelsap{{--{{ Auth::user()->name }}--}}">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="post">Post</label>
-                        <textarea name="body" id="body" class="form-control" rows="25" required></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="post">Post</label>
+                            <textarea name="body" id="body" class="form-control" rows="25" required></textarea>
+                        </div>
 
-                    <button type="submit" class="btn btn-primary">Publish</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Publish</button>
+                    </form>
+                </div>
+                <!-- /.box-body -->
             </div>
-            <!-- /.box-body -->
         </div>
-    </div>
     </div>
     <!-- /.box -->
 @stop
