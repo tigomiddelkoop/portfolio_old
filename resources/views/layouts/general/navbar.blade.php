@@ -14,7 +14,6 @@
                 <a class="nav-link" href="{{ url('/') }}">{{ __('navbar.home') }}</a>
                 <a class="nav-link" href="{{ url('projects') }}">{{ __('navbar.projects') }}</a>
                 <a class="nav-link" href="{{ url('blog') }}">{{ __('navbar.blog') }}</a>
-                <a class="nav-link" href="{{ url('about') }}">{{ __('navbar.about_me') }}</a>
                 <a class="nav-link" href="{{ url('contact') }}">{{ __('navbar.contact') }}</a>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

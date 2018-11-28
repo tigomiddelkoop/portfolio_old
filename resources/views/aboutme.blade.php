@@ -1,6 +1,6 @@
 @extends('layouts.general')
 @section('content')
     <div class="container">
-        <h1>About me</h1>
+        <h1>{{ __('aboutme.title') }}</h1>
     </div>
 @stop

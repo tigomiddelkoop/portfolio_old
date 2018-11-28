@@ -29,17 +29,40 @@
 
             </div>
             <div class="col-md-9">
-                <h1>{{ __('home.intro') }} Tigo Middelkoop</h1>
-                <h5>{{ __('home.welcome_to_portfolio') }}</h5>
-                <a class="btn btn-primary" href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('home.download_cv') }}</a>
+                <h1 class="text--center">{{ __('home.intro') }} Tigo Middelkoop</h1>
+                <h5 class="text--center">{{ __('home.welcome_to_portfolio') }}</h5>
+                <a class="btn btn-primary align-content-center" href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('navbar.about_me') }}</a>
+                <a class="btn btn-primary align-content-center" href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('home.download_cv') }}</a>
                 <br/>
-                <a>Keep in mind that the language of the file is Dutch</a>
+                <a class="align-content-center">Keep in mind that the language of the file is Dutch</a>
             </div>
         </div>
+        <br/>
+        <hr/>
+
+        <br/>
         <div class="row">
             <div class="col-md-12">
-                <h1 class="text--center">{{ __('home.code_knowledge') }}</h1>
-                <h5 class="text--center">{{ __('home.legenda_skills') }}</h5>
+                <h1 class="text--center">{{ __('home.about_me') }}</h1>
+            </div>
+        </div>
+        <br/>
+        <hr/>
+
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text--center">{{ __('home.timeline') }}</h1>
+            </div>
+        </div>
+        <br/>
+        <hr/>
+
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="align-content-center">{{ __('home.skills_section') }}</h1>
+                <h5 class="align-content-center">{{ __('home.legenda_skills') }}</h5>
 
                 <br/>
             </div>
@@ -50,23 +73,27 @@
                             <div class="card-header">
                                 {{ $skill->language }}
                             </div>
-                            <div class="card-body">
-                                @foreach($skill->skills as $learning)
-                                    <a class="card-text">{{$learning->skill}}
-                                        @if($learning->learned == 0)
-                                            <span class="fas fa-clock"></span>
-                                        @elseif($learning->learned == 1)
-                                            <span class="fas fa-check"></span>
-                                        @endif
-                                    </a>
-                                    <hr/>
-                                @endforeach
+                            <div class="table table-responsive">
+                                <table>
+                                    @foreach($skill->skills as $learning)
+                                        <tr>
+                                            <td style="width: 95%;"><a lass="card-text">{{$learning->skill}}</a>
+                                            @if($learning->learned == 0)
+                                                <td style="width: 5%;"><span class="fas fa-clock"></span></td>
+                                            @elseif($learning->learned == 1)
+                                                <td style="width: 5%;"><span class="fas fa-check"></span></td>
+                                            @endif
+                                        </tr>
+                                    @endforeach
+                                </table>
+                                {{--<hr />--}}
                                 {{--<a href="#" class="btn btn-primary btn-sm">Go the projects written--}}
                                 {{--in {{ $skill->language }}</a>--}}
                             </div>
                         </div>
                         <br/>
                     @endforeach
+
                 </div>
             </div>
         </div>

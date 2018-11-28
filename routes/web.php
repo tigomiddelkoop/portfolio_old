@@ -18,7 +18,6 @@
 Route::get('/', 'HomeController@index')->name('homePage');
 Route::get('/projects', 'ProjectController@index')->name('projectsPage');
 Route::get('/projects/{project}', 'ProjectController@show')->name('projectPage');
-Route::get('/about', 'HomeController@about')->name('aboutPage');
 Route::get('/faq', 'HomeController@faq')->name('faqPage');
 
 //Contact
@@ -77,13 +76,4 @@ Route::prefix('admin')->group( function () {
 
 });
 
-
-    //Admin Skills
-
-
-
-
-
 Auth::routes(['register' => true]);
-
-Route::get('/home', 'HomeController@index')->name('home');

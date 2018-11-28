@@ -38,7 +38,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
 
-        $tigo = "tigo.middelkoop@gmail.com";
+//        return $request;
 
         $this->validate(request(), [
 
@@ -48,13 +48,19 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
 
-//        return $request;
+        $data = collect([
+            'name' => $request->name,
+            'emailaddress' => $request->emailaddress,
+            'subject' => $request->subject,
+            'message' => $request->message
+        ]);
+
 
         Mail::to($request->emailaddress)
             ->bcc("tigo.middelkoop@gmail.com")
-            ->send(new Contact($request));
+            ->send(new Contact($data));
 
-
+        return view('contact.successfull');
 
     }
 

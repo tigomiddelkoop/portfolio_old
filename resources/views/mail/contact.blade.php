@@ -1,11 +1,11 @@
-Hello test,<br /><br />
+Hello {{ $data['name'] }},<br /><br />
 
 Your message has been successfully saved!<br /><br />
 Here is a copy of you message:<br /><br />
 
-Subject: test<br /><br />
+Subject: {{ $data['subject'] }}<br /><br />
 Message: <br />
-test
+{{ $data['message'] }}
 
 <br />
 <br />
