@@ -47,7 +47,7 @@
                             <label for="message">{{ __('contact.contact_form_message') }}:</label>
                             <textarea class="form-control" name="message" rows="25"></textarea>
                             <br />
-                            <input type="submit" class="btn btn-primary" name="form_send" value="{{ __('contact.contact_form_send') }}">
+                            {{--<input type="submit" class="btn btn-primary" name="form_send" value="{{ __('contact.contact_form_send') }}">--}}
                         </form>
 
                     </div>

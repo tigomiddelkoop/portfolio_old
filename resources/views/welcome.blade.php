@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-md-3">
 
-                <img src="gif/profilepicture.gif" class="profilepicture">
+                <img src="{{ asset('img/photo.png') }}" class="profilepicture">
 
             </div>
             <div class="col-md-9">
@@ -54,7 +54,7 @@
                                 @foreach($skill->skills as $learning)
                                     <a class="card-text">{{$learning->skill}}
                                         @if($learning->learned == 0)
-                                            <span class="fas fa-times"></span>
+                                            <span class="fas fa-clock"></span>
                                         @elseif($learning->learned == 1)
                                             <span class="fas fa-check"></span>
                                         @endif
