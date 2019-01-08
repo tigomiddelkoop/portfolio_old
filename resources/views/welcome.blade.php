@@ -77,11 +77,11 @@
                                 <table>
                                     @foreach($skill->skills as $learning)
                                         <tr>
-                                            <td style="width: 95%;"><a lass="card-text">{{$learning->skill}}</a>
+                                            <td class="skills-text"><a class="card-text">{{$learning->skill}}</a>
                                             @if($learning->learned == 0)
-                                                <td style="width: 5%;"><span class="fas fa-clock"></span></td>
+                                                <td class="skills-status"><span class="fas fa-clock"></span></td>
                                             @elseif($learning->learned == 1)
-                                                <td style="width: 5%;"><span class="fas fa-check"></span></td>
+                                                <td sclass="skills-status"><span class="fas fa-check"></span></td>
                                             @endif
                                         </tr>
                                     @endforeach
