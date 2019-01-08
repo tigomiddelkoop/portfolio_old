@@ -81,7 +81,7 @@
                                             @if($learning->learned == 0)
                                                 <td class="skills-status"><span class="fas fa-clock"></span></td>
                                             @elseif($learning->learned == 1)
-                                                <td sclass="skills-status"><span class="fas fa-check"></span></td>
+                                                <td class="skills-status"><span class="fas fa-check"></span></td>
                                             @endif
                                         </tr>
                                     @endforeach
