@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
-use App\Mail\Contact;
 
 
 class ContactController extends Controller
@@ -40,13 +40,22 @@ class ContactController extends Controller
 
 //        return $request;
 
-        $this->validate(request(), [
+        $data = $request->validate([
 
             'name' => 'required',
             'emailaddress' => 'required|email',
             'subject' => 'required',
             'message' => 'required',
         ]);
+
+        $contact = new Contact;
+
+        $contact->senderName = $data['name'];
+        $contact->senderEmail = $data['emailaddress'];
+        $contact->title = $data['subject'];
+        $contact->body = $data['message'];
+
+        $contact->save();
 
 
 
@@ -63,7 +72,8 @@ class ContactController extends Controller
 //            ->bcc("tigo.middelkoop@gmail.com")
 //            ->send(new Contact($data));
 
-        return view('contact.successful');
+        $result = true;
+        return Redirect(route('contactPage'))->with(compact('result'));
 
     }
 

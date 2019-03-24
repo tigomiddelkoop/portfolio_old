@@ -25,12 +25,7 @@
   margin: auto;
   display: block;
 }
-.skills-text {
-    width: 95%
-}
-.skills-status{
-    width: 5%;
-}
+
 .card-columns {
   -webkit-column-count: 4;
           column-count: 4;

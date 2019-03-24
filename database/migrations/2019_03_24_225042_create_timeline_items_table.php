@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactsTable extends Migration
+class CreateTimelineItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('timeline_items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('senderName');
-            $table->string('senderEmail');
-            $table->string("title");
-            $table->longText("body");
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('timeline_items');
     }
 }

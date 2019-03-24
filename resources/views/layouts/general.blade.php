@@ -26,7 +26,7 @@
 <main class="py-4">
         @yield('content')
 </main>
-@yield('scripts')
+@yield('requiredJS')
 <script src="{{ asset('js/app.js') }}" defer></script>
 
 

@@ -32,10 +32,14 @@
             <div class="col-md-9">
                 <h1 class="text--center">{{ __('home.intro') }} Tigo Middelkoop</h1>
                 <h5 class="text--center">{{ __('home.welcome_to_portfolio') }}</h5>
-                <span>
-                <a class="btn btn-primary text--center align-content-center" href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('navbar.about_me') }}</a>
-                <a class="btn btn-primary text--center align-content-center" href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('home.download_cv') }}</a>
-                    </span>
+                <div class="text--center">
+                    <div class="btn-group">
+                        <a class="btn btn-primary"
+                           href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('navbar.about_me') }}</a>
+                        <a class="btn btn-secondary"
+                           href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('home.download_cv') }}</a>
+                    </div>
+                </div>
                 {{--<br/>--}}
                 <p class="text--center">Keep in mind that the language of the file is Dutch</p>
             </div>
@@ -64,8 +68,8 @@
         <br/>
         <div class="row">
             <div class="col-md-12">
-                <h1 class="align-content-center">{{ __('home.skills_section') }}</h1>
-                <h5 class="align-content-center">{{ __('home.legenda_skills') }}</h5>
+                <h1 class="text--center">{{ __('home.skills_section') }}</h1>
+                <h5 class="text--center">{{ __('home.legenda_skills') }}</h5>
 
                 <br/>
             </div>
@@ -80,7 +84,8 @@
                                 <table>
                                     @foreach($skill->skills as $learning)
                                         <tr>
-                                            <td class="skills-text"><a class="card-text">{{$learning->skill}}</a>
+                                            <td class="skills-text" style="width: 100%"><a class="card-text"
+                                                                                           style=>{{$learning->skill}}</a>
                                             @if($learning->learned == 0)
                                                 <td class="skills-status"><span class="fas fa-clock"></span></td>
                                             @elseif($learning->learned == 1)
@@ -103,7 +108,7 @@
     </div>
 @stop
 
-@section('scripts')
+@section('requiredJS')
     <script src="js/typewriter.js"></script>
 
 

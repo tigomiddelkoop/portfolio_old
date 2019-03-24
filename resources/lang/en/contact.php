@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'ways_to_contact' => 'There are multiple ways to contact me.',
+    'contact_me' => 'Get in touch with me!',
     'contact_options' => 'Contact options',
     'contact_form_title' => 'Contact me via this form',
 
