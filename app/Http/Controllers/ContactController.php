@@ -48,17 +48,20 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
 
-        $data = collect([
-            'name' => $request->name,
-            'emailaddress' => $request->emailaddress,
-            'subject' => $request->subject,
-            'message' => $request->message
-        ]);
 
 
-        Mail::to($request->emailaddress)
-            ->bcc("tigo.middelkoop@gmail.com")
-            ->send(new Contact($data));
+
+//        $data = collect([
+//            'name' => $request->name,
+//            'emailaddress' => $request->emailaddress,
+//            'subject' => $request->subject,
+//            'message' => $request->message
+//        ]);
+//
+//
+//        Mail::to($request->emailaddress)
+//            ->bcc("tigo.middelkoop@gmail.com")
+//            ->send(new Contact($data));
 
         return view('contact.successful');
 

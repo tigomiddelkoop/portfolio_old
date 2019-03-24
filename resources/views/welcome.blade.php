@@ -21,7 +21,7 @@
 @stop
 
 @section('content')
-    <div id="app>">--</div>
+    <div id="app>"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-3">

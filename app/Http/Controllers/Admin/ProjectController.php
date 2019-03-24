@@ -49,9 +49,15 @@ class ProjectController extends Controller
             'shortDescription' => 'required',
             'description' => 'required',
             'story' => 'required',
+            'thumbnail' => 'image',
 
         ]);
 
+        $imageTargetFolder = "public/storage/";
+
+
+
+        $project->thumbnail;
 
         $project = new Project;
         $project->name = $request->name;
