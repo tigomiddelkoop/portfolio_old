@@ -5,7 +5,7 @@ return [
     'projects_i_have_done' => 'On this page are all the projects I have done',
     'git_explanation' => 'There are two Git servers I use, GitHub and my own so there can be two links to the
             corresponding repo\'s',
-    'project_page' => "Go to the Project page",
+    'project_page' => "Project page",
 
     'project_name' => "Project Name",
     'demo' => 'Demo',

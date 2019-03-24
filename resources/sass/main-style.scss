@@ -27,54 +27,48 @@
 }
 
 .card-columns {
-  -webkit-column-count: 4;
-          column-count: 4;
+  column-count: 4;
 }
 
 @media screen and (max-width: 992px) {
   .card-columns {
-    -webkit-column-count: 3;
-            column-count: 3;
+    column-count: 3
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
   .card-columns {
-    -webkit-column-count: 2;
-            column-count: 2;
+    column-count: 2;
   }
 }
 
 @media screen and (max-width: 600px) {
   .card-columns {
-    -webkit-column-count: 1;
-            column-count: 1;
+    column-count: 1;
   }
 }
+
 
 .test1 {
-  -webkit-column-count: 3;
-          column-count: 3;
+  column-count: 3;
 }
 
 @media screen and (max-width: 992px) {
   .test1 {
-    -webkit-column-count: 3;
-            column-count: 3;
+    column-count: 3
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
   .tes1 {
-    -webkit-column-count: 2;
-            column-count: 2;
+    column-count: 2;
   }
 }
 
 @media screen and (max-width: 600px) {
   .test1 {
-    -webkit-column-count: 1;
-            column-count: 1;
+    column-count: 1;
   }
 }
+
 

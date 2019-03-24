@@ -12,7 +12,7 @@
                     <a>Hi, my name is Tigo Middelkoop and I am</a>
                     <br/>
                 <a class="typewrite" data-period="2000"
-                   data-type='["A Creative", "An Amateurish", "A Innovative", "A Driven", "A Happy" ]'></a>
+                   data-type='[@foreach($frontPageLines as $line)"{{ $line->line }}"@if(!$loop->last),@endif @endforeach]'></a>
                                     <a class="">Developer</a>
 
                 </span>
@@ -21,6 +21,7 @@
 @stop
 
 @section('content')
+    <div id="app>">--</div>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -31,10 +32,12 @@
             <div class="col-md-9">
                 <h1 class="text--center">{{ __('home.intro') }} Tigo Middelkoop</h1>
                 <h5 class="text--center">{{ __('home.welcome_to_portfolio') }}</h5>
-                <a class="btn btn-primary align-content-center" href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('navbar.about_me') }}</a>
-                <a class="btn btn-primary align-content-center" href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('home.download_cv') }}</a>
-                <br/>
-                <a class="align-content-center">Keep in mind that the language of the file is Dutch</a>
+                <span>
+                <a class="btn btn-primary text--center align-content-center" href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('navbar.about_me') }}</a>
+                <a class="btn btn-primary text--center align-content-center" href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('home.download_cv') }}</a>
+                    </span>
+                {{--<br/>--}}
+                <p class="text--center">Keep in mind that the language of the file is Dutch</p>
             </div>
         </div>
         <br/>

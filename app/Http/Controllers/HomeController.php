@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CodeLanguage;
+use App\FrontPageLines;
 use App\Mail\Contact;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\App;
@@ -30,8 +31,9 @@ class HomeController extends Controller
     public function index()
     {
         $skills = CodeLanguage::All();
+        $frontPageLines = FrontPageLines::All();
 
-        return view('welcome', compact('skills'));
+        return view('welcome', compact('skills', 'frontPageLines'));
     }
 
     public function about()

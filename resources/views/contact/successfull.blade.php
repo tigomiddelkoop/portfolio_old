@@ -7,4 +7,5 @@
         <h4>It may be in your spam folder</h4>
     </div>
 
+
 @endsection

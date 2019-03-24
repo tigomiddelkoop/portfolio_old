@@ -60,7 +60,7 @@ class ContactController extends Controller
             ->bcc("tigo.middelkoop@gmail.com")
             ->send(new Contact($data));
 
-        return view('contact.successfull');
+        return view('contact.successful');
 
     }
 

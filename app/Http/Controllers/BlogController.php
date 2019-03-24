@@ -15,6 +15,7 @@ class BlogController extends Controller
     public function index()
     {
 
+        return redirect('https://blog.genericdevelopment.nl');
         $posts = Blogpost::latest()->get()->take(5);
 
         return view('blog.index', compact('posts'));
