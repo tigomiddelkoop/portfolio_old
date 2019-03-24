@@ -28,7 +28,7 @@
         <!-- /.search form -->
 
         <!-- Sidebar Menu -->
-        <
+
         <!-- /.sidebar-menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">Generic</li>
