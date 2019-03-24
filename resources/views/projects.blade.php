@@ -11,7 +11,7 @@
         <br/>
         <br/>
 
-        <div class="card-columns test1">
+        <div class="card-columns project-masonry">
             @foreach($projects as $project)
                 <div class="card">
                     <div class="card-body">
