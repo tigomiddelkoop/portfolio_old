@@ -23,7 +23,7 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="https://github.com/tigomiddelkoop">GitHub</a>
-                        <a class="dropdown-item" href="https://git.genericdevelopment.nl/explore">Generic Git</a>
+                        <a class="dropdown-item" href="https://git.genericdevelopment.nl/explore/projects">Generic Git</a>
                     </div>
                 </li>
 
