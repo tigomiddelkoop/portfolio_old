@@ -8,7 +8,7 @@
     <meta property="og:title" content="GenericDevelopment">
     <meta property="og:site_name" content="GenericDevelopment">
     <meta property="og:site_url" content="https://genericdevelopment.nl">
-    <meta property="og:description" content="I make generic applications for generic people">
+    <meta property="og:description" content="We make generic applications for generic people">
     <meta property="og:image" content="https://images.genericdevelopment.nl/logoGD.png">
 
     <meta name="description" content="I make generic application for generic people">

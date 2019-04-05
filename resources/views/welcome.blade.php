@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-3">
 
-                <img src="{{ asset('img/photo.jpg') }}" class="profilepicture">
+                <img src="{{ asset('storage/img/photo.jpg') }}" class="profilepicture">
 
             </div>
             <div class="col-md-9">
@@ -35,9 +35,9 @@
                 <div class="text--center">
                     <div class="btn-group">
                         <a class="btn btn-primary"
-                           href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('navbar.about_me') }}</a>
+                           href="#about_me">{{ __('navbar.about_me') }}</a>
                         <a class="btn btn-secondary"
-                           href="{{ url('/TigoMiddelkoopCV.pdf') }}">{{ __('home.download_cv') }}</a>
+                           href="{{ url('/storage/pdf/TigoMiddelkoopCV.pdf') }}">{{ __('home.download_cv') }}</a>
                     </div>
                 </div>
                 {{--<br/>--}}
@@ -48,14 +48,15 @@
         <hr/>
 
         <br/>
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text--center">{{ __('home.about_me') }}</h1>
+        <section href="about_me" id="about_me">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text--center" href="about_me">{{ __('home.about_me') }}</h1>
+                </div>
             </div>
-        </div>
-        <br/>
-        <hr/>
-
+            <br/>
+            <hr/>
+        </section>
         <br/>
         <div class="row">
             <div class="col-md-12">
