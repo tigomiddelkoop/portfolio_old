@@ -16,7 +16,7 @@ class ProjectController extends Controller
     {
         $projects = Project::All();
 
-        return view('projects', compact('projects'));
+        return $projects;
     }
 
     /**
@@ -26,9 +26,10 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Project $project)
-    {
+        {
 
-        return view('project', compact('project'));
+//        return view('project', compact('project'));
+        return $project;
 
     }
 }

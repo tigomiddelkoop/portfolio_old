@@ -1,1 +1,1 @@
-{"virtualbox":{"/home/vagrant/code":{"type":null,"mount_options":["uid=1000","gid=1000"],"guestpath":"/home/vagrant/code","hostpath":"C:/Users/tigog/PhpstormProjects/portfolio","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/tigog/PhpstormProjects/portfolio/vagrant","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/tigog/PhpstormProjects/portfolio/vagrant","disabled":false,"__vagrantfile":true}}}

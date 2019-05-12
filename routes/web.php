@@ -12,8 +12,7 @@
 */
 
 
-
-
+Route::view('/{path?}', 'index');
 
 Route::get('/', 'HomeController@index')->name('homePage');
 Route::get('/projects', 'ProjectController@index')->name('projectsPage');

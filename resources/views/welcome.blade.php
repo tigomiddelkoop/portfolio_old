@@ -1,4 +1,4 @@
-@extends('layouts.general')
+@extends('index')
 
 @section('css')
     <link href="css/homepage.css" rel="stylesheet" type="text/css">

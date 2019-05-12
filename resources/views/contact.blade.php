@@ -1,4 +1,4 @@
-@extends('layouts.general')
+@extends('index')
 @section('requiredJS')
 
     {!!  GoogleReCaptchaV3::render(['contact_us_id'=>'contact_us']) !!}

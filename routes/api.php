@@ -13,8 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-Route::get('/projects/{projectid}', 'HomeController@viewProjectAPI');
+Route::get('/projects', 'ProjectController@index');
+
+Route::get('/projects/{project}', 'ProjectController@show');
