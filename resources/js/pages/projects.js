@@ -16,7 +16,7 @@ export default class Project extends React.Component {
     };
 
     componentDidMount() {
-        fetch("http://localhost:8000/api/projects", {
+        fetch("https://portfolio.staging.genericdevelopment.nl/api/projects", {
             method: "GET",
             mode: "no-cors",
             headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
