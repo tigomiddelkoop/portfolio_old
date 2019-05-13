@@ -5,7 +5,9 @@ import PropTypes from "prop-types";
 import Layout from "./layouts/layout";
 import Homepage from "./pages/homepage";
 import Projects from "./pages/projects";
+import Project from "./pages/project";
 import Contact from "./pages/contact";
+import Error404 from "./pages/Errors/Error404";
 
 class App extends React.Component {
 
@@ -20,11 +22,14 @@ class App extends React.Component {
                     <Route path="/" exact component={Homepage}/>
                     <Route path="/projects" exact component={Projects}/>
                     <Route path="/contact" exact component={Contact}/>
+
+                    <Route component={Error404}/>
                 </Switch>
             </Layout>
         );
     }
 }
+
 App.defaultProps = {
     appUrl: process.env.MIX_APP_URL
 };

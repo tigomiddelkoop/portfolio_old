@@ -16,6 +16,9 @@ class ProjectController extends Controller
     {
         $projects = Project::All();
 
+//        sleep(5);
+
+//        abort(500);
         return $projects;
     }
 

@@ -1,7 +1,6 @@
 import * as React from "react";
-import {Card, Spinner} from "reactstrap";
+import {Spinner} from "reactstrap";
 import ProjectCard from "../components/projectCard";
-import CardBody from "reactstrap/es/CardBody";
 
 
 export default class Project extends React.Component {
@@ -34,7 +33,7 @@ export default class Project extends React.Component {
                 // exceptions from actual bugs in components.
                 (error) => {
                     this.setState({
-                        isLoaded: false,
+                        isLoaded: true,
                         error
                     });
                 }
@@ -44,13 +43,12 @@ export default class Project extends React.Component {
 
     render() {
 
-        //@TODO FIX THE GODDAMN ERROR FIXING THINGY WHATEVER
         const {error, isLoaded, projects} = this.state;
         let projectResult;
 
         if (!isLoaded || error) {
-            projectResult = <span><Spinner color={"dark"}/><br /><a>They see me loadin'</a></span>
-        } else if (isLoaded) {
+            projectResult = <div><span><br /><Spinner style={{ width: ' 10rem', height: '10rem' }} type={"grow"} /><br /><h1>Loading Projects</h1></span><br /><br /></div>
+        } else {
             projectResult = projects.map(item => (
                 <ProjectCard thumbnail={item.thumbnail} name={item.name} language={item.language}
                              shortDescription={item.short_description}
@@ -75,13 +73,13 @@ export default class Project extends React.Component {
                             {projectResult}
                         </div> :
 
-                        <Card className="text--center"><CardBody> {projectResult} </CardBody></Card>}
+                        <div className="card text--center"> {projectResult} </div>}
 
+                    </div>
                 </div>
-            </div>
-        )
-    }
-}
+                )
+                }
+                }
 
 
 

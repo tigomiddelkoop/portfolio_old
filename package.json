@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "prop-types": "^15.7.2",
+        "react-emojione": "^5.0.1",
         "react-router-dom": "^5.0.0",
         "reactstrap": "^8.0.0"
     }
