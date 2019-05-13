@@ -1,6 +1,9 @@
 import * as React from "react";
-import {Spinner} from "reactstrap";
+import {Badge, Card, Spinner} from "reactstrap";
 import ProjectCard from "../components/projectCard";
+import CardBody from "reactstrap/es/CardBody";
+import CardTitle from "reactstrap/es/CardTitle";
+import CardHeader from "reactstrap/es/CardHeader";
 
 
 export default class Project extends React.Component {
@@ -15,7 +18,7 @@ export default class Project extends React.Component {
     };
 
     componentDidMount() {
-        fetch("https://portfolio.staging.genericdevelopment.nl/api/projects", {
+        fetch(process.env.MIX_APP_URL + "/api/projects/" + this.props.match.params.id, {
             method: "GET",
             mode: "no-cors",
             headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
@@ -25,7 +28,7 @@ export default class Project extends React.Component {
                     console.log(result);
                     this.setState({
                         isLoaded: true,
-                        projects: result
+                        project: result
                     });
                 },
                 // Note: it's important to handle errors here
@@ -43,29 +46,27 @@ export default class Project extends React.Component {
 
     render() {
 
-        const {error, isLoaded, projects} = this.state;
+        const {error, isLoaded, project} = this.state;
         let projectResult;
 
         if (!isLoaded || error) {
-            projectResult = <div><span><br /><Spinner style={{ width: ' 10rem', height: '10rem' }} type={"grow"} /><br /><h1>Loading Projects</h1></span><br /><br /></div>
+            projectResult = <span><Spinner color={"dark"}/><br /><a>Loadin' project info</a></span>
         } else {
-            projectResult = projects.map(item => (
-                <ProjectCard thumbnail={item.thumbnail} name={item.name} language={item.language}
-                             shortDescription={item.short_description}
-                             github={item.github}
-                             genericgit={item.genericgit}
-                             url={"/projects/" + item.id}
-                />
-            ))
+            projectResult = <div><Card>
+                <CardHeader>Project Info</CardHeader>
+                <ul className="list-group list-group-flush">
+                    <li className="list-group-item">Written in: {project.language}</li>
+                    <li className="list-group-item">Demo: {project.demo_url}</li>
+                    <li className="list-group-item">Development Stage: {project.development_stage}</li>
+                </ul>
+            </Card></div>
         }
 
         return (
             <div>
                 <div className="container">
-                    <h1 className="text--center">A Project</h1>
-                    <h5 className="text--center">These are the projects I am the most proud of!</h5>
-                    <h5 className="text--center" style={{fontSize: 12 + "px"}}>There are two Git servers I use, GitHub
-                        and my own so there can be two links to the corresponding repo's</h5>
+                    <h1 className="text--center">{isLoaded ? project.name : null}</h1>
+                    <h5 className="text--center">{isLoaded ? project.short_description : <Spinner />}</h5>
                     <hr/>
                     <br/>
                     {isLoaded ?
@@ -73,13 +74,13 @@ export default class Project extends React.Component {
                             {projectResult}
                         </div> :
 
-                        <div className="card text--center"> {projectResult} </div>}
+                        <Card className="text--center"><CardBody> {projectResult} </CardBody></Card>}
 
-                    </div>
                 </div>
-                )
-                }
-                }
+            </div>
+        )
+    }
+}
 
 
 

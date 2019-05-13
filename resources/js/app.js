@@ -21,6 +21,7 @@ class App extends React.Component {
                 <Switch>
                     <Route path="/" exact component={Homepage}/>
                     <Route path="/projects" exact component={Projects}/>
+                    <Route path="/projects/:id" exact component={Project}/>
                     <Route path="/contact" exact component={Contact}/>
 
                     <Route component={Error404}/>

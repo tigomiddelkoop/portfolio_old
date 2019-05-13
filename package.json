@@ -29,6 +29,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@hapi/joi": "^15.0.3",
         "prop-types": "^15.7.2",
         "react-emojione": "^5.0.1",
         "react-router-dom": "^5.0.0",

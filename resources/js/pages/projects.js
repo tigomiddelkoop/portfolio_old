@@ -16,7 +16,7 @@ export default class Project extends React.Component {
     };
 
     componentDidMount() {
-        fetch("https://portfolio.staging.genericdevelopment.nl/api/projects", {
+        fetch(process.env.MIX_APP_URL + "/api/projects/", {
             method: "GET",
             mode: "no-cors",
             headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
@@ -64,7 +64,7 @@ export default class Project extends React.Component {
         return (
             <div>
                 <div className="container">
-                    <h1 className="text--center">A Project</h1>
+                    <h1 className="text--center">My Projects</h1>
                     <h5 className="text--center">These are the projects I am the most proud of!</h5>
                     <h5 className="text--center" style={{fontSize: 12 + "px"}}>There are two Git servers I use, GitHub
                         and my own so there can be two links to the corresponding repo's</h5>
