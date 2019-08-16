@@ -1,4 +1,4 @@
-@extends('layouts.general')
+@extends('index')
 
 
 

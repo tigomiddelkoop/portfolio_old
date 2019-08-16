@@ -1,14 +1,14 @@
-@extends('layouts.general')
+@extends('index')
 
 
 
 @section('content')
     <div class="container">
-        <h1 class="text--center">{{  __('projects.my_projects') }}</h1>
-        <h5 class="text--center">{{ __('projects.projects_i_have_done') }}</h5>
-        <h5 class="text--center" style="font-size: 12px">{{ __('projects.git_explanation') }}</h5>
-        <hr/>
-        <br/>
+            <h1 class="text--center">{{  __('projects.my_projects') }}</h1>
+            <h5 class="text--center">{{ __('projects.projects_i_have_done') }}</h5>
+            <h5 class="text--center" style="font-size: 12px">{{ __('projects.git_explanation') }}</h5>
+            <hr/>
+            <br/>
 
         <div class="card-columns project-masonry">
             @foreach($projects as $project)
