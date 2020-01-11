@@ -1,26 +1,63 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/portfolio.scss';
+import './css/tailwind.scss';
+import Tigo from './img/photo.jpg';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faGithub, faGitlab, faWordpressSimple, faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import config from './config/programmingLanguages.json'
+import * as _ from "lodash";
+import moment from "moment";
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const languages: any = [];
+_.forEach(config, (data: any) => {
+    languages.push(data);
+});
+let a = moment([2018]);
+let b = moment([moment().year()]);
+console.log(a.from(b)); // "a day ago"
 
-export default App;
+export default class App extends React.Component {
+
+    componentDidMount(): void {
+
+    }
+
+    render() {
+
+        window.addEventListener('deviceLight', function (event) {
+            alert(event)
+        });
+
+        return (
+            <div className="">
+                <div className="md:flex m-5">
+                    <img className="md:h-64 md:border-2 md:w-64 h-32 w-32 mx-auto md:mx-0 md:mr-6 rounded-full" alt=""
+                         src={Tigo}/>
+                    <div className="text-center md:text-left">
+                        <h1 className="text-4xl md:text-5xl font-bold">Tigo Middelkoop</h1>
+                        <h3 className="text-2xl font-light">Junior Backend Developer</h3>
+                        <h4 className="text-xs font-light mb-4">PHP, JavaScript (incl TypeScript), C++, C, Objective-C,
+                            Java, Go</h4>
+                        <div>
+                            <a className="bg-gray-900 mr-1 hover:bg-gray-600 px-4 py-2 rounded"
+                               href="https://systemmanager.io">SystemManager</a>
+                            <a className="bg-gray-900 mr-1 hover:bg-gray-600 px-4 py-2 rounded"
+                               href="https://www.linkedin.com/in/tigo-middelkoop-92067a15b/"><FontAwesomeIcon
+                                icon={faLinkedin}/></a>
+                            <a className="bg-gray-900 mr-1 hover:bg-gray-600 px-4 py-2 rounded"
+                               href="https://blog.genericdevelopment.nl"><FontAwesomeIcon icon={faWordpressSimple}/></a>
+                            <a className="bg-gray-900 mr-1 hover:bg-gray-600 px-4 py-2 rounded"
+                               href="https://github.com/tigomiddelkoop"><FontAwesomeIcon icon={faGithub}/></a>
+                            <a className="bg-gray-900 mr-1 hover:bg-gray-600 px-4 py-2 rounded"
+                               href="https://git.genericdevelopment.nl/__Tigo__"><FontAwesomeIcon icon={faGitlab}/></a>
+                        </div>
+                    </div>
+                </div>
+                <div className="text-center justify-center">
+                    <h3 className="text-2xl">Im not really a designer or a frontend developer</h3>
+                    <h3 className="text-2xl">My portfolio might be lacking in some areas regarding its design.</h3>
+                </div>
+            </div>
+        );
+    }
+};
