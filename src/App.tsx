@@ -1,35 +1,17 @@
 import React from 'react';
-import './css/portfolio.scss';
-import './css/tailwind.scss';
 import Tigo from './img/photo.jpg';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faGitlab, faWordpressSimple, faLinkedin} from '@fortawesome/free-brands-svg-icons';
-import config from './config/programmingLanguages.json'
-import * as _ from "lodash";
-import moment from "moment";
-
-const languages: any = [];
-_.forEach(config, (data: any) => {
-    languages.push(data);
-});
-let a = moment([2018]);
-let b = moment([moment().year()]);
-console.log(a.from(b)); // "a day ago"
+import Navbar from "./components/Navbar";
 
 export default class App extends React.Component {
 
-    componentDidMount(): void {
-
-    }
 
     render() {
 
-        window.addEventListener('deviceLight', function (event) {
-            alert(event)
-        });
-
         return (
-            <div className="">
+            <div>
+                <Navbar/>
                 <div className="md:flex m-5">
                     <img className="md:h-64 md:border-2 md:w-64 h-32 w-32 mx-auto md:mx-0 md:mr-6 rounded-full" alt=""
                          src={Tigo}/>
