@@ -1,0 +1,46 @@
+[
+  {
+    "title": "SystemManager",
+    "short_description": "A fully customizable server monitoring and management tool",
+    "long_description": "A fully customizable server monitoring and management tool",
+    "images": {
+      "thumbnail": "",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "languages": {
+      "1": "PHP",
+      "2": "C++",
+      "3": "TypeScript",
+      "4": "Go",
+      "5": "Objective-C"
+    },
+    "source_control": {
+      "github": "https://github.com/systemmanager-io/Core",
+      "gitlab": "https://git.genericdevelopment.nl/systemmanager/core"
+    }
+  },
+  {
+    "title": "SystemManager Cloud",
+    "short_description": "A fully customizable server monitoring and management tool",
+    "long_description": "A fully customizable server monitoring and management tool",
+    "images": {
+      "thumbnail": "",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "languages": {
+      "1": "PHP",
+      "2": "C++",
+      "3": "TypeScript",
+      "4": "Go",
+      "5": "Objective-C"
+    },
+    "source_control": {
+      "github": "https://github.com/systemmanager-io/Core",
+      "gitlab": "https://git.genericdevelopment.nl/systemmanager/core"
+    }
+  }
+]
