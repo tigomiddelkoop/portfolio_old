@@ -1,6 +1,5 @@
 import React from "react";
 import projectsJson from "./../config/projects.json"
-import {render} from "react-dom";
 
 export default class Projects extends React.Component {
 
@@ -32,13 +31,26 @@ export default class Projects extends React.Component {
 
                     {projects.map((data: any) => {
                         return (
-                            <div className="m-1 p-1 rounded bg-gray-900  xl:w-3/12 lg:w-4/12  md:6/12 w-full">
-                                <div className="m-1">
-                                    <h1 className="text-2xl font-bold">{data.title}</h1>
-                                    <p className={"font-light"}>{data.short_description}</p>
+                            <div className={"xl:w-3/12 m-2 lg:w-4/12 md:6/12 w-full"}>
+                                <div className="rounded-t p-1 bg-gray-900 mb-1">
+                                    <div className="m-1">
+                                        {/*<img/>*/}
+                                        <h1 className="text-2xl font-bold">{data.title}</h1>
+                                        <p className={"font-light"}>{data.short_description}</p>
+                                    </div>
+                                </div>
+                                <div className="min-w-full">
+                                    <a className="bg-gray-800 mt-2 border-b-2 border-l-2 border-gray-900 hover:bg-gray-600 px-4 py-2 rounded-bl"
+                                       href={data.url}>
+                                        Website</a>
+                                    <a className="bg-gray-800 mt-2 border-b-2 border-gray-900 hover:bg-gray-600 px-4 py-2 "
+                                       href={data.source_control.github}>
+                                        Github</a>
+                                    <a className="bg-gray-800 mt-2 border-b-2 border-r-2 border-gray-900 hover:bg-gray-600 px-4 py-2 rounded-br"
+                                       href={data.source_control.gitlab}>
+                                        GitLab</a>
                                 </div>
                             </div>
-
                         )
                     })}
 
