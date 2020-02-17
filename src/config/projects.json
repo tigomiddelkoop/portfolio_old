@@ -1,8 +1,9 @@
 [
   {
+    "key": 1,
     "title": "SystemManager",
     "short_description": "A fully customizable server monitoring and management tool",
-    "long_description": "A fully customizable server monitoring and management tool",
+    "long_description": "<h1>A fully customizable server monitoring and management tool test<h1>",
     "url": "https://systemmanager.io",
     "images": {
       "thumbnail": "",
@@ -10,21 +11,46 @@
       "2": "",
       "3": ""
     },
-    "languages": {
-      "1": "PHP",
-      "2": "C++",
-      "3": "TypeScript",
-      "4": "Go",
-      "5": "Objective-C"
-    },
+    "languages": [
+      "PHP",
+      "C++",
+      "TypeScript",
+      "Go",
+      "Objective-C"
+    ],
     "source_control": {
       "github": "https://github.com/systemmanager-io/Core",
       "gitlab": "https://git.genericdevelopment.nl/systemmanager/core"
     }
   },
   {
+    "key": 2,
     "title": "SystemManager Cloud",
     "short_description": "The place to find your plugins/hosting for SystemManager",
+    "long_description": "<h1>test</h1>",
+    "url": "https://systemmanager.cloud",
+    "images": {
+      "thumbnail": "",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "languages": [
+      "PHP",
+      "C++",
+      "TypeScript",
+      "Go",
+      "Objective-C"
+    ],
+    "source_control": {
+      "github": "https://github.com/systemmanager-io/Core",
+      "gitlab": "https://git.genericdevelopment.nl/systemmanager/core"
+    }
+  },
+  {
+    "key": 3,
+    "title": "Jace",
+    "short_description": "An multipurpose discordbot for games",
     "long_description": "A fully customizable server monitoring and management tool",
     "url": "https://systemmanager.cloud",
     "images": {
@@ -33,13 +59,13 @@
       "2": "",
       "3": ""
     },
-    "languages": {
-      "1": "PHP",
-      "2": "C++",
-      "3": "TypeScript",
-      "4": "Go",
-      "5": "Objective-C"
-    },
+    "languages": [
+      "PHP",
+      "C++",
+      "TypeScript",
+      "Go",
+      "Objective-C"
+    ],
     "source_control": {
       "github": "https://github.com/systemmanager-io/Core",
       "gitlab": "https://git.genericdevelopment.nl/systemmanager/core"

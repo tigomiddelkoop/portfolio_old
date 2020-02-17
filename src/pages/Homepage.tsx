@@ -35,12 +35,12 @@ export default class Homepage extends React.Component {
                     </div>
                 </div>
             </div>
-            <div className="text-center justify-center">
-                <h3 className="text-sm font-light">I'm not really a designer or a frontend developer</h3>
-                <h3 className="text-sm font-light">My portfolio might be lacking in some areas regarding its
-                    design.</h3>
-                <h3 className="text-sm font-light">I am trying to make it a darkmode based portfolio</h3>
-            </div>
+            {/*<div className="text-center justify-center">*/}
+            {/*    <h3 className="text-sm font-light">I'm not really a designer or a frontend developer</h3>*/}
+            {/*    <h3 className="text-sm font-light">My portfolio might be lacking in some areas regarding its*/}
+            {/*        design.</h3>*/}
+            {/*    <h3 className="text-sm font-light">I am trying to make it a darkmode based portfolio</h3>*/}
+            {/*</div>*/}
         </Fragment>
         )
     }
