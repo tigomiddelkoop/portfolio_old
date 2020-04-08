@@ -1,4 +1,4 @@
-import Tigo from "../img/photo.jpg";
+import Tigo from "../img/profilepicture.png";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faGitlab, faLinkedin, faWordpressSimple} from "@fortawesome/free-brands-svg-icons";
 import React, { Fragment } from "react";
@@ -15,7 +15,7 @@ export default class Homepage extends React.Component {
                     <h1 className="text-4xl md:text-5xl font-bold">Tigo Middelkoop</h1>
                     <h3 className="text-2xl font-light">Junior Backend Developer</h3>
                     <h4 className="text-xs font-light mb-4">PHP, JavaScript (incl TypeScript), C++, C, Objective-C,
-                        Java, Go</h4>
+                        Java & Rust</h4>
                     <div className="mb-4">
                         <a className="bg-gray-900 border-r-2 border-gray-700 hover:bg-gray-600 px-4 py-2 rounded-l"
                            href="https://systemmanager.io">SystemManager Core</a>

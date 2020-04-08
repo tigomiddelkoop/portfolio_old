@@ -2,8 +2,8 @@
   {
     "key": 1,
     "title": "SystemManager",
-    "short_description": "A fully customizable server monitoring and management tool",
-    "long_description": "<h1>A fully customizable server monitoring and management tool test<h1>",
+    "short_description": "A fully customizable server monitoring and management tool.",
+    "long_description": "A fully customizable server monitoring and management tool test",
     "url": "https://systemmanager.io",
     "images": {
       "thumbnail": "",
@@ -12,11 +12,8 @@
       "3": ""
     },
     "languages": [
-      "PHP",
-      "C++",
       "TypeScript",
-      "Go",
-      "Objective-C"
+      "Rust"
     ],
     "source_control": {
       "github": "https://github.com/systemmanager-io/Core",
@@ -26,8 +23,8 @@
   {
     "key": 2,
     "title": "SystemManager Cloud",
-    "short_description": "The place to find your plugins/hosting for SystemManager",
-    "long_description": "<h1>test</h1>",
+    "short_description": "The place to find your plugins/hosting for SystemManager.",
+    "long_description": "",
     "url": "https://systemmanager.cloud",
     "images": {
       "thumbnail": "",
@@ -37,10 +34,7 @@
     },
     "languages": [
       "PHP",
-      "C++",
-      "TypeScript",
-      "Go",
-      "Objective-C"
+      "TypeScript"
     ],
     "source_control": {
       "github": "https://github.com/systemmanager-io/Core",
@@ -50,7 +44,7 @@
   {
     "key": 3,
     "title": "Jace",
-    "short_description": "An multipurpose discordbot for games",
+    "short_description": "An multipurpose discordbot for games and utilities.",
     "long_description": "A fully customizable server monitoring and management tool",
     "url": "https://systemmanager.cloud",
     "images": {
@@ -60,15 +54,8 @@
       "3": ""
     },
     "languages": [
-      "PHP",
-      "C++",
-      "TypeScript",
-      "Go",
-      "Objective-C"
+      "TypeScript"
     ],
-    "source_control": {
-      "github": "https://github.com/systemmanager-io/Core",
-      "gitlab": "https://git.genericdevelopment.nl/systemmanager/core"
-    }
+    "source_control": {}
   }
 ]

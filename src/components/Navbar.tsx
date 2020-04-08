@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import Tigo from "../img/photo.jpg";
+import Tigo from "../img/profilepicture.png";
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
@@ -23,12 +23,12 @@ export default class Navbar extends React.Component {
             <Fragment>
                 <div className={"md:flex"}>
                     <div className="flex flex-1 bg-gray-900">
-                        <Link to="/" className="flex flex-1">
-                            <div className={"flex items-center p-4 hover:bg-gray-800"}>
+                        <div className="flex flex-1">
+                            <Link to={"/"} className={"flex items-center p-4 hover:bg-gray-800"}>
                                 <img className="border mr-2 h-8 w-8 rounded-full" alt="Tigo" src={Tigo}/>
                                 <p className="font-light">Tigo Middelkoop</p>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                         <div onClick={this.toggleNavbar.bind(this)}
                              className="md:hidden block py-5 px-4 hover:bg-gray-800">
                             <FontAwesomeIcon icon={faBars}/>
