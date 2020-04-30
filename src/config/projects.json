@@ -2,8 +2,24 @@
   {
     "key": 1,
     "title": "SystemManager",
-    "short_description": "A fully customizable server monitoring and management tool.",
-    "long_description": "A fully customizable server monitoring and management tool test",
+    "short_description": "A configurable server monitoring and management suite",
+    "long_description": [
+      {
+        "key": 1,
+        "header": "What is SystemManager",
+        "body": "SystemManager "
+      },
+      {
+        "key": 2,
+        "header": "Who is it for?",
+        "body": "Who is it for?"
+      },
+      {
+        "key": 9,
+        "header": "Why did I build it?",
+        "body": "I started to build SystemManager because I did not find any monitoring/management software really suiting my needs. I also started working on the project so I had a goal to learn new programming languages."
+      }
+    ],
     "url": "https://systemmanager.io",
     "images": {
       "thumbnail": "",
@@ -12,8 +28,11 @@
       "3": ""
     },
     "languages": [
-      "TypeScript",
-      "Rust"
+      "TypeScript (Core, Dashboard, Chromecast)",
+      "Rust (Daemon)",
+      "C++ (Daemon)",
+      "Objective-C (iOS)",
+      "Java (Android)"
     ],
     "source_control": {
       "github": "https://github.com/systemmanager-io/Core",
@@ -24,7 +43,13 @@
     "key": 2,
     "title": "SystemManager Cloud",
     "short_description": "The place to find your plugins/hosting for SystemManager.",
-    "long_description": "",
+    "long_description": [
+      {
+        "key": 1,
+        "header": "",
+        "body": "<h1>A fully customizable server monitoring and management tool</h1>"
+      }
+    ],
     "url": "https://systemmanager.cloud",
     "images": {
       "thumbnail": "",
@@ -45,8 +70,13 @@
     "key": 3,
     "title": "Jace",
     "short_description": "An multipurpose discordbot for games and utilities.",
-    "long_description": "A fully customizable server monitoring and management tool",
-    "url": "https://systemmanager.cloud",
+    "long_description": [
+      {
+        "key": 1,
+        "header": "",
+        "body": ""
+      }
+    ],
     "images": {
       "thumbnail": "",
       "1": "",
@@ -56,6 +86,8 @@
     "languages": [
       "TypeScript"
     ],
-    "source_control": {}
+    "source_control": {
+      "gitlab": "https://git.genericdevelopment.nl/discord-bots/jace"
+    }
   }
 ]

@@ -38,7 +38,7 @@ export default class Projects extends React.Component {
                     {projects.map((data: any) => {
                             return (
                                 <div key={data.key} className={"xl:w-3/12 lg:w-4/12 md:w-6/12 w-full"}>
-                                    <div className={"m-2"}>
+                                    <div className={"m-2 shadow shadow-rounded"}>
                                         <Link to={`/projects/${data.key}`}>
                                             <div className="rounded-t p-2 bg-gray-900">
                                                 {/*<img/>*/}

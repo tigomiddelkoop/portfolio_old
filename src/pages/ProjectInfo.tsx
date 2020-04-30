@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import projectsJson from "./../config/projects.json"
 import {Link} from "react-router-dom";
 import * as _ from "lodash";
@@ -38,27 +38,48 @@ export default class Projects extends React.Component {
         console.log(project);
 
         return (
-            <div>
-                <div className="md:flex flex-row m-5">
+            <Fragment>
+                <div className={"m-5 flex flex-wrap"}>
+                    <div className="w-full md:w-9/12">
 
-                    <div className="text-center md:text-left">
-                        <Link className="bg-gray-900 mr-1 font-light hover:bg-gray-600 px-4 py-2 rounded"
-                              to={"/projects"}><FontAwesomeIcon className={"mr-1"} icon={faArrowLeft}/>Back</Link>
-                        <h1 className="text-4xl mt-1 md:text-5xl font-bold">{project.title}</h1>
-                        <h3 className="text-2xl mb-2 font-light">{project.short_description}</h3>
-                        <div className={"flex"}>
-                            {project.languages.map(text => {
-                                return (
-                                    <p key={text} className="bg-gray-900 mr-1 text-sm px-2 py-1 rounded">{text}</p>);
-                            })}
+                        <div className="text-center mb-1 md:text-left">
+                            <Link className="bg-gray-900 mr-1 font-light hover:bg-gray-600 px-4 py-2 rounded"
+                                  to={"/projects"}><FontAwesomeIcon className={"mr-1"} icon={faArrowLeft}/>Back</Link>
+                            <h1 className="text-4xl mt-1 md:text-5xl font-bold">{project.title}</h1>
+                            <h3 className="text-2xl mb-2">{project.short_description}</h3>
+                            <hr className={"w-full md:w-9/12"}/>
                         </div>
-                        <div className="flex flex-wrap">
-                        <p>{project.long_description}</p>
+                        <div className="text-center md:text-left">
+                            <div>
+                                {project.long_description.map(text => {
+                                    return (
+                                        <div className={"mt-2"} key={text.key}>
+                                            <h2 className="text-2xl">{text.header}</h2>
+                                            <h2 className="">{text.body}</h2>
+                                        </div>);
+                                })}
+                            </div>
+                        </div>
                     </div>
+
+                    <div className={"w-full lg:w-3/12 mt-6 text-center md:mt-0"}>
+                        <div className={"mb-8"}>
+                            <h3 className={"text-xl mb-1"}>Pictures</h3>
+                            <p className={"text-sm mb-1"}>Not implemented, soon to be implemented.</p>
+                        </div>
+                        <div>
+                            <h3 className={"text-xl mb-1"}>Languages it's build in</h3>
+                            <div className={"flex justify-center flex-column flex-wrap"}>
+                                {project.languages.map(language => {
+                                    return (
+                                        <p key={language}
+                                           className="bg-gray-900 mr-1 mb-1 text-sm px-2 py-1 rounded">{language}</p>);
+                                })}
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-            </div>
+            </Fragment>
         )
     };
 };
