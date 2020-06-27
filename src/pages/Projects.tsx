@@ -47,13 +47,13 @@ export default class Projects extends React.Component {
                                             </div>
                                         </Link>
                                         <div className="mt-0 flex min-w-full text-center">
-                                            <a className={`${data.url === undefined ? "text-gray-700 cursor-not-allowed" : ""} bg-gray-800 font-light flex-1 border-b-2 border-l-2 border-gray-900 hover:bg-gray-600 px-4 py-2 rounded-bl`}
+                                            <a className={`${data.url === undefined ? "text-gray-700 cursor-not-allowed" : ""} shadow bg-gray-800 font-light flex-1 border-b-2 border-l-2 border-gray-900 hover:bg-gray-600 px-4 py-2 rounded-bl`}
                                                href={data.url}>
                                                 Website</a>
-                                            <a className={`${data.source_control.github === undefined ? "text-gray-700 cursor-not-allowed" : ""} bg-gray-800 font-light flex-1 border-b-2 border-l border-r border-gray-900 hover:bg-gray-600 px-4 py-2`}
+                                            <a className={`${data.source_control.github === undefined ? "text-gray-700 cursor-not-allowed" : ""} shadow bg-gray-800 font-light flex-1 border-b-2 border-l border-r border-gray-900 hover:bg-gray-600 px-4 py-2`}
                                                href={data.source_control.github}>
                                                 Github</a>
-                                            <a className={`${data.source_control.gitlab === undefined ? "text-gray-700 cursor-not-allowed" : ""} bg-gray-800 font-light flex-1 border-b-2 border-r-2 border-gray-900 hover:bg-gray-600 px-4 py-2 rounded-br`}
+                                            <a className={`${data.source_control.gitlab === undefined ? "text-gray-700 cursor-not-allowed" : ""} shadow bg-gray-800 font-light flex-1 border-b-2 border-r-2 border-gray-900 hover:bg-gray-600 px-4 py-2 rounded-br`}
                                                href={data.source_control.gitlab}>
                                                 GitLab</a>
                                         </div>

@@ -1,4 +1,4 @@
-module.exports = {
+odule.exports = {
   prefix: '',
   important: false,
   separator: ':',

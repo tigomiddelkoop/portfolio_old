@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import Tigo from "../img/profilepicture.png";
+import flyinghearts from "../img/flyinghearts.png";
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
