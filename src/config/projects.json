@@ -87,7 +87,7 @@
       "TypeScript"
     ],
     "source_control": {
-      "gitlab": "https://git.genericdevelopment.nl/discord-bots/jace"
+      "github": "https://github.com/tigomiddelkoop/jace"
     }
   }
 ]

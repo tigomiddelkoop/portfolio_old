@@ -3,7 +3,7 @@ import React from 'react';
 import DesignerMessage from "./components/DesignerMessage";
 import Homepage from './pages/Homepage';
 import {Route, Switch} from 'react-router-dom';
-import Projects from "./pages/Projects";
+import Projects from "./components/Projects";
 import ProjectInfo from "./pages/ProjectInfo";
 import Easteregg from './pages/Easteregg';
 import Notfound from "./pages/Notfound";

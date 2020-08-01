@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import React, {Fragment} from "react";
 import {faCloud, faServer} from "@fortawesome/free-solid-svg-icons";
-import Projects from "./Projects";
+import Projects from "../components/Projects";
 import ProgrammingLanguages from "../components/ProgrammingLanguages";
 
 export default class Homepage extends React.Component {
