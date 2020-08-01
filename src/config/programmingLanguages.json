@@ -1,22 +1,30 @@
-{
-  "1": {
+[
+  {
     "language": "PHP",
-    "year": 2018
+    "year": 2018,
+    "confidence": 50
   },
-  "2": {
-    "language": "JavaScript",
-    "year": 2018
+  {
+    "language": [
+      "JavaScript",
+      "TypeScript"
+    ],
+    "year": 2018,
+    "confidence": 50
   },
-  "3": {
+  {
     "language": "Java",
-    "year": 2019
+    "year": 2019,
+    "confidence": 10
   },
-  "4": {
-    "language": "C++ / C",
-    "year": 2020
+  {
+    "language": ["C++", "C#", "C"],
+    "year": 2020,
+    "confidence": 0
   },
-  "5": {
+  {
     "language": "Rust",
-    "year": 2020
+    "year": 2020,
+    "confidence": 0
   }
-}
+]

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Navbar from "./components/Navbar";
+import DesignerMessage from "./components/DesignerMessage";
 import Homepage from './pages/Homepage';
 import {Route, Switch} from 'react-router-dom';
 import Projects from "./pages/Projects";
@@ -14,17 +14,15 @@ export default class App extends React.Component {
     render() {
 
         return (
-            <div className={"bg-gray-800 text-white h-screen"}>
-                <Navbar/>
-                <Switch>
-                    <Route exact path="/" component={Homepage}/>
-                    <Route exact path="/projects" component={Projects}/>
-                    <Route exact path="/projects/:id" component={ProjectInfo}/>
-
-
-                    <Route exact path="/easteregg" component={Easteregg}/>
-                    <Route component={Notfound}/>
-                </Switch>
+            <div className={"bg-gray-800 h-full min-h-screen text-white"}>
+                <DesignerMessage/>
+                <div className={"p-5"}>
+                    <Switch>
+                        <Route exact path="/" component={Homepage}/>
+                        <Route exact path="/easteregg" component={Easteregg}/>
+                        <Route component={Notfound}/>
+                    </Switch>
+                </div>
             </div>
         );
     }

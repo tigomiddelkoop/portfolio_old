@@ -36,31 +36,25 @@ export default class Projects extends React.Component {
                 <div className="flex flex-wrap">
 
                     {projects.map((data: any) => {
-                            return (
-                                <div key={data.key} className={"xl:w-3/12 lg:w-4/12 md:w-6/12 w-full"}>
-                                    <div className={"m-2 shadow shadow-rounded"}>
-                                        <Link to={`/projects/${data.key}`}>
-                                            <div className="rounded-t p-2 bg-gray-900">
-                                                {/*<img/>*/}
-                                                <h1 className="text-2xl font-bold">{data.title}</h1>
-                                                <p className={"font-light"}>{data.short_description}</p>
-                                            </div>
-                                        </Link>
-                                        <div className="mt-0 flex min-w-full text-center">
-                                            <a className={`${data.url === undefined ? "text-gray-700 cursor-not-allowed" : ""} shadow bg-gray-800 font-light flex-1 border-b-2 border-l-2 border-gray-900 hover:bg-gray-600 px-4 py-2 rounded-bl`}
-                                               href={data.url}>
-                                                Website</a>
-                                            <a className={`${data.source_control.github === undefined ? "text-gray-700 cursor-not-allowed" : ""} shadow bg-gray-800 font-light flex-1 border-b-2 border-l border-r border-gray-900 hover:bg-gray-600 px-4 py-2`}
-                                               href={data.source_control.github}>
-                                                Github</a>
-                                            <a className={`${data.source_control.gitlab === undefined ? "text-gray-700 cursor-not-allowed" : ""} shadow bg-gray-800 font-light flex-1 border-b-2 border-r-2 border-gray-900 hover:bg-gray-600 px-4 py-2 rounded-br`}
-                                               href={data.source_control.gitlab}>
-                                                GitLab</a>
-                                        </div>
+                        return (
+                            <div key={data.key} className={"xl:w-3/12 lg:w-4/12 md:w-6/12 w-full"}>
+                                <div className={"m-2 py-2 px-2 bg-gray-900 shadow rounded-lg"}>
+                                    <Link to={`/projects/${data.key}`}>
+                                        <h1 className="text-2xl font-bold">{data.title}</h1>
+                                        <p className={"font-light"}>{data.short_description}</p>
+                                    </Link>
+                                    <div className="flex">
+                                        <a className={`mr-1 relative flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-700 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-gray active:bg-gray-700 transition duration-150 ease-in-out`}
+                                           href={data.url}>
+                                            Website</a>
+                                        <a className={`relative flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-700 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-gray active:bg-gray-700 transition duration-150 ease-in-out`}
+                                           href={data.source_control.github}>
+                                            Github</a>
                                     </div>
                                 </div>
-                            )
-                        },
+                            </div>
+                        )
+                    },
                     )}
                 </div>
             </div>

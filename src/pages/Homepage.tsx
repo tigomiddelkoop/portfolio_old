@@ -1,15 +1,17 @@
 import Tigo from "../img/profilepicture.png";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faGithub, faGitlab, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import React, {Fragment} from "react";
 import {faCloud, faServer} from "@fortawesome/free-solid-svg-icons";
+import Projects from "./Projects";
+import ProgrammingLanguages from "../components/ProgrammingLanguages";
 
 export default class Homepage extends React.Component {
 
     render() {
         return (
             <Fragment>
-                <div className="md:flex m-5">
+                <div className="md:flex">
                     <img className="shadow border-2 h-64 w-64 mx-auto md:mx-0 md:mr-6 rounded-full"
                          alt="" src={Tigo}/>
                     <div className="text-center md:text-left">
@@ -30,12 +32,18 @@ export default class Homepage extends React.Component {
                                 icon={faLinkedin}/> LinkedIn</a>
                             <a className="shadow bg-gray-900 hover:bg-gray-600 px-4 py-2 rounded mr-1"
                                href="https://github.com/tigomiddelkoop"><FontAwesomeIcon icon={faGithub}/> GitHub</a>
-                            <a className="shadow bg-gray-900 hover:bg-gray-600 px-4 py-2 rounded mr-1"
-                               href="https://git.genericdevelopment.nl/__Tigo__"><FontAwesomeIcon
-                                icon={faGitlab}/> GitLab</a>
+                            {/*<a className="shadow bg-gray-900 hover:bg-gray-600 px-4 py-2 rounded mr-1"*/}
+                            {/*   href="https://git.genericdevelopment.nl/__Tigo__"><FontAwesomeIcon*/}
+                            {/*    icon={faGitlab}/> GitLab</a>*/}
 
                         </div>
                     </div>
+                </div>
+                <div>
+                    <ProgrammingLanguages/>
+                </div>
+                <div>
+                    <Projects/>
                 </div>
             </Fragment>
         )
