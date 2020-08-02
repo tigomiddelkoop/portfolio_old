@@ -16,13 +16,13 @@ export default class App extends React.Component {
         return (
             <div className={"bg-gray-800 h-full min-h-screen text-white"}>
                 <DesignerMessage/>
-                <div className={"p-5"}>
-                    <Switch>
-                        <Route exact path="/" component={Homepage}/>
-                        <Route exact path="/easteregg" component={Easteregg}/>
-                        <Route component={Notfound}/>
-                    </Switch>
-                </div>
+
+                <Switch>
+                    <Route exact path="/" component={Homepage}/>
+                    <Route exact path="/easteregg" component={Easteregg}/>
+                    <Route component={Notfound}/>
+                </Switch>
+
             </div>
         );
     }
