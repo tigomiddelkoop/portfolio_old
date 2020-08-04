@@ -87,7 +87,31 @@
       "TypeScript"
     ],
     "source_control": {
-      "gitlab": "https://git.genericdevelopment.nl/discord-bots/jace"
+      "github": "https://github.com/tigomiddelkoop/jace"
+    }
+  },
+  {
+    "key": 4,
+    "title": "Portfolio",
+    "short_description": "This portfolio, completely build in React, uses no database. Uses JSON files to store the data",
+    "long_description": [
+      {
+        "key": 1,
+        "header": "",
+        "body": ""
+      }
+    ],
+    "images": {
+      "thumbnail": "",
+      "1": "",
+      "2": "",
+      "3": ""
+    },
+    "languages": [
+      "TypeScript"
+    ],
+    "source_control": {
+      "github": "https://github.com/tigomiddelkoop/Portfolio"
     }
   }
 ]

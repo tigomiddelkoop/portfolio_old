@@ -1,6 +1,6 @@
 {
-  "short_name": "GenericDevelopment",
-  "name": "GenericDevelopment Portfolio",
+  "short_name": "Tigo Middelkoop",
+  "name": "Tigo's Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#2D3748",
   "background_color": "#ffffff"
 }
