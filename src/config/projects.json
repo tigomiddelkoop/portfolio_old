@@ -93,7 +93,7 @@
   {
     "key": 4,
     "title": "Portfolio",
-    "short_description": "This portfolio, completely build in React, uses no database. Uses JSON files to show the data",
+    "short_description": "This portfolio, completely build in React, uses no database. Uses JSON files to store the data",
     "long_description": [
       {
         "key": 1,

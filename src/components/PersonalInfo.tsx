@@ -19,15 +19,15 @@ export default class PersonalInfo extends React.Component<any, any> {
                         <h4 className="text-sm font-light">Current languages: PHP & JavaScript/TypeScript</h4>
                         <h4 className="text-xs font-light mb-6">Currently learning: C++, C, Objective-C, Java &
                             Rust</h4>
-                        <div className="mb-4">
-                            <p className={"inline mr-2"}>SystemManager:</p>
+                        <div className="mb-4 ">
+                            <p className={"block md:inline mb-2 md:mb-0 md:mr-2"}>SystemManager<span className={"hidden md:inline"}>:</span></p>
                             <a className="shadow bg-gray-900 border-r border-gray-700 hover:bg-gray-600 px-4 py-2 rounded-l-lg"
                                href="https://systemmanager.io"><FontAwesomeIcon icon={faServer}/> Core</a>
                             <a className="shadow bg-gray-900 border-l border-gray-700 hover:bg-gray-600 px-4 py-2 rounded-r-lg"
                                href="https://systemmanager.cloud"><FontAwesomeIcon icon={faCloud}/> Cloud</a>
                         </div>
                         <div className={"mb-4"}>
-                            <p className={"inline mr-2 "}>Social:</p>
+                            <p className={"block md:inline mb-2 md:mb-0 md:mr-2"}>Social<span className={"hidden md:inline"}>:</span></p>
                             <a className="shadow bg-gray-900 mr-1 hover:bg-gray-600 px-4 py-2 rounded-lg"
                                href="https://www.linkedin.com/in/tigo-middelkoop-92067a15b/"><FontAwesomeIcon
                                 icon={faLinkedin}/> LinkedIn</a>
