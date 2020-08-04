@@ -16,13 +16,15 @@ export default class Notfound extends React.Component<any, any> {
     render(): JSX.Element {
         return (
             <Fragment>
-                <div className="flex m-5 text-center content-center justify-center">
+                <div
+                    className="min-h-screen flex items-center text-center justify-center">
                     <div className={"h-full"}>
-
-                        <h1 className="text-3xl md:text-5xl font-light">404</h1>
-                        <p className="font-light">Seems like this page has vanished</p>
-                        <p className="font-light mb-2">Click the button below to travel to the homepage</p>
-                        <Link className={"shadow bg-gray-900 border-gray-700 hover:bg-gray-600 px-4 py-2 rounded"}
+                        <h1 className="text-6xl font-light">404</h1>
+                        <div className={"font-light mb-4"}>
+                            <p>The page you requested was not available.</p>
+                            <p>Click the on the button below to go back to the homepage</p>
+                        </div>
+                        <Link className={"shadow bg-gray-900 hover:bg-gray-600 px-4 py-2 rounded-lg"}
                               to={"/"}><FontAwesomeIcon icon={faHome}/> Home</Link>
                     </div>
                 </div>

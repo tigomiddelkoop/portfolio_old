@@ -1,6 +1,5 @@
-import React from "react";
+import React, {Fragment} from "react";
 import Moment from "moment";
-import Loading from "./Loading";
 
 export default class ProgrammingLanguages extends React.Component {
 
@@ -39,7 +38,7 @@ export default class ProgrammingLanguages extends React.Component {
                     </div>
                 </div>
                 <div className="mt-2 flex flex-wrap">
-                    {this.state.languages.length === 0 ? <Loading/> : this.state.languages.map((data: any) => {
+                    {this.state.languages.length === 0 ? this.renderLoadingObjects() : this.state.languages.map((data: any) => {
                             let now = Moment();
                             let then = Moment([data.year]);
                             let {confidence}: any = data;
@@ -102,6 +101,136 @@ export default class ProgrammingLanguages extends React.Component {
                     )}
                 </div>
             </div>
+        )
+    };
+
+    renderLoadingObjects(): JSX.Element {
+        return (
+            <Fragment>
+                <div className={"xl:w-3/12 lg:w-4/12 md:w-6/12 w-full"}>
+                    <div className={"m-1 py-2 px-2 bg-gray-900 shadow rounded-lg justify-center"}>
+                        <div className="animate-pulse items-center text-center justify-center flex">
+                            <div className={"w-32 border-r-2 border-gray-800"}>
+                                <h1 className={"font-bold mr-2"}>
+                                    <div
+                                        className={"h-8 w-16 rounded mx-auto bg-gray-800"}></div>
+                                </h1>
+                            </div>
+                            <div className={"flex flex-1 font-light text-xs flex-col ml-2"}>
+                                <div
+                                    className={"space-y-2 self-center w-full text-center border-b-2 border-gray-800"}>
+                                    <p className={"text-xl"}>
+                                        <div
+                                            className={"h-8 w-3/4 rounded mx-auto bg-gray-800"}></div>
+                                    </p>
+                                    <p className={"mb-2"}>
+                                        <div className={"h-3 w-1/2 mx-auto rounded bg-gray-800 mb-2"}></div>
+                                    </p>
+                                </div>
+                                <div className={""}>
+                                    <p className={"mt-2 text-md"}>
+                                        <div className={"h-3 w-4/6 mx-auto rounded bg-gray-800"}></div>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className={"xl:w-3/12 lg:w-4/12 md:w-6/12 w-full"}>
+                    <div className={"m-1 py-2 px-2 bg-gray-900 shadow rounded-lg justify-center"}>
+                        <div className="animate-pulse items-center text-center justify-center flex">
+                            <div className={"w-32 border-r-2 border-gray-800"}>
+                                <h1 className={"font-bold mr-2"}>
+                                    <div
+                                        className={"h-8 w-16 rounded mx-auto bg-gray-800"}></div>
+                                </h1>
+                            </div>
+                            <div className={"flex flex-1 font-light text-xs flex-col ml-2"}>
+                                <div
+                                    className={"space-y-2 self-center w-full text-center border-b-2 border-gray-800"}>
+                                    <p className={"text-xl"}>
+                                        <div
+                                            className={"h-8 w-3/4 rounded mx-auto bg-gray-800"}></div>
+                                    </p>
+                                    <p className={"mb-2"}>
+                                        <div className={"h-3 w-1/2 mx-auto rounded bg-gray-800 mb-2"}></div>
+                                    </p>
+                                </div>
+                                <div className={""}>
+                                    <p className={"mt-2 text-md"}>
+                                        <div className={"h-3 w-4/6 mx-auto rounded bg-gray-800"}></div>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className={"xl:w-3/12 lg:w-4/12 md:w-6/12 w-full"}>
+                    <div className={"m-1 py-2 px-2 bg-gray-900 shadow rounded-lg justify-center"}>
+                        <div className="animate-pulse items-center text-center justify-center flex">
+                            <div className={"w-32 border-r-2 border-gray-800"}>
+                                <h1 className={"font-bold mr-2"}>
+                                    <div
+                                        className={"h-8 w-16 rounded mx-auto bg-gray-800"}></div>
+                                </h1>
+                            </div>
+                            <div className={"flex flex-1 font-light text-xs flex-col ml-2"}>
+                                <div
+                                    className={"space-y-2 self-center w-full text-center border-b-2 border-gray-800"}>
+                                    <p className={"text-xl"}>
+                                        <div
+                                            className={"h-8 w-3/4 rounded mx-auto bg-gray-800"}></div>
+                                    </p>
+                                    <p className={"mb-2"}>
+                                        <div className={"h-3 w-1/2 mx-auto rounded bg-gray-800 mb-2"}></div>
+                                    </p>
+                                </div>
+                                <div className={""}>
+                                    <p className={"mt-2 text-md"}>
+                                        <div className={"h-3 w-4/6 mx-auto rounded bg-gray-800"}></div>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className={"xl:w-3/12 lg:w-4/12 md:w-6/12 w-full"}>
+                    <div className={"m-1 py-2 px-2 bg-gray-900 shadow rounded-lg justify-center"}>
+                        <div className="animate-pulse items-center text-center justify-center flex">
+                            <div className={"w-32 border-r-2 border-gray-800"}>
+                                <h1 className={"font-bold mr-2"}>
+                                    <div
+                                        className={"h-8 w-16 rounded mx-auto bg-gray-800"}></div>
+                                </h1>
+                            </div>
+                            <div className={"flex flex-1 font-light text-xs flex-col ml-2"}>
+                                <div
+                                    className={"space-y-2 self-center w-full text-center border-b-2 border-gray-800"}>
+                                    <p className={"text-xl"}>
+                                        <div
+                                            className={"h-8 w-3/4 rounded mx-auto bg-gray-800"}></div>
+                                    </p>
+                                    <p className={"mb-2"}>
+                                        <div className={"h-3 w-1/2 mx-auto rounded bg-gray-800 mb-2"}></div>
+                                    </p>
+                                </div>
+                                <div className={""}>
+                                    <p className={"mt-2 text-md"}>
+                                        <div className={"h-3 w-4/6 mx-auto rounded bg-gray-800"}></div>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </Fragment>
         )
     };
 };
