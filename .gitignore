@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea/
+
+# It gets built every single time, does not to be in the repo...
+/src/css/tailwind.scss

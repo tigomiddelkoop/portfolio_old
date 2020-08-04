@@ -25,7 +25,7 @@ export default class DesignerMessage extends React.Component<any, { bannerHidden
      *
      * Closes the banner that displays when someone clicks the cross on the banner
      *
-     * @return {void} - Returns nothing
+     * @return {void} Returns nothing
      *
      */
 
@@ -41,7 +41,7 @@ export default class DesignerMessage extends React.Component<any, { bannerHidden
         return (
             <Fragment>
                 {!bannerHidden ?
-                    <div className="flex py-3 mb-5 px-4 bg-red-700 shadow rounded-lg">
+                    <div className="flex py-3 mb-5 px-4 bg-red-700 shadow-lg rounded-lg">
                         <div className={"flex-1 flex justify-center"}>
                             <div className="font-light text-md md:text-base">
                                 <p>I am not a frontend developer or UX designer, nor do I want to be one. I am a backend
