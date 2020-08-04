@@ -1,5 +1,6 @@
 import React from "react";
 import Moment from "moment";
+import Loading from "./Loading";
 
 export default class ProgrammingLanguages extends React.Component {
 
@@ -38,8 +39,7 @@ export default class ProgrammingLanguages extends React.Component {
                     </div>
                 </div>
                 <div className="mt-2 flex flex-wrap">
-                    {this.state.languages.map((data: any) => {
-                        console.log(data);
+                    {this.state.languages.length === 0 ? <Loading/> : this.state.languages.map((data: any) => {
                             let now = Moment();
                             let then = Moment([data.year]);
                             let {confidence}: any = data;

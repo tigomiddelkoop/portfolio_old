@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {faGlobe} from "@fortawesome/free-solid-svg-icons";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import Loading from "./Loading";
 
 
 export default class Projects extends React.Component {
@@ -51,8 +52,8 @@ export default class Projects extends React.Component {
      * @return {JSX.Element} The element that needs to be rendered
      *
      */
-    render(): JSX.Element {
 
+    render(): JSX.Element {
         return (
             <div>
                 <div className="md:flex">
@@ -61,9 +62,10 @@ export default class Projects extends React.Component {
                         <h3 className="text-xs md:text-xl font-light">All the projects I am working on</h3>
                     </div>
                 </div>
+
                 <div className="mt-2 flex flex-wrap">
 
-                    {this.state.projects.map((data: any) => {
+                    {this.state.projects.length === 0 ? <Loading/> : this.state.projects.map((data: any) => {
                             return (
                                 <div key={data.key} className={"xl:w-3/12 lg:w-4/12 md:w-6/12 w-full"}>
                                     <div className={"flex m-1 bg-gray-900 border-gray-800  shadow rounded-lg"}>
@@ -111,4 +113,18 @@ export default class Projects extends React.Component {
             </div>
         )
     };
+
+
+    /**
+     *
+     * Renders the projects
+     *
+     * @deprecated Deprecated, not in use right now
+     * @return {JSX.Element} The element that needs to be rendered
+     *
+     */
+
+    renderProjects(): JSX.Element {
+        return (<div></div>)
+    }
 };
