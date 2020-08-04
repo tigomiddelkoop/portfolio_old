@@ -3,7 +3,7 @@ import programmingLanguagesJson from "./../config/programmingLanguages.json"
 import Moment from "moment";
 
 export default class ProgrammingLanguages extends React.Component {
-    i = 0;
+    
     state = {
         languages: Array.from(programmingLanguagesJson),
     }
@@ -45,6 +45,8 @@ export default class ProgrammingLanguages extends React.Component {
 
                             }
 
+
+                            // A bit of sarcasm to show what I am capable of right?
                             // if (confidence >= 0 && confidence < 10) confidence = "None at all";
                             // else if (confidence >= 10 && confidence < 25) confidence = "A bit, will need lots of StackOverflow";
                             // else if (confidence >= 25 && confidence < 50) confidence = "I need StackOverflow sometimes";
