@@ -1,5 +1,4 @@
 import React from "react";
-import projectsJson from "../config/projects.json"
 import {Link} from "react-router-dom";
 import {faGlobe} from "@fortawesome/free-solid-svg-icons";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
@@ -9,18 +8,23 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 export default class Projects extends React.Component {
 
     state = {
-        projects: Array.from(projectsJson),
+        projects: [],
     }
 
     /**
      *
      * Runs when the component gets mounted
+     * In this case we use it to load the data that we are going to display on the site.
+     * This should make it easier for me to add new content without to much hastle
      *
      * @return {void} Returns nothing
      *
      */
     componentDidMount(): void {
 
+        fetch(process.env.PUBLIC_URL + "/data/projects.json", {
+            method: "GET"
+        }).then(response => response.json().then(data => this.setState({projects: data})));
 
     }
 

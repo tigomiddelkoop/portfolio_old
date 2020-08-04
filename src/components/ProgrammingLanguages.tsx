@@ -1,14 +1,20 @@
 import React from "react";
-import programmingLanguagesJson from "./../config/programmingLanguages.json"
 import Moment from "moment";
 
 export default class ProgrammingLanguages extends React.Component {
 
     state = {
-        languages: Array.from(programmingLanguagesJson),
+        languages: [],
     }
 
     componentDidMount(): void {
+
+        fetch(process.env.PUBLIC_URL + "/data/programmingLanguages.json", {
+            method: "GET"
+        }).then(response => response.json().then(data => {
+            console.log(data);
+            this.setState({languages: data})
+        }));
 
     }
 
@@ -32,7 +38,8 @@ export default class ProgrammingLanguages extends React.Component {
                     </div>
                 </div>
                 <div className="mt-2 flex flex-wrap">
-                    {this.state.languages.map(data => {
+                    {this.state.languages.map((data: any) => {
+                        console.log(data);
                             let now = Moment();
                             let then = Moment([data.year]);
                             let {confidence}: any = data;
