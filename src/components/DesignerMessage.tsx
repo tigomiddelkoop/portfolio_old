@@ -9,8 +9,15 @@ export default class DesignerMessage extends React.Component<any, { bannerHidden
         bannerHidden: window.localStorage.getItem("bannerHidden"),
     };
 
+    /**
+     *
+     * Function that gets executed when the component mounted
+     *
+     * @return {void} Returns nothing
+     *
+     */
 
-    componentDidMount() {
+    componentDidMount(): void {
         let {bannerHidden}: any = this.state
 
         if (bannerHidden == null) {
@@ -29,12 +36,20 @@ export default class DesignerMessage extends React.Component<any, { bannerHidden
      *
      */
 
-    closeBanner() {
+    closeBanner(): void {
         window.localStorage.setItem("bannerHidden", "1")
         this.setState({bannerHidden: "1"})
     }
 
-    render() {
+    /**
+     *
+     * Renders the elements that are going to be displayed on the page
+     *
+     * @return {JSX.Element} The element that needs to be rendered
+     *
+     */
+
+    render(): JSX.Element {
         let {bannerHidden}: any = this.state
         bannerHidden = !!bannerHidden
 

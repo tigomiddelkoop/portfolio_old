@@ -12,6 +12,13 @@ export default class Projects extends React.Component {
         projects: Array.from(projectsJson),
     }
 
+    /**
+     *
+     * Runs when the component gets mounted
+     *
+     * @return {void} Returns nothing
+     *
+     */
     componentDidMount(): void {
 
 
@@ -26,15 +33,21 @@ export default class Projects extends React.Component {
      *
      */
 
-    openProject(id: bigint) {
+    openProject(id: bigint): void {
         console.log(id);
 
         return;
     }
 
 
-
-    render() {
+    /**
+     *
+     * Renders the elements that are going to be displayed on the page
+     *
+     * @return {JSX.Element} The element that needs to be rendered
+     *
+     */
+    render(): JSX.Element {
 
         return (
             <div>

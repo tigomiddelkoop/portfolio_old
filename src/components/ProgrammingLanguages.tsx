@@ -3,7 +3,7 @@ import programmingLanguagesJson from "./../config/programmingLanguages.json"
 import Moment from "moment";
 
 export default class ProgrammingLanguages extends React.Component {
-    
+
     state = {
         languages: Array.from(programmingLanguagesJson),
     }
@@ -12,8 +12,15 @@ export default class ProgrammingLanguages extends React.Component {
 
     }
 
+    /**
+     *
+     * Renders the elements that are going to be displayed on the page
+     *
+     * @return {JSX.Element} The element that needs to be rendered
+     *
+     */
 
-    render() {
+    render(): JSX.Element {
 
         return (
             <div>

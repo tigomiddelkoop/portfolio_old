@@ -16,11 +16,28 @@ export default class Easteregg extends React.Component<any, any> {
         counter: this.calculateRelationLength(),
     };
 
+    /**
+     *
+     * Toggles the easter egg when the button got pressed
+     *
+     * @return {void} returns nothing
+     *
+     */
+
     toggleEaster = () => {
         this.setState({eastertoggled: !this.state.eastertoggled})
     }
 
-    componentDidMount() {
+
+    /**
+     *
+     * Executes when the page gets mounted
+     *
+     * @return {void} Returns nothing
+     *
+     */
+
+    componentDidMount(): void {
         this.interval = setInterval(() => {
             const result = this.calculateRelationLength()
 
@@ -29,11 +46,27 @@ export default class Easteregg extends React.Component<any, any> {
         // It is not really necessary to do it every 500ms, but i felt like it needed to be accurate enough.
     }
 
-    componentWillUnmount() {
+    /**
+     *
+     * Executes when the component will unmount
+     *
+     * @return {void} The Element that needs to be rendered
+     *
+     */
+
+    componentWillUnmount(): void {
         clearInterval(this.interval)
     }
 
-    render() {
+    /**
+     *
+     * Renders the elements that are going to be displayed on the page
+     *
+     * @return {JSX.Element} The element that needs to be rendered
+     *
+     */
+
+    render(): JSX.Element {
 
         return (
 
@@ -83,7 +116,7 @@ export default class Easteregg extends React.Component<any, any> {
      *
      */
 
-    calculateRelationLength() {
+    calculateRelationLength(): string {
 
         const length = Moment();
         let duration = Moment.duration(length.diff(this.dates.dateOfRelation));

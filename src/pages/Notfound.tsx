@@ -5,9 +5,15 @@ import {Link} from "react-router-dom";
 
 export default class Notfound extends React.Component<any, any> {
 
-    render() {
+    /**
+     *
+     * Renders the elements that are going to be displayed on the page
+     *
+     * @return {JSX.Element} The element that needs to be rendered
+     *
+     */
 
-
+    render(): JSX.Element {
         return (
             <Fragment>
                 <div className="flex m-5 text-center content-center justify-center">
