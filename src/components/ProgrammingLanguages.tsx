@@ -3,8 +3,10 @@ import programmingLanguagesJson from "./../config/programmingLanguages.json"
 import Moment from "moment";
 
 export default class ProgrammingLanguages extends React.Component {
-
-    state = {}
+    i = 0;
+    state = {
+        languages: Array.from(programmingLanguagesJson),
+    }
 
     componentDidMount(): void {
 
@@ -13,18 +15,17 @@ export default class ProgrammingLanguages extends React.Component {
 
     render() {
 
-        const programmingLanguages = Array.from(programmingLanguagesJson);
-
         return (
             <div>
                 <div className="md:flex">
                     <div className={"text-center md:text-left"}>
                         <h1 className="text-2xl md:text-5xl font-bold">The programming languages I know</h1>
-                        <h3 className="text-xs md:text-xl font-light">These programming languages are onces I can code in, or those who I am currently learning</h3>
+                        <h3 className="text-xs md:text-xl font-light">These programming languages are onces I can code
+                            in, or those who I am currently learning</h3>
                     </div>
                 </div>
                 <div className="mt-2 flex flex-wrap">
-                    {programmingLanguages.map(data => {
+                    {this.state.languages.map(data => {
                             let now = Moment();
                             let then = Moment([data.year]);
                             let {confidence}: any = data;
@@ -37,7 +38,7 @@ export default class ProgrammingLanguages extends React.Component {
                                 languageName = languageName.map((data => {
                                     let first = firstLanguage;
                                     firstLanguage = false;
-                                    return (<div>
+                                    return (<div key={data}>
                                         <p className={`${!first ? "text-xs font-light" : ""}`}>{data}</p>
                                     </div>)
                                 }))
@@ -56,8 +57,7 @@ export default class ProgrammingLanguages extends React.Component {
                             else if (confidence >= 25 && confidence < 50) confidence = `Getting Comfy (${confidence}%)`;
                             else if (confidence >= 50 && confidence < 75) confidence = `Quite comfortable (${confidence}%)`;
                             else if (confidence >= 75 && confidence < 99) confidence = `Getting skilled (${confidence}%)`;
-                            else if (confidence == 100) confidence = `(${confidence}%)`;
-
+                            else if (confidence === 100) confidence = `(${confidence}%)`;
 
                             return (
                                 <div key={languageName} className={"xl:w-3/12 lg:w-4/12 md:w-6/12 w-full"}>
