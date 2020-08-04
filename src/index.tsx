@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './css/portfolio.scss';
-import './css//tailwind.scss';
+import './css/tailwind.scss';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom';
 

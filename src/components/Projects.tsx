@@ -32,7 +32,11 @@ export default class Projects extends React.Component {
     /**
      *
      * Opens a popover with more information about the project.
-     * @TODO We need to figure out how we do this in the JSON files, Either we make a small program that combines them all or we make a webserver that serves those when it gets requested by the site itself.
+     *
+     * TODO We need to figure out how we do this in the JSON files,
+     * TODO Either we make a small program that combines them all or we make a webserver that serves those when it gets requested by the site itself.
+     *
+     * We sorta fixed this, But now I need to figure out how to do it on a per project basis.
      *
      * @return {void} - Returns nothing, read above why
      *
