@@ -119,18 +119,18 @@ export default class ProgrammingLanguages extends React.Component {
                             <div className={"flex flex-1 font-light text-xs flex-col ml-2"}>
                                 <div
                                     className={"space-y-2 self-center w-full text-center border-b-2 border-gray-800"}>
-                                    <p className={"text-xl"}>
+                                    <div className={"text-xl"}>
                                         <div
                                             className={"h-8 w-3/4 rounded mx-auto bg-gray-800"}></div>
-                                    </p>
-                                    <p className={"mb-2"}>
+                                    </div>
+                                    <div className={"mb-2"}>
                                         <div className={"h-3 w-1/2 mx-auto rounded bg-gray-800 mb-2"}></div>
-                                    </p>
+                                    </div>
                                 </div>
                                 <div className={""}>
-                                    <p className={"mt-2 text-md"}>
+                                    <div className={"mt-2 text-md"}>
                                         <div className={"h-3 w-4/6 mx-auto rounded bg-gray-800"}></div>
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -150,18 +150,18 @@ export default class ProgrammingLanguages extends React.Component {
                             <div className={"flex flex-1 font-light text-xs flex-col ml-2"}>
                                 <div
                                     className={"space-y-2 self-center w-full text-center border-b-2 border-gray-800"}>
-                                    <p className={"text-xl"}>
+                                    <div className={"text-xl"}>
                                         <div
                                             className={"h-8 w-3/4 rounded mx-auto bg-gray-800"}></div>
-                                    </p>
-                                    <p className={"mb-2"}>
+                                    </div>
+                                    <div className={"mb-2"}>
                                         <div className={"h-3 w-1/2 mx-auto rounded bg-gray-800 mb-2"}></div>
-                                    </p>
+                                    </div>
                                 </div>
                                 <div className={""}>
-                                    <p className={"mt-2 text-md"}>
+                                    <div className={"mt-2 text-md"}>
                                         <div className={"h-3 w-4/6 mx-auto rounded bg-gray-800"}></div>
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -181,18 +181,18 @@ export default class ProgrammingLanguages extends React.Component {
                             <div className={"flex flex-1 font-light text-xs flex-col ml-2"}>
                                 <div
                                     className={"space-y-2 self-center w-full text-center border-b-2 border-gray-800"}>
-                                    <p className={"text-xl"}>
+                                    <div className={"text-xl"}>
                                         <div
                                             className={"h-8 w-3/4 rounded mx-auto bg-gray-800"}></div>
-                                    </p>
-                                    <p className={"mb-2"}>
+                                    </div>
+                                    <div className={"mb-2"}>
                                         <div className={"h-3 w-1/2 mx-auto rounded bg-gray-800 mb-2"}></div>
-                                    </p>
+                                    </div>
                                 </div>
                                 <div className={""}>
-                                    <p className={"mt-2 text-md"}>
+                                    <div className={"mt-2 text-md"}>
                                         <div className={"h-3 w-4/6 mx-auto rounded bg-gray-800"}></div>
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -212,18 +212,18 @@ export default class ProgrammingLanguages extends React.Component {
                             <div className={"flex flex-1 font-light text-xs flex-col ml-2"}>
                                 <div
                                     className={"space-y-2 self-center w-full text-center border-b-2 border-gray-800"}>
-                                    <p className={"text-xl"}>
+                                    <div className={"text-xl"}>
                                         <div
                                             className={"h-8 w-3/4 rounded mx-auto bg-gray-800"}></div>
-                                    </p>
-                                    <p className={"mb-2"}>
+                                    </div>
+                                    <div className={"mb-2"}>
                                         <div className={"h-3 w-1/2 mx-auto rounded bg-gray-800 mb-2"}></div>
-                                    </p>
+                                    </div>
                                 </div>
                                 <div className={""}>
-                                    <p className={"mt-2 text-md"}>
+                                    <div className={"mt-2 text-md"}>
                                         <div className={"h-3 w-4/6 mx-auto rounded bg-gray-800"}></div>
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
 

@@ -4,8 +4,6 @@ import {faGlobe, faCircle} from "@fortawesome/free-solid-svg-icons";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-
-
 export default class Projects extends React.Component {
 
     state = {
@@ -38,15 +36,12 @@ export default class Projects extends React.Component {
      *
      * We sorta fixed this, But now I need to figure out how to do it on a per project basis.
      *
+     * @param id
+     *
      * @return {void} - Returns nothing, read above why
      *
      */
 
-    openProject(id: bigint): void {
-        console.log(id);
-
-        return;
-    }
 
 
     /**
@@ -74,7 +69,7 @@ export default class Projects extends React.Component {
                                     <div className={"flex m-1 bg-gray-900 border-gray-800  shadow rounded-lg"}>
                                         <div className={"flex flex-col flex-1"}>
                                             <div className={"flex"}>
-                                                <Link to={`/projects/${data.key}`}
+                                                <Link to={`/project/${data.key}`}
                                                       className="p-2 flex-1 text-xl font-bold border-b-2 border-gray-800">{data.title}</Link>
                                                 <div className="flex">
                                                     {data.url !== undefined ?
@@ -154,10 +149,10 @@ export default class Projects extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <p className={"p-2 font-light space-y-2"}>
+                            <div className={"p-2 font-light space-y-2"}>
                                 <div className={"h-5 bg-gray-800 rounded w-3/4"}></div>
                                 <div className={"h-5 bg-gray-800 rounded w-1/2"}></div>
-                            </p>
+                            </div>
 
                         </div>
                     </div>
@@ -185,10 +180,10 @@ export default class Projects extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <p className={"p-2 font-light space-y-2"}>
+                            <div className={"p-2 font-light space-y-2"}>
                                 <div className={"h-5 bg-gray-800 rounded w-3/4"}></div>
                                 <div className={"h-5 bg-gray-800 rounded w-1/2"}></div>
-                            </p>
+                            </div>
 
                         </div>
                     </div>
@@ -216,10 +211,10 @@ export default class Projects extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <p className={"p-2 font-light space-y-2"}>
+                            <div className={"p-2 font-light space-y-2"}>
                                 <div className={"h-5 bg-gray-800 rounded w-3/4"}></div>
                                 <div className={"h-5 bg-gray-800 rounded w-1/2"}></div>
-                            </p>
+                            </div>
 
                         </div>
                     </div>
@@ -247,10 +242,10 @@ export default class Projects extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <p className={"p-2 font-light space-y-2"}>
+                            <div className={"p-2 font-light space-y-2"}>
                                 <div className={"h-5 bg-gray-800 rounded w-3/4"}></div>
                                 <div className={"h-5 bg-gray-800 rounded w-1/2"}></div>
-                            </p>
+                            </div>
 
                         </div>
                     </div>
