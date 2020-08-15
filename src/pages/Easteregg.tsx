@@ -5,7 +5,7 @@ import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
-export default class Easteregg extends React.Component<EastereggState, any> {
+export default class Easteregg extends React.Component<{}, EastereggState> {
 
     interval: any;
 
@@ -53,9 +53,6 @@ export default class Easteregg extends React.Component<EastereggState, any> {
      */
 
     componentDidMount(): void {
-
-        // window.addEventListener("onfocusout", this.onblur())
-        // window.addEventListener("onfocusin", this.onfocus())
 
         // window.onblur = this.onblur();
         // window.onfocus = this.onfocus();
