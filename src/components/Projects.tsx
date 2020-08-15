@@ -4,7 +4,7 @@ import {faGlobe, faCircle} from "@fortawesome/free-solid-svg-icons";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-export default class Projects extends React.Component {
+export default class Projects extends React.Component<ProjectState, {}> {
 
     state = {
         projects: [],

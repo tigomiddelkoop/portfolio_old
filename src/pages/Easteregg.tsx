@@ -1,9 +1,11 @@
-import React, { Fragment } from "react";
+import React, {Fragment} from "react";
 import hearts from "../img/hearts.png"
-import Moment, { Duration, duration } from "moment";
+import Moment, {Duration} from "moment";
+import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
-export default class Easteregg extends React.Component<any, any> {
+export default class Easteregg extends React.Component<EastereggState, any> {
 
     interval: any;
 
@@ -20,6 +22,7 @@ export default class Easteregg extends React.Component<any, any> {
     }
 
     state = {
+        milestonesOpen: false,
         eastertoggled: false,
         counter: this.formatRelationLength(this.calculateRelationLength()),
         milestones: this.getMilestones(this.calculateRelationLength())
@@ -34,9 +37,12 @@ export default class Easteregg extends React.Component<any, any> {
      */
 
     toggleEaster = () => {
-        this.setState({ eastertoggled: !this.state.eastertoggled })
+        this.setState({eastertoggled: !this.state.eastertoggled})
     }
 
+    toggleMilestone = () => {
+        this.setState({milestonesOpen: !this.state.milestonesOpen})
+    }
 
     /**
      *
@@ -61,10 +67,9 @@ export default class Easteregg extends React.Component<any, any> {
 
             const milestones = this.getMilestones(relationLength);
             console.log(milestones);
-            this.setState({ counter: relationLengthFormatted, milestones })
+            this.setState({counter: relationLengthFormatted, milestones})
 
         }, 500) // It is not really necessary to do it every 500ms, but i felt like it needed to be accurate enough.
-
 
 
     }
@@ -91,54 +96,81 @@ export default class Easteregg extends React.Component<any, any> {
 
     render(): JSX.Element {
 
-        const { counter, milestones } = this.state;
+        const {counter, milestones} = this.state;
 
         return (
 
-            <div
-                className="min-h-screen flex items-center text-center content-center justify-center transition duration-150 ease-in-out">
-                <div className="align-middle">
-                    {!this.state.eastertoggled ?
-                        <Fragment>
-                            <div>
-                                <h1 className="text-5xl md:text-5xl font-light">EasterEgg!</h1>
-                                <h1 className="text-md md:text-md font-light">Click Reveal to see what it is!</h1>
-                                <button onClick={this.toggleEaster}
-                                    className={"shadow bg-gray-900 hover:bg-gray-700 px-4 py-2 rounded-lg mt-2"}>
-                                    <img alt={"hearts"} className={"inline w-6 mr-2"} src={hearts} />
-                                    <p className={"inline"}>Reveal</p>
-                                </button>
-                            </div>
-                        </Fragment>
-                        :
-                        <Fragment>
-                            <div className={""}>
-                                <h1 className="text-6xl font-light">Demi</h1>
-                                <img alt={"hearts"} className={"w-32 inline"} src={hearts} />
-
-                                <h1 className="text-4xl md:text-6xl font-light">{this.dates.dateOfRelation.format("MMMM DD[th] YYYY")}</h1>
-                                <h1 className="text-xs md:text-lg text-gray-500 font-light">{counter}</h1>
-                            </div>
-
-                            <div className={"bg-gray-900 m-2 rounded-lg shadow"}>
-                                <h1 className={`text-4xl p-2 border-b-2 border-gray-700`}>"Milestones"</h1>
-                                <div className={`p-2`}>
-                                    <p className={milestones.oneweek ? `text-white` : `text-gray-700`}>One week</p>
-                                    <p className={milestones.onemonth ? `text-white` : `text-gray-700`}>One Month</p>
-                                    <p className={milestones.sixmonths ? `text-white` : `text-gray-700`}>Six months</p>
-                                    <p className={milestones.oneyear ? `text-white` : `text-gray-700`}>One year</p>
+            <div className={`min-h-screen flex-col flex`}>
+                <div
+                    className="h-full flex-1 flex  items-center text-center content-center justify-center transition duration-150 ease-in-out">
+                    <div className="align-middle">
+                        {!this.state.eastertoggled ?
+                            <Fragment>
+                                <div>
+                                    <h1 className="text-5xl md:text-5xl font-light">EasterEgg!</h1>
+                                    <h1 className="text-md md:text-md font-light">Click Reveal to see what it is!</h1>
+                                    <button onClick={this.toggleEaster}
+                                            className={"shadow bg-gray-900 hover:bg-gray-700 px-4 py-2 rounded-lg mt-2"}>
+                                        <img alt={"hearts"} className={"inline w-6 mr-2"} src={hearts}/>
+                                        <p className={"inline"}>Reveal</p>
+                                    </button>
                                 </div>
-                            </div>
+                            </Fragment>
+                            :
+                            <Fragment>
+                                <div className={""}>
+                                    <h1 className="text-6xl font-light">Demi</h1>
+                                    <img alt={"hearts"} className={"w-32 inline"} src={hearts}/>
 
-                            <div className={"bg-gray-900 m-2 p-2 rounded-lg shadow"}>
-                                <p className={"text-md font-light"}>Yes, This is something that is highly
-                                    personal</p>
-                                <p className={"text-xs font-light"}>This is one of my ways of showing eternal
-                                    love to the girl I love.</p>
-                            </div>
-                        </Fragment>
-                    }
+                                    <h1 className="text-4xl md:text-6xl font-light">{this.dates.dateOfRelation.format("MMMM DD[th] YYYY")}</h1>
+                                    <h1 className="text-xs md:text-lg text-gray-500 font-light">{counter}</h1>
+                                </div>
+
+                                <div className={`bg-gray-900 m-2 rounded-lg shadow`}>
+
+                                    <div
+                                        onClick={this.toggleMilestone.bind(this)}
+                                        className={`cursor-pointer flex ${this.state.milestonesOpen ? `border-b-2` : ``} border-gray-700`}>
+                                        {/* I absolutely hate doing it this way...*/}
+                                        <div className={`m-6`}></div>
+                                        <h1
+                                            className={`text-2xl flex-1 p-2 `}>"Milestones"</h1>
+                                        <FontAwesomeIcon
+
+                                            className={`transform transition duration-500 ${this.state.milestonesOpen ? `rotate-180` : ``} m-4 self-center`}
+                                            icon={faChevronDown}/>
+
+                                    </div>
+                                    <div
+                                        className={`${this.state.milestonesOpen ? `block` : `hidden`} transition duration-500 p-2`}>
+                                        <p className={milestones.oneweek ? `text-white` : `text-gray-700`}>{milestones.oneweek ?
+                                            <img alt={"hearts"} className={"inline w-6"} src={hearts}/> : ``} One
+                                            week</p>
+                                        <p className={milestones.onemonth ? `text-white` : `text-gray-700`}>{milestones.onemonth ?
+                                            <img alt={"hearts"} className={"inline w-6"} src={hearts}/> : ``} One
+                                            Month</p>
+                                        <p className={milestones.sixmonths ? `text-white` : `text-gray-700`}>{milestones.sixmonths ?
+                                            <img alt={"hearts"} className={"inline w-6"} src={hearts}/> : ``} Six
+                                            months</p>
+                                        <p className={milestones.oneyear ? `text-white` : `text-gray-700`}>{milestones.oneyear ?
+                                            <img alt={"hearts"} className={"inline w-6"} src={hearts}/> : ``} One
+                                            year</p>
+                                    </div>
+                                </div>
+
+
+                            </Fragment>
+                        }
+                    </div>
+
                 </div>
+                {this.state.eastertoggled ?
+                <div className={"bg-gray-900 text-center p-2 shadow"}>
+                    <p className={"text-md font-light"}>Yes, This is something that is highly
+                        personal</p>
+                    <p className={"text-xs font-light"}>This is one of my ways of showing eternal
+                        love to the girl I love.</p>
+                </div> : ``}
             </div>
         )
     }
@@ -189,12 +221,22 @@ export default class Easteregg extends React.Component<any, any> {
         return string;
     }
 
-    getMilestones(duration: Duration): any {
+    /**
+     *
+     * Calculates the "milestones" reached by using the duration of the relation
+     * it will return a object with true or false objects
+     *
+     * @param duration
+     *
+     * @return {Milestones} - A JSON object containing the milestones
+     */
+
+    getMilestones(duration: Duration): Milestones {
 
         /**
-         * 
+         *
          * I am going to call them milestones for now but that needs to be rephrased really quick!
-         * 
+         *
          */
         let dates = {
             years: duration.years(),
@@ -210,8 +252,6 @@ export default class Easteregg extends React.Component<any, any> {
             twoyears: false,
             threeyears: false
         }
-
-        console.log(dates);
 
 
         if (dates.weeks >= 1 || dates.months >= 1) milestones.oneweek = true;

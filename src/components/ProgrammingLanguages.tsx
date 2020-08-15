@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Moment from "moment";
 
-export default class ProgrammingLanguages extends React.Component {
+export default class ProgrammingLanguages extends React.Component<ProgrammingLanguagesState, {}> {
 
     state = {
         languages: [],

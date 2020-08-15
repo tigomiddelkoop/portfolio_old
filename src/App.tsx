@@ -4,7 +4,7 @@ import Homepage from './pages/Homepage';
 import {Route, Switch} from 'react-router-dom';
 import Easteregg from './pages/Easteregg';
 import Notfound from "./pages/Notfound";
-import ProjectInfo from "./pages/ProjectInfo";
+// import ProjectInfo from "./pages/ProjectInfo";
 
 export default class App extends React.Component {
 

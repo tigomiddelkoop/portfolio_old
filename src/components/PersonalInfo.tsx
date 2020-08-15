@@ -4,7 +4,7 @@ import {faCloud, faServer} from "@fortawesome/free-solid-svg-icons";
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 import React, {Fragment} from "react";
 
-export default class PersonalInfo extends React.Component<any, any> {
+export default class PersonalInfo extends React.Component<{}, {}> {
 
 
     /**
