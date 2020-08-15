@@ -6,7 +6,15 @@ import PersonalInfo from "../components/PersonalInfo";
 
 export default class Homepage extends React.Component {
 
-    render() {
+    /**
+     *
+     * Renders the elements that are going to be displayed on the page
+     *
+     * @return {JSX.Element} The element that needs to be rendered
+     *
+     */
+
+    render(): JSX.Element {
         return (
             <Fragment>
                 <div className="p-5">

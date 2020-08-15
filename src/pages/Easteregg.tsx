@@ -1,79 +1,193 @@
 import React, {Fragment} from "react";
 import hearts from "../img/hearts.png"
-import Moment from "moment";
+import Moment, {Duration} from "moment";
+import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
-export default class Easteregg extends React.Component<any, any> {
+export default class Easteregg extends React.Component<{}, EastereggState> {
 
     interval: any;
+
+    onfocus: Function = function (e: any) {
+        console.log(`TAB ACTIVE ${new Date()}`)
+    };
+
+    onblur: Function = function (e: any) {
+        console.log(`TAB INACTIVE ${new Date()}`)
+    }
 
     dates = {
         dateOfRelation: Moment("2020-03-13"),
     }
 
     state = {
+        milestonesOpen: false,
         eastertoggled: false,
-        counter: this.calculateRelationLength(),
+        counter: this.formatRelationLength(this.calculateRelationLength()),
+        milestones: this.getMilestones(this.calculateRelationLength())
     };
+
+    /**
+     *
+     * Toggles the easter egg when the button got pressed
+     *
+     * @return {void} returns nothing
+     *
+     */
 
     toggleEaster = () => {
         this.setState({eastertoggled: !this.state.eastertoggled})
     }
 
-    componentDidMount() {
-        this.interval = setInterval(() => {
-            const result = this.calculateRelationLength()
-
-            this.setState({counter: result})
-        }, 500)
-        // It is not really necessary to do it every 500ms, but i felt like it needed to be accurate enough.
+    toggleMilestone = () => {
+        this.setState({milestonesOpen: !this.state.milestonesOpen})
     }
 
-    componentWillUnmount() {
+    /**
+     *
+     * Executes when the page gets mounted
+     *
+     * @return {void} Returns nothing
+     *
+     */
+
+    componentDidMount(): void {
+
+        // window.onblur = this.onblur();
+        // window.onfocus = this.onfocus();
+
+        this.interval = setInterval(() => {
+
+            const relationLength = this.calculateRelationLength()
+            const relationLengthFormatted = this.formatRelationLength(relationLength)
+
+            const milestones = this.getMilestones(relationLength);
+            console.log(milestones);
+            this.setState({counter: relationLengthFormatted, milestones})
+
+        }, 500) // It is not really necessary to do it every 500ms, but i felt like it needed to be accurate enough.
+
+
+    }
+
+    /**
+     *
+     * Executes when the component will unmount
+     *
+     * @return {void} The Element that needs to be rendered
+     *
+     */
+
+    componentWillUnmount(): void {
         clearInterval(this.interval)
     }
 
-    render() {
+    /**
+     *
+     * Renders the elements that are going to be displayed on the page
+     *
+     * @return {JSX.Element} The element that needs to be rendered
+     *
+     */
+
+    render(): JSX.Element {
+
+        const {counter, milestones} = this.state;
 
         return (
 
-            <div
-                className="min-h-screen flex items-center text-center content-center justify-center transition duration-150 ease-in-out">
-                <div className="align-middle">
-                    {!this.state.eastertoggled ?
-                        <Fragment>
-                            <div>
-                                <h1 className="text-5xl md:text-5xl font-light">EasterEgg!</h1>
-                                <h1 className="text-md md:text-md font-light">Click Reveal to see what it is!</h1>
-                                <button onClick={this.toggleEaster}
-                                        className={"shadow bg-gray-900 hover:bg-gray-700 px-4 py-2 rounded-lg mt-2"}>
-                                    <img alt={"hearts"} className={"inline w-6 mr-2"} src={hearts}/>
-                                    <p className={"inline"}>Reveal</p>
-                                </button>
-                            </div>
-                        </Fragment>
-                        :
-                        <Fragment>
-                            <div className={""}>
-                                <h1 className="text-6xl font-light">Demi</h1>
-                                <img alt={"hearts"} className={"lg:w-32 w-12 inline"} src={hearts}/>
+            <div className={`min-h-screen flex-col flex`}>
+                <div
+                    className="h-full flex-1 flex  items-center text-center content-center justify-center transition duration-150 ease-in-out">
+                    <div className="align-middle">
+                        {!this.state.eastertoggled ?
+                            <Fragment>
+                                <div>
+                                    <h1 className="text-5xl md:text-5xl font-light">EasterEgg!</h1>
+                                    <h1 className="text-md md:text-md font-light">Click Reveal to see what it is!</h1>
+                                    <button onClick={this.toggleEaster}
+                                            className={"shadow bg-gray-900 hover:bg-gray-700 px-4 py-2 rounded-lg mt-2"}>
+                                        <img alt={"hearts"} className={"inline w-6 mr-2"} src={hearts}/>
+                                        <p className={"inline"}>Reveal</p>
+                                    </button>
+                                </div>
+                            </Fragment>
+                            :
+                            <Fragment>
+                                <div className={""}>
+                                    <h1 className="text-6xl font-light">Demi</h1>
+                                    <img alt={"hearts"} className={"w-32 inline"} src={hearts}/>
 
-                                <h1 className="text-4xl md:text-6xl font-light">{this.dates.dateOfRelation.format("MMMM DD[th] YYYY")}</h1>
-                                <h1 className="text-xs md:text-lg text-gray-600 font-light">{this.state.counter}</h1>
-                            </div>
+                                    <h1 className="text-4xl md:text-6xl font-light">{this.dates.dateOfRelation.format("MMMM DD[th] YYYY")}</h1>
+                                    <h1 className="text-xs md:text-lg text-gray-500 font-light">{counter}</h1>
+                                </div>
 
-                            <div className={"bg-gray-900 m-2 p-2 rounded-lg shadow"}>
-                                <p className={"text-md font-light"}>Yes, This is something that is highly
-                                    personal</p>
-                                <p className={"text-xs font-light"}>This is one of my ways of showing eternal
-                                    love to the girl I love.</p>
-                            </div>
-                        </Fragment>
-                    }
+                                <div className={`bg-gray-900 m-2 rounded-lg shadow`}>
+
+                                    <div
+                                        onClick={this.toggleMilestone.bind(this)}
+                                        className={`cursor-pointer flex ${this.state.milestonesOpen ? `border-b-2` : ``} border-gray-700`}>
+                                        {/* I absolutely hate doing it this way...*/}
+                                        <div className={`m-6`}></div>
+                                        <h1
+                                            className={`text-2xl flex-1 p-2 `}>"Milestones"</h1>
+                                        <FontAwesomeIcon
+
+                                            className={`transform transition duration-500 ${this.state.milestonesOpen ? `rotate-180` : ``} m-4 self-center`}
+                                            icon={faChevronDown}/>
+
+                                    </div>
+                                    <div
+                                        className={`${this.state.milestonesOpen ? `block` : `hidden`} transition duration-500 p-2`}>
+                                        <p className={milestones.oneweek ? `text-white` : `text-gray-700`}>{milestones.oneweek ?
+                                            <img alt={"hearts"} className={"inline w-6"} src={hearts}/> : ``} One
+                                            week</p>
+                                        <p className={milestones.onemonth ? `text-white` : `text-gray-700`}>{milestones.onemonth ?
+                                            <img alt={"hearts"} className={"inline w-6"} src={hearts}/> : ``} One
+                                            Month</p>
+                                        <p className={milestones.sixmonths ? `text-white` : `text-gray-700`}>{milestones.sixmonths ?
+                                            <img alt={"hearts"} className={"inline w-6"} src={hearts}/> : ``} Six
+                                            months</p>
+                                        <p className={milestones.oneyear ? `text-white` : `text-gray-700`}>{milestones.oneyear ?
+                                            <img alt={"hearts"} className={"inline w-6"} src={hearts}/> : ``} One
+                                            year</p>
+                                    </div>
+                                </div>
+
+
+                            </Fragment>
+                        }
+                    </div>
+
                 </div>
+                {this.state.eastertoggled ?
+                <div className={"bg-gray-900 text-center p-2 shadow"}>
+                    <p className={"text-md font-light"}>Yes, This is something that is highly
+                        personal</p>
+                    <p className={"text-xs font-light"}>This is one of my ways of showing eternal
+                        love to the girl I love.</p>
+                </div> : ``}
             </div>
         )
     }
+
+    /**
+     *
+     * Calculates the length of the relationship between Demi and me
+     *
+     * @return {Duration} - A object containing the time of our relationship in computerreadable form
+     *
+     */
+
+    calculateRelationLength(): Duration {
+
+        const length = Moment();
+        let duration = Moment.duration(length.diff(this.dates.dateOfRelation));
+
+        return duration;
+    }
+
 
     /**
      *
@@ -83,11 +197,7 @@ export default class Easteregg extends React.Component<any, any> {
      *
      */
 
-    calculateRelationLength() {
-
-        const length = Moment();
-        let duration = Moment.duration(length.diff(this.dates.dateOfRelation));
-
+    formatRelationLength(duration: Duration): string {
         let string = ""
         const years = duration.years()
         const months = duration.months()
@@ -105,8 +215,51 @@ export default class Easteregg extends React.Component<any, any> {
         string += ` and`
         string += ` ${seconds} Second${seconds !== 1 ? 's' : ''}`
 
-        console.log(string);
-        return string
+        return string;
+    }
+
+    /**
+     *
+     * Calculates the "milestones" reached by using the duration of the relation
+     * it will return a object with true or false objects
+     *
+     * @param duration
+     *
+     * @return {Milestones} - A JSON object containing the milestones
+     */
+
+    getMilestones(duration: Duration): Milestones {
+
+        /**
+         *
+         * I am going to call them milestones for now but that needs to be rephrased really quick!
+         *
+         */
+        let dates = {
+            years: duration.years(),
+            months: duration.months(),
+            weeks: duration.weeks(),
+        }
+
+        let milestones = {
+            oneweek: false,
+            onemonth: false,
+            sixmonths: false,
+            oneyear: false,
+            twoyears: false,
+            threeyears: false
+        }
+
+
+        if (dates.weeks >= 1 || dates.months >= 1) milestones.oneweek = true;
+        if (dates.months >= 1 || dates.years >= 1) milestones.onemonth = true;
+        if (dates.months >= 6 || dates.years >= 1) milestones.sixmonths = true;
+        if (dates.years >= 1) milestones.oneyear = true;
+        if (dates.years >= 2) milestones.oneyear = true;
+        if (dates.years >= 3) milestones.oneyear = true;
+
+        return milestones;
+
     }
 
 }
