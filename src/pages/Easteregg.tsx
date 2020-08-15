@@ -1,11 +1,19 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 import hearts from "../img/hearts.png"
-import Moment from "moment";
+import Moment, { Duration, duration } from "moment";
 
 
 export default class Easteregg extends React.Component<any, any> {
 
     interval: any;
+
+    onfocus: Function = function (e: any) {
+        console.log(`TAB ACTIVE ${new Date()}`)
+    };
+
+    onblur: Function = function (e: any) {
+        console.log(`TAB INACTIVE ${new Date()}`)
+    }
 
     dates = {
         dateOfRelation: Moment("2020-03-13"),
@@ -13,7 +21,8 @@ export default class Easteregg extends React.Component<any, any> {
 
     state = {
         eastertoggled: false,
-        counter: this.calculateRelationLength(),
+        counter: this.formatRelationLength(this.calculateRelationLength()),
+        milestones: this.getMilestones(this.calculateRelationLength())
     };
 
     /**
@@ -25,7 +34,7 @@ export default class Easteregg extends React.Component<any, any> {
      */
 
     toggleEaster = () => {
-        this.setState({eastertoggled: !this.state.eastertoggled})
+        this.setState({ eastertoggled: !this.state.eastertoggled })
     }
 
 
@@ -38,12 +47,26 @@ export default class Easteregg extends React.Component<any, any> {
      */
 
     componentDidMount(): void {
-        this.interval = setInterval(() => {
-            const result = this.calculateRelationLength()
 
-            this.setState({counter: result})
-        }, 500)
-        // It is not really necessary to do it every 500ms, but i felt like it needed to be accurate enough.
+        // window.addEventListener("onfocusout", this.onblur())
+        // window.addEventListener("onfocusin", this.onfocus())
+
+        // window.onblur = this.onblur();
+        // window.onfocus = this.onfocus();
+
+        this.interval = setInterval(() => {
+
+            const relationLength = this.calculateRelationLength()
+            const relationLengthFormatted = this.formatRelationLength(relationLength)
+
+            const milestones = this.getMilestones(relationLength);
+            console.log(milestones);
+            this.setState({ counter: relationLengthFormatted, milestones })
+
+        }, 500) // It is not really necessary to do it every 500ms, but i felt like it needed to be accurate enough.
+
+
+
     }
 
     /**
@@ -68,6 +91,8 @@ export default class Easteregg extends React.Component<any, any> {
 
     render(): JSX.Element {
 
+        const { counter, milestones } = this.state;
+
         return (
 
             <div
@@ -79,8 +104,8 @@ export default class Easteregg extends React.Component<any, any> {
                                 <h1 className="text-5xl md:text-5xl font-light">EasterEgg!</h1>
                                 <h1 className="text-md md:text-md font-light">Click Reveal to see what it is!</h1>
                                 <button onClick={this.toggleEaster}
-                                        className={"shadow bg-gray-900 hover:bg-gray-700 px-4 py-2 rounded-lg mt-2"}>
-                                    <img alt={"hearts"} className={"inline w-6 mr-2"} src={hearts}/>
+                                    className={"shadow bg-gray-900 hover:bg-gray-700 px-4 py-2 rounded-lg mt-2"}>
+                                    <img alt={"hearts"} className={"inline w-6 mr-2"} src={hearts} />
                                     <p className={"inline"}>Reveal</p>
                                 </button>
                             </div>
@@ -89,10 +114,20 @@ export default class Easteregg extends React.Component<any, any> {
                         <Fragment>
                             <div className={""}>
                                 <h1 className="text-6xl font-light">Demi</h1>
-                                <img alt={"hearts"} className={"lg:w-32 w-12 inline"} src={hearts}/>
+                                <img alt={"hearts"} className={"w-32 inline"} src={hearts} />
 
                                 <h1 className="text-4xl md:text-6xl font-light">{this.dates.dateOfRelation.format("MMMM DD[th] YYYY")}</h1>
-                                <h1 className="text-xs md:text-lg text-gray-600 font-light">{this.state.counter}</h1>
+                                <h1 className="text-xs md:text-lg text-gray-500 font-light">{counter}</h1>
+                            </div>
+
+                            <div className={"bg-gray-900 m-2 rounded-lg shadow"}>
+                                <h1 className={`text-4xl p-2 border-b-2 border-gray-700`}>"Milestones"</h1>
+                                <div className={`p-2`}>
+                                    <p className={milestones.oneweek ? `text-white` : `text-gray-700`}>One week</p>
+                                    <p className={milestones.onemonth ? `text-white` : `text-gray-700`}>One Month</p>
+                                    <p className={milestones.sixmonths ? `text-white` : `text-gray-700`}>Six months</p>
+                                    <p className={milestones.oneyear ? `text-white` : `text-gray-700`}>One year</p>
+                                </div>
                             </div>
 
                             <div className={"bg-gray-900 m-2 p-2 rounded-lg shadow"}>
@@ -112,15 +147,28 @@ export default class Easteregg extends React.Component<any, any> {
      *
      * Calculates the length of the relationship between Demi and me
      *
-     * @return {string} - A string containing the time of our relationship in humanreadable form
+     * @return {Duration} - A object containing the time of our relationship in computerreadable form
      *
      */
 
-    calculateRelationLength(): string {
+    calculateRelationLength(): Duration {
 
         const length = Moment();
         let duration = Moment.duration(length.diff(this.dates.dateOfRelation));
 
+        return duration;
+    }
+
+
+    /**
+     *
+     * Calculates the length of the relationship between Demi and me
+     *
+     * @return {string} - A string containing the time of our relationship in humanreadable form
+     *
+     */
+
+    formatRelationLength(duration: Duration): string {
         let string = ""
         const years = duration.years()
         const months = duration.months()
@@ -138,8 +186,43 @@ export default class Easteregg extends React.Component<any, any> {
         string += ` and`
         string += ` ${seconds} Second${seconds !== 1 ? 's' : ''}`
 
-        console.log(string);
-        return string
+        return string;
+    }
+
+    getMilestones(duration: Duration): any {
+
+        /**
+         * 
+         * I am going to call them milestones for now but that needs to be rephrased really quick!
+         * 
+         */
+        let dates = {
+            years: duration.years(),
+            months: duration.months(),
+            weeks: duration.weeks(),
+        }
+
+        let milestones = {
+            oneweek: false,
+            onemonth: false,
+            sixmonths: false,
+            oneyear: false,
+            twoyears: false,
+            threeyears: false
+        }
+
+        console.log(dates);
+
+
+        if (dates.weeks >= 1 || dates.months >= 1) milestones.oneweek = true;
+        if (dates.months >= 1 || dates.years >= 1) milestones.onemonth = true;
+        if (dates.months >= 6 || dates.years >= 1) milestones.sixmonths = true;
+        if (dates.years >= 1) milestones.oneyear = true;
+        if (dates.years >= 2) milestones.oneyear = true;
+        if (dates.years >= 3) milestones.oneyear = true;
+
+        return milestones;
+
     }
 
 }
