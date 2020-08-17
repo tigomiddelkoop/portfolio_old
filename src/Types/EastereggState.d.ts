@@ -1,6 +1,6 @@
 declare interface EastereggState {
     milestonesOpen: boolean,
-    eastertoggled: boolean,
+    easteregg: any,
     counter: string,
     milestones: Milestones,
 }
