@@ -3,6 +3,7 @@ import Projects from "../components/Projects";
 import ProgrammingLanguages from "../components/ProgrammingLanguages";
 import DesignerMessage from "../components/DesignerMessage";
 import PersonalInfo from "../components/PersonalInfo";
+import CV from "../components/CV";
 
 export default class Homepage extends React.Component {
 
@@ -14,11 +15,32 @@ export default class Homepage extends React.Component {
      *
      */
 
+    componentDidMount() {
+        window.addEventListener("beforeprint", (event) => {
+            event.preventDefault();
+            window.location.assign("/data/CV.pdf")
+        });
+
+        window.addEventListener("keydown", (event) => {
+            if (event.ctrlKey && event.code === "KeyP") {
+                event.preventDefault();
+                window.location.assign("/data/CV.pdf")
+
+            }
+        })
+    }
+
+    componentWillUnmount() {
+    }
+
     render(): JSX.Element {
         return (
             <Fragment>
-                <div className="p-5">
+                <CV/>
+                <div className={"p-5"}>
+
                     <DesignerMessage/>
+
                     <div>
                         <PersonalInfo/>
                     </div>

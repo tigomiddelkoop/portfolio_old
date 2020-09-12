@@ -60,7 +60,7 @@ export default class DesignerMessage extends React.Component<any, { bannerHidden
                         <div className={"flex-1 flex justify-center"}>
                             <div className="font-light text-md md:text-base">
                                 <p>I am not a frontend developer or UX designer, nor do I want to be one. I am a backend
-                                    developer so my portfolio will not look nice compared to others, </p>
+                                    developer so my portfolio will not look nice compared to others.</p>
                             </div>
                             <FontAwesomeIcon onClick={this.closeBanner.bind(this)}
                                              className={"self-center ml-6 text-lg"} icon={faTimes}/>

@@ -6,6 +6,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faExclamationTriangle} from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 
 
+// The relation has ended so let me put the end date here, I do still love the girl! And I genuinly hope I never lose these feelings!
+// This page will not be available, but will remain in the sourcecode until I eventually switch from framework?
+
 export default class Easteregg extends React.Component<{}, EastereggState> {
 
     interval: any;
@@ -151,7 +154,12 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
                                     <div
                                         onClick={this.toggleMilestone.bind(this)}
                                         className={`cursor-pointer flex ${this.state.milestonesOpen ? `border-b-2` : ``} border-gray-700`}>
-                                        {/* I absolutely hate doing it this way...*/}
+                                        {/*
+
+                                        I absolutely hate doing it this way... But it won't center otherwise.
+                                        If someone could tell me how to do it better please tell me!
+
+                                        */}
                                         <div className={`m-6`}></div>
                                         <h1
                                             className={`text-2xl flex-1 p-2 `}>"Milestones"</h1>
@@ -221,7 +229,7 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
 
     calculateRelationLength(): Duration {
 
-        const length = Moment();
+        const length = Moment("2020-09-04");
         let duration = Moment.duration(length.diff(this.dates.dateOfRelation));
 
         return duration;
