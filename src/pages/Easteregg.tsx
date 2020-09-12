@@ -3,7 +3,11 @@ import hearts from "../img/hearts.png"
 import Moment, {Duration} from "moment";
 import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faExclamationTriangle} from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 
+
+// The relation has ended so let me put the end date here, I do still love the girl! And I genuinly hope I never lose these feelings!
+// This page will not be available, but will remain in the sourcecode until I eventually switch from framework?
 
 export default class Easteregg extends React.Component<{}, EastereggState> {
 
@@ -23,7 +27,7 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
 
     state = {
         milestonesOpen: false,
-        eastertoggled: false,
+        easteregg: {disclaimerClosed: false, found: false, foundPreviously: false},
         counter: this.formatRelationLength(this.calculateRelationLength()),
         milestones: this.getMilestones(this.calculateRelationLength())
     };
@@ -37,11 +41,23 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
      */
 
     toggleEaster = () => {
-        this.setState({eastertoggled: !this.state.eastertoggled})
+        let {easteregg} = this.state
+        easteregg.found = true
+
+        window.localStorage.setItem("relationEasteregg", JSON.stringify(easteregg));
+        this.setState({easteregg});
     }
 
     toggleMilestone = () => {
         this.setState({milestonesOpen: !this.state.milestonesOpen})
+    }
+
+    closeDisclaimer = () => {
+        let {easteregg} = this.state
+        easteregg.disclaimerClosed = true
+
+        window.localStorage.setItem("relationEasteregg", JSON.stringify(easteregg));
+        this.setState({easteregg});
     }
 
     /**
@@ -54,6 +70,17 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
 
     componentDidMount(): void {
 
+        let easteregg: any = window.localStorage.getItem("relationEasteregg");
+
+        if (easteregg == null) {
+            window.localStorage.setItem("relationEasteregg", JSON.stringify({disclaimerClosed: false, found: false, foundPreviously: false}));
+            easteregg = {disclaimerClosed: false, found: false, foundPreviously: false};
+        } else {
+            easteregg = JSON.parse(easteregg);
+        }
+
+        this.setState({easteregg})
+
         // window.onblur = this.onblur();
         // window.onfocus = this.onfocus();
 
@@ -63,7 +90,6 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
             const relationLengthFormatted = this.formatRelationLength(relationLength)
 
             const milestones = this.getMilestones(relationLength);
-            console.log(milestones);
             this.setState({counter: relationLengthFormatted, milestones})
 
         }, 500) // It is not really necessary to do it every 500ms, but i felt like it needed to be accurate enough.
@@ -93,7 +119,7 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
 
     render(): JSX.Element {
 
-        const {counter, milestones} = this.state;
+        const {counter, milestones, easteregg} = this.state;
 
         return (
 
@@ -101,7 +127,7 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
                 <div
                     className="h-full flex-1 flex  items-center text-center content-center justify-center transition duration-150 ease-in-out">
                     <div className="align-middle">
-                        {!this.state.eastertoggled ?
+                        {!easteregg.found ?
                             <Fragment>
                                 <div>
                                     <h1 className="text-5xl md:text-5xl font-light">EasterEgg!</h1>
@@ -128,7 +154,12 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
                                     <div
                                         onClick={this.toggleMilestone.bind(this)}
                                         className={`cursor-pointer flex ${this.state.milestonesOpen ? `border-b-2` : ``} border-gray-700`}>
-                                        {/* I absolutely hate doing it this way...*/}
+                                        {/*
+
+                                        I absolutely hate doing it this way... But it won't center otherwise.
+                                        If someone could tell me how to do it better please tell me!
+
+                                        */}
                                         <div className={`m-6`}></div>
                                         <h1
                                             className={`text-2xl flex-1 p-2 `}>"Milestones"</h1>
@@ -161,13 +192,29 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
                     </div>
 
                 </div>
-                {this.state.eastertoggled ?
-                <div className={"bg-gray-900 text-center p-2 shadow"}>
-                    <p className={"text-md font-light"}>Yes, This is something that is highly
-                        personal</p>
-                    <p className={"text-xs font-light"}>This is one of my ways of showing eternal
-                        love to the girl I love.</p>
-                </div> : ``}
+                {easteregg.found ?
+                    <div
+                         className={"flex text-center bg-gray-900 p-2 shadow"}>
+
+                        <div className={"flex-1"}>
+                            <p className={"text-xs font-light"}>Congratulations! You found this eastegg!</p>
+                        </div>
+
+                    </div> : ``}
+                {easteregg.found && !easteregg.disclaimerClosed ?
+                    <div onClick={this.closeDisclaimer.bind(this)}
+                         className={"flex text-center bg-gray-900 p-2 shadow"}>
+                        <FontAwesomeIcon className={"text-2xl self-center ml-2"} icon={faExclamationTriangle}/>
+                        <div className={"flex-1"}>
+                            <p className={"text-xl font-bold"}>DISCLAIMER</p>
+                            <p className={"text-md font-light"}>Yes, This is something that is highly
+                                personal</p>
+                            <p className={"text-xs font-light"}>This is one of my ways of showing eternal
+                                love to the girl I love.</p>
+                            <p className={"text-xs font-light"}>(Click to close)</p>
+                        </div>
+                        <FontAwesomeIcon className={"text-2xl self-center mr-2"} icon={faExclamationTriangle}/>
+                    </div> : ``}
             </div>
         )
     }
@@ -182,7 +229,7 @@ export default class Easteregg extends React.Component<{}, EastereggState> {
 
     calculateRelationLength(): Duration {
 
-        const length = Moment();
+        const length = Moment("2020-09-04");
         let duration = Moment.duration(length.diff(this.dates.dateOfRelation));
 
         return duration;
