@@ -3,6 +3,8 @@ import {Link} from "react-router-dom";
 import {faGlobe, faCircle} from "@fortawesome/free-solid-svg-icons";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import ParagraphTitle from "./ParagraphTitle";
+import ParagraphSubtitle from "./ParagraphSubtitle";
 
 export default class Projects extends React.Component<{}, ProjectState> {
 
@@ -56,8 +58,8 @@ export default class Projects extends React.Component<{}, ProjectState> {
             <div>
                 <div className="md:flex">
                     <div className="text-center md:text-left">
-                        <h1 className="text-4xl md:text-5xl font-bold">My projects</h1>
-                        <h3 className="text-xs md:text-xl font-light">All the projects I am working on</h3>
+                        <ParagraphTitle>Projects</ParagraphTitle>
+                        <ParagraphSubtitle>All the project I have done, or still working on</ParagraphSubtitle>
                     </div>
                 </div>
 

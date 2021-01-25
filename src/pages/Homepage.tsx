@@ -4,6 +4,7 @@ import ProgrammingLanguages from "../components/ProgrammingLanguages";
 import DesignerMessage from "../components/DesignerMessage";
 import PersonalInfo from "../components/PersonalInfo";
 import CV from "../components/CV";
+import Frameworks from "../components/Frameworks";
 
 export default class Homepage extends React.Component {
 
@@ -31,6 +32,7 @@ export default class Homepage extends React.Component {
     }
 
     componentWillUnmount() {
+
     }
 
     render(): JSX.Element {
@@ -44,8 +46,12 @@ export default class Homepage extends React.Component {
                     <div>
                         <PersonalInfo/>
                     </div>
+
                     <div>
                         <ProgrammingLanguages/>
+                    </div>
+                    <div>
+                        <Frameworks/>
                     </div>
                     <div>
                         <Projects/>

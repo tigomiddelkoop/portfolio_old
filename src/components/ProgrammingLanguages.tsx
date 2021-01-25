@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import Moment from "moment";
+import ParagraphTitle from "./ParagraphTitle";
+import ParagraphSubtitle from "./ParagraphSubtitle";
 
 export default class ProgrammingLanguages extends React.Component<{}, ProgrammingLanguagesState> {
 
@@ -32,9 +34,9 @@ export default class ProgrammingLanguages extends React.Component<{}, Programmin
             <div>
                 <div className="md:flex">
                     <div className={"text-center md:text-left"}>
-                        <h1 className="text-2xl md:text-5xl font-bold">The programming languages I know</h1>
-                        <h3 className="text-xs md:text-xl font-light">These programming languages are onces I can code
-                            in, or those who I am currently learning</h3>
+                        <ParagraphTitle>Programming Languages</ParagraphTitle>
+                        <ParagraphSubtitle>These programming languages are ones I can code
+                            in, or those who I am currently learning</ParagraphSubtitle>
                     </div>
                 </div>
                 <div className="mt-2 flex flex-wrap">

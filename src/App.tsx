@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Homepage from './pages/Homepage';
+import Homepage from './pages/RedirectHomepage';
 import {Route, Switch} from 'react-router-dom';
 import Notfound from "./pages/Notfound";
 // import ProjectInfo from "./pages/ProjectInfo";
